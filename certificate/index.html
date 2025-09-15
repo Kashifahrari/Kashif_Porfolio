@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Certificate Showcase</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
+
+    <header>
+      <h1>My Certificates</h1>
+      <p>Showcasing my achievements and certifications</p>
+    </header>
+
+    <main>
+      <div class="gallery">
+        <div class="certificate">
+          <img src="certi/cert1.png" alt="NIPAM" onclick="openModal(this)" />
+          <p>NIPAM</p>
+        </div>
+        <div class="certificate">
+          <img src="certi/cert13.png" alt="IBM" onclick="openModal(this)" />
+          <p>IBM</p>
+          <p>API Development</p>
+        </div>
+
+        <div class="certificate">
+          <img
+            src="certi/cert15.png"
+            alt="Rooman Technologies"
+            onclick="openModal(this)"
+          />
+          <p>Rooman Technologies</p>
+          <p>Internship Rooman Technologies Private Limited</p>
+        </div>
+
+        <div class="certificate">
+          <img
+            src="certi/cert14.png"
+            alt="WadhWani"
+            onclick="openModal(this)"
+          />
+          <p>Wadhwani</p>
+          <p>93 Hours Course</p>
+        </div>
+        <div class="certificate">
+          <img
+            src="certi/cert2.png"
+            alt="INFOSIS SPRINGBOARD - Responsive web Development with HTML5, CSS3, JAVA SCRIPT"
+            onclick="openModal(this)"
+          />
+          <p>INFOSIS SPRINGBOARD</p>
+          <p>Responsive web Development with HTML5, CSS3, JAVA SCRIPT</p>
+        </div>
+        <div class="certificate">
+          <img
+            src="certi/cert3.png"
+            alt="BLOCKCHAIN FOR BEGINNERS"
+            onclick="openModal(this)"
+          />
+          <p>BLOCKCHAIN FOR BEGINNERS</p>
+        </div>
+        <div class="certificate">
+          <img
+            src="certi/cert4.png"
+            alt="FUTURE SKILL PRIME - DIGITAL 101 JOURNEY"
+            onclick="openModal(this)"
+          />
+          <p>FUTURE SKILL PRIME</p>
+          <p>DIGITAL 101 JOURNEY</p>
+        </div>
+        <div class="certificate">
+          <img
+            src="certi/cert5.png"
+            alt="GeeksforGeeks - Content Writing Internship"
+            onclick="openModal(this)"
+          />
+          <p>Internship GeeksforGeeks</p>
+          <p>Content Writing Internship</p>
+        </div>
+        <div class="certificate">
+          <img
+            src="certi/cert6.png"
+            alt="INFOSIS SPRINGBOARD - BROWSING THE WEB"
+            onclick="openModal(this)"
+          />
+          <p>INFOSIS SPRINGBOARD</p>
+          <p>BROWSING THE WEB</p>
+        </div>
+        <div class="certificate">
+          <img
+            src="certi/cert7.png"
+            alt="UDEMY - THE COMPLETE JAVASCRIPT COURSE"
+            onclick="openModal(this)"
+          />
+          <p>UDEMY</p>
+          <p>THE COMPLETE JAVASCRIPT COURSE</p>
+        </div>
+        <div class="certificate">
+          <img
+            src="certi/cert8.png"
+            alt="OpenWeaver - BASICS OF JAVASCRIPT PROGRAMMING"
+            onclick="openModal(this)"
+          />
+          <p>OpenWeaver</p>
+          <p>BASICS OF JAVASCRIPT PROGRAMMING</p>
+        </div>
+        <div class="certificate">
+          <img
+            src="certi/cert12 (1).png"
+            alt="Summer Internship with Effervescence of IIT ALLAHABAD - Android Application Development"
+            onclick="openModal(this)"
+          />
+          <p>Summer Internship with Effervescence of IIT ALLAHABAD</p>
+          <p>Android Application Development</p>
+        </div>
+        <div class="certificate">
+          <img
+            src="certi/cert12 (3).png"
+            alt="Internship at Aqmenz Automation Private Limited - Python Libraries with Application Projects"
+            onclick="openModal(this)"
+          />
+          <p>Internship at Aqmenz Automation Private Limited</p>
+          <p>Python Libraries with Application Projects</p>
+        </div>
+        <div class="certificate">
+          <img
+            src="certi/cert12 (2).png"
+            alt="DSCI Government of India Certificate - Cyber Security Awareness Quiz"
+            onclick="openModal(this)"
+          />
+          <p>DSCI Government of India Certificate</p>
+          <p>Cyber Security Awareness Quiz</p>
+        </div>
+        <div class="certificate">
+          <img
+            src="certi/cert12 (4).png"
+            alt="Summer Internship with Effervescence of IIT ALLAHABAD - Block Chain For Beginners"
+            onclick="openModal(this)"
+          />
+          <p>Summer Internship with Effervescence of IIT ALLAHABAD</p>
+          <p>Block Chain For Beginners</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        Copyright &copy; 2023 | Designed and Maintenance by Mohd Kashif | All
+        Rights Reserved
+      </p>
+    </footer>
+
+    <!-- Modal for larger image view -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg" />
+      <div id="caption"></div>
+    </div>
+
+    <!-- Navigation button -->
+    <a href="../index.html" class="nav-button">
+      <i class="fas fa-home"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
