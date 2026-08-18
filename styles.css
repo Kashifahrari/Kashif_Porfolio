@@ -30,14 +30,36 @@
   --card-border: rgba(2, 132, 199, 0.2);
   --card-hover-border: rgba(2, 132, 199, 0.5);
   --text-color: #0f172a;
-  --text-muted: #64748b;
+  --text-muted: #475569;
   --main-color: #0284c7;
   --accent-teal: #06b6d4;
   --accent-coral: #ef4444;
-  --accent-gold: #f59e0b;
+  --accent-gold: #d97706;
   --accent-green: #059669;
   --glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   --glass-glow: 0 0 25px rgba(2, 132, 199, 0.15);
+}
+
+.light-theme .ambient-glow {
+  opacity: 0.08;
+}
+
+.light-theme .btn-glass {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(2, 132, 199, 0.3);
+  color: #0f172a;
+}
+
+.light-theme .btn-glass:hover {
+  background: rgba(2, 132, 199, 0.12);
+  border-color: var(--main-color);
+  color: var(--main-color);
+}
+
+.light-theme .social-icon-btn {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(2, 132, 199, 0.25);
+  color: #0f172a;
 }
 
 * {
