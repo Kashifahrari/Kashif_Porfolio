@@ -1,13 +1,19 @@
 {
   "version": 2,
-  "buildCommand": "",
-  "devCommand": "",
-  "outputDirectory": ".",
-  "framework": null,
-  "cleanUrls": true,
+  "cleanUrls": false,
+  "trailingSlash": true,
   "headers": [
     {
-      "source": "/assets/(.*)",
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/(assets|certificate/certi)/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
