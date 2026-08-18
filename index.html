@@ -16,6 +16,21 @@
   <title>Mohd Kashif Ahrari | Full-Stack Developer & Software Engineer</title>
   <meta name="description"
     content="Mohd Kashif Ahrari – Computer Science Engineer & Full-Stack Developer specializing in Java, React, Node.js, SQL, MongoDB, and modern web architectures." />
+  
+  <!-- Open Graph / LinkedIn / WhatsApp Social Previews -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kashifahrari.github.io/Kashif_Porfolio/" />
+  <meta property="og:title" content="Mohd Kashif Ahrari | Software Engineer & Full-Stack Developer" />
+  <meta property="og:description" content="Software Engineer at Dhira Software Labs & Top GeeksforGeeks Author (61k+ reads). Specializing in React 19, TypeScript, Node.js, and Java DSA." />
+  <meta property="og:image" content="https://kashifahrari.github.io/Kashif_Porfolio/kashif.jpg" />
+
+  <!-- Twitter / X Previews -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mohd Kashif Ahrari | Software Engineer & Full-Stack Developer" />
+  <meta name="twitter:description" content="Software Engineer at Dhira Software Labs & Top GeeksforGeeks Author (61k+ reads). Specializing in React 19, TypeScript, Node.js, and Java DSA." />
+  <meta name="twitter:image" content="https://kashifahrari.github.io/Kashif_Porfolio/kashif.jpg" />
+  <meta name="theme-color" content="#081b29" />
+
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +38,13 @@
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/preloader.css" />
+  <link rel="stylesheet" href="assets/terminal.css" />
+  <link rel="stylesheet" href="assets/cursor.css" />
+  <link rel="stylesheet" href="assets/resume-modal.css" />
+  <link rel="stylesheet" href="assets/scroll-tools.css" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="assets/preloader.js"></script>
 </head>
 
 <body>
@@ -100,11 +121,14 @@
             <a href="#projects" class="btn btn-primary" data-i18n="hero.explore">
               <span>Explore My Work 🚀</span>
             </a>
+            <button class="btn btn-glass open-resume-trigger" data-action="open-resume" title="Open ATS Resume Modal">
+              <i class="bx bx-file"></i> <span>View Resume (ATS)</span>
+            </button>
             <a href="contact/contact.html" class="btn btn-secondary" data-i18n="hero.contact">
               <span>Get in Touch ✉️</span>
             </a>
             <a href="aboutme/index.html" class="btn btn-glass" data-i18n="hero.resume">
-              <span>About Me 📄</span>
+              <span>About Me 👤</span>
             </a>
           </div>
 
@@ -706,6 +730,10 @@
   <script defer src="https://unpkg.com/i18next@21.6.16/dist/umd/i18next.min.js"></script>
   <script defer src="script.js"></script>
   <script defer src="assets/security.js"></script>
+  <script defer src="assets/terminal.js"></script>
+  <script defer src="assets/resume-modal.js"></script>
+  <script defer src="assets/scroll-tools.js"></script>
+  <script defer src="assets/cursor.js"></script>
 </body>
 
 </html>
