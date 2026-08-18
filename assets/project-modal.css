@@ -1,0 +1,244 @@
+/* ===================================================
+   PROJECT ARCHITECTURE & DEEP DIVE MODAL STYLING
+   =================================================== */
+
+.project-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 13, 20, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 100008;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.project-modal-dialog {
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  background: rgba(8, 27, 41, 0.96);
+  border: 1.5px solid var(--card-border, rgba(0, 171, 240, 0.35));
+  border-radius: 2.2rem;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 171, 240, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.92) translateY(20px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-modal-overlay.active .project-modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+/* Header */
+.project-modal-header {
+  padding: 2rem 2.5rem;
+  background: rgba(13, 37, 56, 0.85);
+  border-bottom: 1px solid var(--card-border, rgba(0, 171, 240, 0.25));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.project-modal-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.project-modal-category {
+  font-family: "Fira Code", monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-gold, #ffd166);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-modal-company-tag {
+  font-size: 1.15rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 1.2rem;
+  background: rgba(0, 171, 240, 0.15);
+  border: 1px solid rgba(0, 171, 240, 0.3);
+  color: var(--main-color, #00abf0);
+  font-weight: 600;
+}
+
+.project-modal-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.project-modal-close {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--card-border, rgba(0, 171, 240, 0.25));
+  color: #ffffff;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.project-modal-close:hover {
+  background: rgba(255, 107, 107, 0.2);
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+  transform: rotate(90deg);
+}
+
+/* Body */
+.project-modal-body {
+  padding: 2.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  line-height: 1.6;
+}
+
+.project-modal-section {
+  padding: 2.2rem;
+  background: rgba(13, 37, 56, 0.5);
+  border: 1px solid var(--card-border, rgba(0, 171, 240, 0.2));
+  border-radius: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.project-section-heading {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--main-color, #00abf0);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Architecture Flow Pipeline */
+.architecture-pipeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 1rem;
+  background: rgba(6, 18, 28, 0.6);
+  border-radius: 1.2rem;
+  border: 1px solid rgba(0, 171, 240, 0.2);
+}
+
+.arch-node {
+  flex: 1;
+  min-width: 140px;
+  padding: 1.2rem 1rem;
+  border-radius: 1rem;
+  background: rgba(13, 37, 56, 0.85);
+  border: 1px solid rgba(0, 171, 240, 0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.arch-node-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.arch-node-desc {
+  font-family: "Fira Code", monospace;
+  font-size: 1.15rem;
+  color: var(--accent-teal, #4ecdc4);
+}
+
+.arch-arrow {
+  color: var(--main-color, #00abf0);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Engineering Highlights Bullet List */
+.project-highlights-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: #cbd5e1;
+  font-size: 1.35rem;
+}
+
+.project-highlights-list li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.project-highlights-list li::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  color: var(--accent-gold, #ffd166);
+}
+
+/* Tech Stack Badges */
+.project-tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.project-tech-pill {
+  padding: 0.4rem 1.2rem;
+  border-radius: 1.4rem;
+  background: rgba(0, 171, 240, 0.12);
+  border: 1px solid rgba(0, 171, 240, 0.3);
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Footer */
+.project-modal-footer {
+  padding: 1.8rem 2.5rem;
+  background: rgba(13, 37, 56, 0.9);
+  border-top: 1px solid var(--card-border, rgba(0, 171, 240, 0.25));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.project-modal-actions {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}

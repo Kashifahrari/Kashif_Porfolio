@@ -43,6 +43,7 @@
   <link rel="stylesheet" href="assets/cursor.css" />
   <link rel="stylesheet" href="assets/resume-modal.css" />
   <link rel="stylesheet" href="assets/scroll-tools.css" />
+  <link rel="stylesheet" href="assets/project-modal.css" />
   <link rel="stylesheet" href="styles.css" />
   <script src="assets/preloader.js"></script>
 </head>
@@ -318,7 +319,7 @@
 
       <div class="projects-grid">
         <!-- Project 1: CBSE Aakalan (CBA Platform) -->
-        <div class="glass-card project-card" data-tilt>
+        <div class="glass-card project-card" data-tilt data-project-key="cba" style="cursor: pointer;">
           <div class="project-header">
             <div class="project-icon-wrap web">
               <i class="bx bx-layer"></i>
@@ -339,16 +340,16 @@
             <span class="tag">jsPDF</span>
           </div>
           <div class="project-actions">
-            <a href="https://github.com/Kashifahrari" target="_blank" rel="noopener noreferrer" class="project-link"
+            <button class="project-link" data-project-key="cba" style="background: none; border: none; cursor: pointer; text-align: left;"
               data-i18n="projects.project1.link">
-              <span>Explore Project 🚀</span>
+              <span>View Architecture & Specs ⚡</span>
               <i class="bx bx-right-arrow-alt"></i>
-            </a>
+            </button>
           </div>
         </div>
 
         <!-- Project 2: Stay Ease Rental Platform -->
-        <div class="glass-card project-card" data-tilt>
+        <div class="glass-card project-card" data-tilt data-project-key="stayease" style="cursor: pointer;">
           <div class="project-header">
             <div class="project-icon-wrap backend">
               <i class="bx bx-home-heart"></i>
@@ -368,16 +369,16 @@
             <span class="tag">MongoDB</span>
           </div>
           <div class="project-actions">
-            <a href="https://github.com/Kashifahrari" target="_blank" rel="noopener noreferrer" class="project-link"
+            <button class="project-link" data-project-key="stayease" style="background: none; border: none; cursor: pointer; text-align: left;"
               data-i18n="projects.project2.link">
-              <span>View Architecture ⚡</span>
+              <span>View Architecture & Specs ⚡</span>
               <i class="bx bx-right-arrow-alt"></i>
-            </a>
+            </button>
           </div>
         </div>
 
         <!-- Project 3: Mega-Vlog Platform -->
-        <div class="glass-card project-card" data-tilt>
+        <div class="glass-card project-card" data-tilt data-project-key="megavlog" style="cursor: pointer;">
           <div class="project-header">
             <div class="project-icon-wrap data">
               <i class="bx bx-news"></i>
@@ -396,16 +397,16 @@
             <span class="tag">CRUD</span>
           </div>
           <div class="project-actions">
-            <a href="https://github.com/Kashifahrari" target="_blank" rel="noopener noreferrer" class="project-link"
+            <button class="project-link" data-project-key="megavlog" style="background: none; border: none; cursor: pointer; text-align: left;"
               data-i18n="projects.project3.link">
-              <span>View Details 📊</span>
+              <span>View Architecture & Specs ⚡</span>
               <i class="bx bx-right-arrow-alt"></i>
-            </a>
+            </button>
           </div>
         </div>
 
         <!-- Project 4: Student Attendance System -->
-        <div class="glass-card project-card" data-tilt>
+        <div class="glass-card project-card" data-tilt data-project-key="attendance" style="cursor: pointer;">
           <div class="project-header">
             <div class="project-icon-wrap cert">
               <i class="bx bx-calendar-check"></i>
@@ -424,11 +425,11 @@
             <span class="tag">HTML5/CSS3</span>
           </div>
           <div class="project-actions">
-            <a href="https://github.com/Kashifahrari" target="_blank" rel="noopener noreferrer" class="project-link"
+            <button class="project-link" data-project-key="attendance" style="background: none; border: none; cursor: pointer; text-align: left;"
               data-i18n="projects.project4.link">
-              <span>View Management System 📋</span>
+              <span>View Architecture & Specs ⚡</span>
               <i class="bx bx-right-arrow-alt"></i>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -732,6 +733,7 @@
   <script defer src="assets/security.js"></script>
   <script defer src="assets/terminal.js"></script>
   <script defer src="assets/resume-modal.js"></script>
+  <script defer src="assets/project-modal.js"></script>
   <script defer src="assets/scroll-tools.js"></script>
   <script defer src="assets/cursor.js"></script>
 </body>
