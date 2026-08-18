@@ -1,118 +1,134 @@
-// toggle icon navbar
-let menuIcon = document.querySelector("#menu-icon");
-let navbar = document.querySelector(".navbar");
+/**
+ * ===================================================
+ * ABOUT ME - ADVANCED INTERACTIONS & ANIMATIONS
+ * ===================================================
+ */
 
-menuIcon.onclick = () => {
-  menuIcon.classList.toggle("bx-x");
-  navbar.classList.toggle("active");
-};
+document.addEventListener("DOMContentLoaded", () => {
+  initParticles();
+  initMobileNavbar();
+  initSkillsProgressObserver();
+  init3DTilt();
+});
 
-// scroll sections
-let sections = document.querySelectorAll("section");
-let navLinks = document.querySelectorAll("header nav a");
+/* ===================================================
+   1. PARTICLES.JS INITIALIZATION
+   =================================================== */
+function initParticles() {
+  if (typeof window.particlesJS === "function" && document.getElementById("particles-js")) {
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 65, density: { enable: true, value_area: 800 } },
+        color: { value: "#00abf0" },
+        shape: { type: "circle" },
+        opacity: { value: 0.45, random: true },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 140,
+          color: "#00abf0",
+          opacity: 0.35,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 1.8,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+          resize: true,
+        },
+        modes: {
+          grab: { distance: 150, line_linked: { opacity: 0.6 } },
+          push: { particles_nb: 3 },
+        },
+      },
+      retina_detect: true,
+    });
+  }
+}
 
-window.onscroll = () => {
-  sections.forEach((sec) => {
-    let top = window.scrollY;
-    let offset = sec.offsetTop - 100;
-    let height = sec.offsetHeight;
-    let id = sec.getAttribute("id");
+/* ===================================================
+   2. MOBILE NAVBAR TOGGLE
+   =================================================== */
+function initMobileNavbar() {
+  const menuIcon = document.getElementById("menu-icon");
+  const navbar = document.querySelector(".navbar");
 
-    if (top >= offset && top < offset + height) {
-      // active navbar links
-      navLinks.forEach((links) => {
-        links.classList.remove("active");
-        document
-          .querySelector("header nav a[href*=" + id + "]")
-          .classList.add("active");
+  if (menuIcon && navbar) {
+    menuIcon.onclick = () => {
+      menuIcon.classList.toggle("bx-x");
+      navbar.classList.toggle("active");
+    };
+
+    document.querySelectorAll(".navbar a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menuIcon.classList.remove("bx-x");
+        navbar.classList.remove("active");
       });
-      // active sections for animation on scroll
-      sec.classList.add("show-animate");
-    }
-    // if want to animation that repeats on scroll use this
-    else {
-      sec.classList.remove("show-animate");
-    }
-  });
+    });
 
-  // sticky navbar
-  let header = document.querySelector("header");
+    document.addEventListener("click", (e) => {
+      if (!navbar.contains(e.target) && !menuIcon.contains(e.target)) {
+        menuIcon.classList.remove("bx-x");
+        navbar.classList.remove("active");
+      }
+    });
+  }
+}
 
-  header.classList.toggle("sticky", window.scrollY > 100);
-
-  // remove toggle icon and navbar when click navbar links (scroll)
-  menuIcon.classList.remove("bx-x");
-  navbar.classList.remove("active");
-
-  // animation footer on scroll
-  let footer = document.querySelector("footer");
-
-  footer.classList.toggle(
-    "show-animate",
-    this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight
-  );
-};
-
-// Initialize particles.js
-document.addEventListener("DOMContentLoaded", function () {
-  particlesJS("particles-js", {
-    particles: {
-      number: { value: 80, density: { enable: true, value_area: 800 } },
-      color: { value: "#00abf0" },
-      shape: { type: "circle" },
-      opacity: { value: 0.5, random: true },
-      size: { value: 3, random: true },
-      line_linked: {
-        enable: true,
-        distance: 150,
-        color: "#00abf0",
-        opacity: 0.4,
-        width: 1,
-      },
-      move: {
-        enable: true,
-        speed: 2,
-        direction: "none",
-        random: true,
-        straight: false,
-        out_mode: "out",
-        bounce: false,
-      },
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: {
-        onhover: { enable: true, mode: "repulse" },
-        onclick: { enable: true, mode: "push" },
-        resize: true,
-      },
-    },
-    retina_detect: true,
-  });
-
-  // Animate skill bars on scroll
-  const skillBars = document.querySelectorAll(".bar span");
-  const skillsSection = document.querySelector(".skills");
+/* ===================================================
+   3. SKILLS PROGRESS OBSERVER
+   =================================================== */
+function initSkillsProgressObserver() {
+  const skillCards = document.querySelectorAll(".skills-card");
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          skillBars.forEach((bar) => {
-            const width = bar.style.width;
-            bar.style.width = "0";
-            setTimeout(() => {
-              bar.style.width = width;
-            }, 200);
-          });
-          observer.unobserve(entry.target);
+          entry.target.classList.add("show-progress");
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.2 }
   );
 
-  if (skillsSection) {
-    observer.observe(skillsSection);
+  skillCards.forEach((card) => observer.observe(card));
+}
+
+/* ===================================================
+   4. 3D TILT EFFECT FOR GLASS CARDS
+   =================================================== */
+function init3DTilt() {
+  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    const tiltCards = document.querySelectorAll("[data-tilt]");
+    tiltCards.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -6;
+        const rotateY = ((x - centerX) / centerX) * 6;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+      });
+    });
   }
-});
+}

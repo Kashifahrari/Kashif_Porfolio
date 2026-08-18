@@ -1,151 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-theme");
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3D Contact - Mohd Kashif Ahrari</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    <title>Contact Mohd Kashif Ahrari | Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Get in touch with Mohd Kashif Ahrari for web development, backend engineering, freelance projects, and full-time opportunities."
     />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- 3D Background Elements -->
+    <!-- Background Ambient Glow & Particles -->
     <div id="particles-js"></div>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
 
-    <!-- Rotating Name at Corners -->
-    <div class="rotating-name top-left">
-      <span>M</span>
-      <span>O</span>
-      <span>H</span>
-      <span>D</span>
-    </div>
-    <div class="rotating-name top-right">
-      <span>K</span>
-      <span>A</span>
-      <span>S</span>
-      <span>H</span>
-      <span>I</span>
-      <span>F</span>
-    </div>
-    <div class="rotating-name bottom-left">
-      <span>A</span>
-      <span>H</span>
-      <span>R</span>
-      <span>A</span>
-      <span>R</span>
-      <span>I</span>
-    </div>
-    <div class="rotating-name bottom-right">
-      <span>P</span>
-      <span>O</span>
-      <span>R</span>
-      <span>T</span>
-      <span>F</span>
-      <span>O</span>
-      <span>L</span>
-      <span>I</span>
-      <span>O</span>
-    </div>
+    <!-- Navigation Header -->
+    <header class="header">
+      <a href="../index.html" class="logo">
+        Kashif<span>.dev</span>
+      </a>
 
-    <section class="contact-section">
-      <div class="container">
-        <div class="heading">
-          <h1><span>C</span>on<span>ta</span>ct - U<span>s</span></h1>
-          <p>
-            Thank you for your interest in contacting me! I value your feedback,
-            suggestions, and questions.
-          </p>
-          <p>For a fast response, please contact me by phone or email</p>
+      <nav class="navbar">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a href="../aboutme/index.html" data-i18n="nav.about">About</a>
+        <a href="../index.html#projects" data-i18n="nav.projects">Projects</a>
+        <a href="../certificate/index.html" data-i18n="cert.title">Certificates</a>
+        <a href="../progress/index.html" data-i18n="nav.progress">Dev Log</a>
+        <a href="#" class="active" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button id="lang-en" class="lang-btn" aria-label="Switch to English" aria-pressed="true">EN</button>
+          <button id="lang-hi" class="lang-btn" aria-label="Switch to Hindi" aria-pressed="false">HI</button>
         </div>
-
-        <div class="contact-content">
-          <div class="contact-info">
-            <div class="info-item">
-              <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
-              <h3>Address</h3>
-              <p>Btm Layout Stage-2</p>
-              <p>Near Silkboard Metro Station</p>
-              <p>Bengaluru, Karnataka</p>
-            </div>
-            <div class="info-item">
-              <span class="icon"><i class="fa-solid fa-phone"></i></span>
-              <h3>Phone Number</h3>
-              <p>7905291957</p>
-            </div>
-            <div class="info-item">
-              <span class="icon"><i class="fa-regular fa-envelope"></i></span>
-              <h3>Email</h3>
-              <p>ahrarikashif@gmail.com</p>
-              <h3>
-                <a
-                  href="https://www.linkedin.com/in/mohd-kashif-9096a4227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
-                  >linkedin</a
-                >
-              </h3>
-            </div>
-          </div>
-
-          <div class="message-box">
-            <h2>
-              <span>S</span>end Me<span>ss</span>age
-              <i class="fa-solid fa-message-arrow-down"></i>
-            </h2>
-            <form action="">
-              <div class="input-group">
-                <div class="inputbox">
-                  <input required="required" type="text" />
-                  <span>Full Name</span>
-                  <i></i>
-                </div>
-                <div class="inputbox">
-                  <input required="required" type="email" />
-                  <span>Email</span>
-                  <i></i>
-                </div>
-                <div class="inputbox message-input">
-                  <textarea required="required"></textarea>
-                  <span>Your Message</span>
-                  <i></i>
-                </div>
-                <button data-text="Awesome" class="button">
-                  <span class="actual-text">&nbsp;SEND&nbsp;</span>
-                  <span class="hover-text" aria-hidden="true"
-                    >&nbsp;SEND&nbsp;</span
-                  >
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <a
+          href="../roadmap-24lpa/index.html?tab=inbox"
+          class="nav-roadmap-link"
+          style="border-color: rgba(255, 107, 107, 0.4); background: rgba(255, 107, 107, 0.12); color: var(--accent-coral);"
+          title="Private Client Messages & Inquiries Inbox (Password Protected)"
+        >
+          <i class="bx bx-envelope"></i>
+          <span>Messages 🔒</span>
+        </a>
       </div>
 
-      <footer>
-        <p>Kashif Ahrari</p>
-        <p>
-          Copyright &copy; 2023 | Designed and Maintenance by Mohd Kashif | All
-          Rights Reserved
-        </p>
-        <div class="social-links">
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a
-            href="https://www.instagram.com/kashif_ahrari?igsh=bHp3eDh3ajRwNHli "
-            ><i class="fa-brands fa-instagram"></i
-          ></a>
-          <a href="#"><i class="fa-brands fa-dribbble"></i></a>
-          <a
-            href="https://www.linkedin.com/in/mohd-kashif-9096a4227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        </div>
-        <p class="copyright">CopyRight By Kashif Ahrari</p>
-      </footer>
-    </section>
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
 
+    <!-- Main Contact Content -->
+    <main class="contact-main">
+      <div class="contact-container">
+        <!-- Hero Header -->
+        <section class="contact-hero">
+          <div class="status-badge" id="statusBadge">
+            <span class="pulse-ring"></span>
+            <span class="pulse-dot"></span>
+            <span data-i18n="contact.badge">Available for freelance projects & full-time roles</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span data-i18n="contact.heading">Get In <span>Touch</span></span>
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="contact.subtitle">
+            Have a project in mind, an internship or full-time opportunity, or just want to say hi? I'd love to connect!
+          </p>
+        </section>
+
+        <!-- Main Grid: Info Cards (Left) + Contact Form (Right) -->
+        <div class="contact-grid">
+          <!-- Left Column: Contact Cards -->
+          <div class="contact-info-column">
+            <!-- Email Card -->
+            <div class="glass-card info-card" data-tilt>
+              <div class="card-icon-wrap email-icon">
+                <i class="bx bx-envelope"></i>
+              </div>
+              <div class="card-text">
+                <span class="card-label" data-i18n="contact.cards.email_title">Email Address</span>
+                <a href="mailto:ahrarikashif@gmail.com" class="card-val" id="emailVal">ahrarikashif@gmail.com</a>
+                <p class="card-desc" data-i18n="contact.cards.email_desc">Direct inbox — quick response</p>
+              </div>
+              <div class="card-actions">
+                <button
+                  class="action-btn copy-btn"
+                  data-copy="ahrarikashif@gmail.com"
+                  aria-label="Copy email address"
+                >
+                  <i class="bx bx-copy"></i>
+                  <span class="btn-text" data-i18n="contact.cards.copy_btn">Copy</span>
+                </button>
+                <a href="mailto:ahrarikashif@gmail.com" class="action-btn primary-action" aria-label="Send Email">
+                  <i class="bx bx-send"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Phone / WhatsApp Card -->
+            <div class="glass-card info-card" data-tilt>
+              <div class="card-icon-wrap phone-icon">
+                <i class="bx bxl-whatsapp"></i>
+              </div>
+              <div class="card-text">
+                <span class="card-label" data-i18n="contact.cards.phone_title">Phone & WhatsApp</span>
+                <a href="tel:+917905291957" class="card-val" id="phoneVal">+91 7905291957</a>
+                <p class="card-desc" data-i18n="contact.cards.phone_desc">Available Mon - Sat (9 AM - 8 PM IST)</p>
+              </div>
+              <div class="card-actions">
+                <button
+                  class="action-btn copy-btn"
+                  data-copy="+917905291957"
+                  aria-label="Copy phone number"
+                >
+                  <i class="bx bx-copy"></i>
+                  <span class="btn-text" data-i18n="contact.cards.copy_btn">Copy</span>
+                </button>
+                <a
+                  href="https://wa.me/917905291957?text=Hi%20Kashif,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="action-btn whatsapp-action"
+                  aria-label="Chat on WhatsApp"
+                >
+                  <i class="bx bxl-whatsapp"></i>
+                  <span class="btn-text" data-i18n="contact.cards.whatsapp_btn">Chat</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Location Card with Live Clock -->
+            <div class="glass-card info-card" data-tilt>
+              <div class="card-icon-wrap location-icon">
+                <i class="bx bx-map-pin"></i>
+              </div>
+              <div class="card-text">
+                <span class="card-label" data-i18n="contact.cards.location_title">Location</span>
+                <span class="card-val">Bengaluru, Karnataka, India</span>
+                <p class="card-desc" data-i18n="contact.cards.location_desc">BTM Layout 2nd Stage (Silk Board)</p>
+              </div>
+              <div class="card-badge live-time-badge" id="liveTimeBadge">
+                <i class="bx bx-time-five"></i>
+                <span id="currentTime">--:--:-- IST</span>
+              </div>
+            </div>
+
+            <!-- Social Profiles Card -->
+            <div class="glass-card info-card socials-card" data-tilt>
+              <div class="social-header">
+                <div class="card-icon-wrap social-icon">
+                  <i class="bx bx-share-alt"></i>
+                </div>
+                <div>
+                  <span class="card-label" data-i18n="contact.cards.social_title">Social Profiles</span>
+                  <p class="card-desc" data-i18n="contact.cards.social_desc">Let's connect on professional networks</p>
+                </div>
+              </div>
+
+              <div class="social-badges-grid">
+                <a
+                  href="https://www.linkedin.com/in/mohd-kashif-9096a4227"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-pill linkedin"
+                  aria-label="LinkedIn"
+                >
+                  <i class="bx bxl-linkedin"></i>
+                  <span>LinkedIn</span>
+                  <i class="bx bx-up-arrow-alt arrow"></i>
+                </a>
+
+                <a
+                  href="https://github.com/Kashifahrari"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-pill github"
+                  aria-label="GitHub"
+                >
+                  <i class="bx bxl-github"></i>
+                  <span>GitHub</span>
+                  <i class="bx bx-up-arrow-alt arrow"></i>
+                </a>
+
+                <a
+                  href="https://www.geeksforgeeks.org/profile/mohd_kashif_ahrari?tab=articles&page=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-pill gfg"
+                  aria-label="GeeksforGeeks"
+                >
+                  <i class="bx bx-code-alt"></i>
+                  <span>GFG Author</span>
+                  <i class="bx bx-up-arrow-alt arrow"></i>
+                </a>
+
+                <a
+                  href="https://www.youtube.com/@kashifahrari"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-pill youtube"
+                  aria-label="YouTube"
+                >
+                  <i class="bx bxl-youtube"></i>
+                  <span>YouTube</span>
+                  <i class="bx bx-up-arrow-alt arrow"></i>
+                </a>
+
+                <a
+                  href="https://www.instagram.com/kashif_ahrari"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-pill instagram"
+                  aria-label="Instagram"
+                >
+                  <i class="bx bxl-instagram"></i>
+                  <span>Instagram</span>
+                  <i class="bx bx-up-arrow-alt arrow"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Form Card -->
+          <div class="contact-form-column">
+            <div class="glass-card form-card" id="formCard">
+              <div class="form-header">
+                <h2 class="form-title">
+                  <span data-i18n="contact.form.title">Send Me a <span>Message</span></span>
+                </h2>
+                <p class="form-subtitle" data-i18n="contact.form.subtitle">
+                  Fill out the form below and I'll get back to you within 24 hours.
+                </p>
+              </div>
+
+              <!-- Quick Topic Pills Selector -->
+              <div class="topic-selector-wrap">
+                <label class="field-label" data-i18n="contact.form.subjectLabel">Subject / Project Type</label>
+                <div class="topic-pills" id="topicPills">
+                  <button type="button" class="topic-pill active" data-topic="Web Development">💻 Web Dev</button>
+                  <button type="button" class="topic-pill" data-topic="Full Stack Project">⚡ Full Stack</button>
+                  <button type="button" class="topic-pill" data-topic="Backend & API">🛠️ Backend / API</button>
+                  <button type="button" class="topic-pill" data-topic="Job / Internship">💼 Job / Internship</button>
+                  <button type="button" class="topic-pill" data-topic="Other Query">✨ Other</button>
+                </div>
+              </div>
+
+              <form id="contactForm" novalidate>
+                <input type="hidden" id="selectedTopic" name="topic" value="Web Development" />
+
+                <!-- Name & Email Row -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="userName" class="field-label" data-i18n="contact.form.nameLabel">Full Name</label>
+                    <div class="input-wrap">
+                      <i class="bx bx-user input-icon"></i>
+                      <input
+                        type="text"
+                        id="userName"
+                        name="name"
+                        required
+                        data-i18n-placeholder="contact.form.namePlaceholder"
+                        placeholder="Mohd Kashif"
+                        autocomplete="name"
+                      />
+                    </div>
+                    <span class="error-msg" id="nameError">Please enter your name</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="userEmail" class="field-label" data-i18n="contact.form.emailLabel">Email Address</label>
+                    <div class="input-wrap">
+                      <i class="bx bx-envelope input-icon"></i>
+                      <input
+                        type="email"
+                        id="userEmail"
+                        name="email"
+                        required
+                        data-i18n-placeholder="contact.form.emailPlaceholder"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                      />
+                    </div>
+                    <span class="error-msg" id="emailError">Please enter a valid email address</span>
+                  </div>
+                </div>
+
+                <!-- Custom Subject (Optional) -->
+                <div class="form-group">
+                  <label for="customSubject" class="field-label" data-i18n="contact.form.subjectLabel">Project Title / Headline</label>
+                  <div class="input-wrap">
+                    <i class="bx bx-bookmark-alt input-icon"></i>
+                    <input
+                      type="text"
+                      id="customSubject"
+                      name="subject"
+                      data-i18n-placeholder="contact.form.subjectPlaceholder"
+                      placeholder="Web Development / Full-Stack Project / Hiring"
+                    />
+                  </div>
+                </div>
+
+                <!-- Message Textarea -->
+                <div class="form-group">
+                  <div class="label-with-counter">
+                    <label for="userMessage" class="field-label" data-i18n="contact.form.messageLabel">Your Message</label>
+                    <span class="char-counter"><span id="charCount">0</span>/500</span>
+                  </div>
+                  <div class="input-wrap textarea-wrap">
+                    <i class="bx bx-message-square-detail input-icon textarea-icon"></i>
+                    <textarea
+                      id="userMessage"
+                      name="message"
+                      rows="4"
+                      maxlength="500"
+                      required
+                      data-i18n-placeholder="contact.form.messagePlaceholder"
+                      placeholder="Tell me about your project, timeline, or just say hello..."
+                    ></textarea>
+                  </div>
+                  <span class="error-msg" id="messageError">Please write a message (at least 10 characters)</span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn" id="submitBtn">
+                  <span class="btn-content">
+                    <span class="btn-text" id="btnText" data-i18n="contact.form.send">Send Message 🚀</span>
+                    <i class="bx bx-paper-plane btn-icon"></i>
+                  </span>
+                  <span class="spinner" id="btnSpinner"></span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Connect Direct Bar -->
+        <section class="quick-connect-section glass-card">
+          <div class="quick-connect-content">
+            <div class="quick-connect-text">
+              <h3 data-i18n="contact.quickConnect.title">Prefer Direct Communication?</h3>
+              <p data-i18n="contact.quickConnect.desc">
+                Skip the form and reach out directly through WhatsApp, Email, or LinkedIn.
+              </p>
+            </div>
+            <div class="quick-connect-buttons">
+              <a
+                href="https://wa.me/917905291957?text=Hi%20Kashif,%20I%20would%20like%20to%20discuss%20a%20project."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="direct-btn whatsapp"
+              >
+                <i class="bx bxl-whatsapp"></i>
+                <span>WhatsApp</span>
+              </a>
+              <a href="mailto:ahrarikashif@gmail.com" class="direct-btn email">
+                <i class="bx bx-envelope"></i>
+                <span>Email</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/mohd-kashif-9096a4227"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="direct-btn linkedin"
+              >
+                <i class="bx bxl-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href="../roadmap-24lpa/index.html?tab=inbox"
+                class="direct-btn inbox-link"
+                style="border-color: rgba(255, 107, 107, 0.4); background: rgba(255, 107, 107, 0.08); color: var(--accent-coral);"
+                title="View All Received Inquiries & Messages (Password Protected)"
+              >
+                <i class="bx bx-envelope"></i>
+                <span>Messages 🔒</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Success Modal Popup -->
+    <div class="modal-overlay" id="successModal" aria-hidden="true" role="dialog">
+      <div class="modal-card">
+        <canvas id="confettiCanvas"></canvas>
+        <div class="modal-icon-wrap">
+          <i class="bx bx-check"></i>
+        </div>
+        <h3 class="modal-title" data-i18n="contact.form.successTitle">Thank You!</h3>
+        <p class="modal-msg" data-i18n="contact.form.successMsg">
+          Your message has been sent successfully. I will get back to you as soon as possible!
+        </p>
+        <button class="modal-close-btn" id="closeModalBtn" data-i18n="contact.form.closeModal">Close</button>
+      </div>
+    </div>
+
+    <!-- Toast Notification for Copy Actions -->
+    <div class="toast-notification" id="toastNotification">
+      <i class="bx bx-check-circle"></i>
+      <span id="toastMsg">Copied to clipboard! ✨</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="contact-footer">
+      <p data-i18n="footer.copyright">
+        Copyright &copy; 2023 | Designed and Maintenance by Mohd Kashif | All Rights Reserved
+      </p>
+      <div class="footer-bottom-links">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <span>•</span>
+        <a href="../aboutme/index.html" data-i18n="nav.about">About</a>
+        <span>•</span>
+        <a href="../index.html#projects" data-i18n="nav.projects">Projects</a>
+        <span>•</span>
+        <a href="../certificate/index.html" data-i18n="cert.title">Certificates</a>
+        <span>•</span>
+        <a href="../progress/index.html" data-i18n="nav.progress">Dev Log</a>
+        <span>•</span>
+        <a href="../roadmap-24lpa/index.html?tab=inbox" style="color: var(--accent-coral);">Messages 🔒</a>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/i18next@21.6.16/dist/umd/i18next.min.js"></script>
+    <script src="../script.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

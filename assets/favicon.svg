@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1e33" />
+      <stop offset="50%" stop-color="#081422" />
+      <stop offset="100%" stop-color="#020811" />
+    </linearGradient>
+
+    <!-- Border Glow Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="45%" stop-color="#00abf0" />
+      <stop offset="85%" stop-color="#9d4edd" />
+      <stop offset="100%" stop-color="#c77dff" />
+    </linearGradient>
+
+    <!-- Monogram Core Gradient -->
+    <linearGradient id="mkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="40%" stop-color="#00abf0" />
+      <stop offset="75%" stop-color="#8a2be2" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Glowing Dot Gradient -->
+    <linearGradient id="dotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38ef7d" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+
+    <!-- Drop Shadow & Glow Filters -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <!-- Base Rounded Container with Glowing Stroke -->
+  <rect x="20" y="20" width="472" height="472" rx="118" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="14" filter="url(#subtleShadow)" />
+
+  <!-- Ambient Internal Glow Arc -->
+  <path d="M 40 138 C 40 75, 75 40, 138 40 L 374 40" fill="none" stroke="rgba(0, 240, 255, 0.25)" stroke-width="6" stroke-linecap="round" />
+
+  <!-- Modern Geometric "MK" Monogram Group -->
+  <g filter="url(#neonGlow)" transform="translate(6, 0)">
+    <!-- Letter M -->
+    <path d="M 104 360 L 104 152 L 176 268 L 248 152 L 248 360" 
+          fill="none" 
+          stroke="url(#mkGrad)" 
+          stroke-width="36" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+
+    <!-- Letter K -->
+    <path d="M 288 152 L 288 360 M 396 156 L 292 260 L 400 360" 
+          fill="none" 
+          stroke="url(#mkGrad)" 
+          stroke-width="36" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+  </g>
+
+  <!-- Live Pulse Status Dot in Corner -->
+  <circle cx="410" cy="102" r="18" fill="url(#dotGrad)" stroke="#081422" stroke-width="6" />
+</svg>

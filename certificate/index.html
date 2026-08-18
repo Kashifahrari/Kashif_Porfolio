@@ -1,181 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-theme");
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3D Certificate Showcase</title>
+    <title>Certifications & Credentials | Mohd Kashif Ahrari</title>
+    <meta
+      name="description"
+      content="Verified certifications and internship credentials of Mohd Kashif Ahrari in Web Development, API Engineering, Python, Cybersecurity, and Blockchain."
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Background Particles & Ambient Glow Orbs -->
     <div id="particles-js"></div>
-    <div class="floating-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-      <div class="shape shape-4"></div>
-    </div>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
 
-    <header>
-      <h1>My Certificates</h1>
-      <p>Showcasing my achievements and certifications</p>
+    <!-- Navigation Header -->
+    <header class="header">
+      <a href="../index.html" class="logo">
+        Kashif<span>.dev</span>
+      </a>
+
+      <nav class="navbar">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a href="../aboutme/index.html" data-i18n="nav.about">About</a>
+        <a href="../index.html#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#" class="active" data-i18n="cert.title">Certificates</a>
+        <a href="../progress/index.html" data-i18n="nav.progress">Dev Log</a>
+        <a href="../contact/contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button id="lang-en" class="lang-btn" aria-label="Switch to English" aria-pressed="true">EN</button>
+          <button id="lang-hi" class="lang-btn" aria-label="Switch to Hindi" aria-pressed="false">HI</button>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <a
+          href="../roadmap-24lpa/index.html"
+          class="nav-roadmap-link"
+          title="Private Area (Password Protected)"
+        >
+          <i class="bx bxs-lock-alt"></i>
+          <span>(Not for you)</span>
+        </a>
+      </div>
+
+      <div class="bx bx-menu" id="menu-icon"></div>
     </header>
 
-    <main>
-      <div class="gallery">
-        <div class="certificate">
-          <img src="certi/cert1.png" alt="NIPAM" onclick="openModal(this)" />
-          <p>NIPAM</p>
-        </div>
-        <div class="certificate">
-          <img src="certi/cert13.png" alt="IBM" onclick="openModal(this)" />
-          <p>IBM</p>
-          <p>API Development</p>
+    <!-- Main Content -->
+    <main class="cert-main">
+      <div class="cert-container">
+        <!-- Hero Header -->
+        <section class="cert-hero">
+          <div class="status-badge">
+            <i class="bx bx-award"></i>
+            <span data-i18n="cert.badge">15+ Verified Professional Credentials & Internships</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span data-i18n="cert.heading">My <span>Certificates</span></span>
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="cert.subtitle">
+            Industry-recognized credentials in Full-Stack Web Development, Backend APIs, Python, Cybersecurity, and Blockchain.
+          </p>
+
+          <!-- Filter Categories -->
+          <div class="filter-wrapper">
+            <button class="filter-btn active" data-filter="all" data-i18n="cert.filters.all">
+              All Credentials (15)
+            </button>
+            <button class="filter-btn" data-filter="internship" data-i18n="cert.filters.internships">
+              Internships (5)
+            </button>
+            <button class="filter-btn" data-filter="web" data-i18n="cert.filters.web">
+              Web & APIs (4)
+            </button>
+            <button class="filter-btn" data-filter="security" data-i18n="cert.filters.security">
+              Cyber & IP (3)
+            </button>
+            <button class="filter-btn" data-filter="course" data-i18n="cert.filters.courses">
+              Foundations (3)
+            </button>
+          </div>
+        </section>
+
+        <!-- Certificates Showcase Grid -->
+        <div class="cert-grid" id="certGrid">
+          <!-- Cert 1: IBM API Development -->
+          <div class="glass-card cert-card" data-category="web" data-index="0" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert13.png" alt="IBM - API Development" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert2.org">IBM</span>
+              <h3 class="cert-title" data-i18n="certs.cert2.title">IBM - API Development</h3>
+              <p class="cert-desc" data-i18n="certs.cert2.desc">API Design, Architecture & Backend Integration</p>
+            </div>
+          </div>
+
+          <!-- Cert 2: Rooman Tech Internship -->
+          <div class="glass-card cert-card" data-category="internship" data-index="1" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert15.png" alt="Rooman Technologies - Web Developer Internship" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert3.org">Rooman Tech</span>
+              <h3 class="cert-title" data-i18n="certs.cert3.title">Web Developer Internship</h3>
+              <p class="cert-desc" data-i18n="certs.cert3.desc">Front-End & Responsive Web Engineering</p>
+            </div>
+          </div>
+
+          <!-- Cert 3: GeeksforGeeks Content Writing Internship -->
+          <div class="glass-card cert-card" data-category="internship" data-index="2" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert5.png" alt="GeeksforGeeks - Content Writing Internship" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert9.org">GeeksforGeeks</span>
+              <h3 class="cert-title" data-i18n="certs.cert9.title">Content Writing Internship</h3>
+              <p class="cert-desc" data-i18n="certs.cert9.desc">Technical Article Writing on DSA & Programming</p>
+            </div>
+          </div>
+
+          <!-- Cert 4: NIPAM - IP Rights -->
+          <div class="glass-card cert-card" data-category="security" data-index="3" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert1.png" alt="NIPAM - IP Rights" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert1.org">Govt of India</span>
+              <h3 class="cert-title" data-i18n="certs.cert1.title">NIPAM - IP Rights</h3>
+              <p class="cert-desc" data-i18n="certs.cert1.desc">National Intellectual Property Awareness Mission</p>
+            </div>
+          </div>
+
+          <!-- Cert 5: Infosys Springboard Web Development -->
+          <div class="glass-card cert-card" data-category="web" data-index="4" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert2.png" alt="Infosys Springboard - Responsive Web Development" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert5.org">Infosys Springboard</span>
+              <h3 class="cert-title" data-i18n="certs.cert5.title">Responsive Web Development</h3>
+              <p class="cert-desc" data-i18n="certs.cert5.desc">Modern HTML5, CSS3 & JavaScript Web Apps</p>
+            </div>
+          </div>
+
+          <!-- Cert 6: Infosys Springboard Browsing the Web -->
+          <div class="glass-card cert-card" data-category="web" data-index="5" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert6.png" alt="Infosys Springboard - Browsing the Web & Networking" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert6.org">Infosys Springboard</span>
+              <h3 class="cert-title" data-i18n="certs.cert6.title">Browsing the Web & Networking</h3>
+              <p class="cert-desc" data-i18n="certs.cert6.desc">Web Architecture, HTTP Protocols & Networking</p>
+            </div>
+          </div>
+
+          <!-- Cert 7: Wadhwani Foundation Course -->
+          <div class="glass-card cert-card" data-category="course" data-index="6" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert14.png" alt="Wadhwani Foundation - Employability Foundations" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert4.org">Wadhwani Foundation</span>
+              <h3 class="cert-title" data-i18n="certs.cert4.title">Employability Foundations</h3>
+              <p class="cert-desc" data-i18n="certs.cert4.desc">93-Hour Professional Core Competencies</p>
+            </div>
+          </div>
+
+          <!-- Cert 8: Udemy - The Complete JavaScript Course -->
+          <div class="glass-card cert-card" data-category="web" data-index="7" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert7.png" alt="Udemy - The Complete JavaScript Course" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert7.org">Udemy</span>
+              <h3 class="cert-title" data-i18n="certs.cert7.title">The Complete JavaScript Course</h3>
+              <p class="cert-desc" data-i18n="certs.cert7.desc">ES6+, Asynchronous JS, DOM & OOP Patterns</p>
+            </div>
+          </div>
+
+          <!-- Cert 9: OpenWeaver - JavaScript Programming -->
+          <div class="glass-card cert-card" data-category="course" data-index="8" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert8.png" alt="OpenWeaver - JavaScript Programming" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert8.org">OpenWeaver</span>
+              <h3 class="cert-title" data-i18n="certs.cert8.title">JavaScript Programming</h3>
+              <p class="cert-desc" data-i18n="certs.cert8.desc">Core JavaScript Logic & Algorithms</p>
+            </div>
+          </div>
+
+          <!-- Cert 10: FutureSkills Prime - Digital 101 Journey -->
+          <div class="glass-card cert-card" data-category="course" data-index="9" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert4.png" alt="FutureSkills Prime - Digital 101 Journey" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert10.org">FutureSkills Prime</span>
+              <h3 class="cert-title" data-i18n="certs.cert10.title">Digital 101 Journey</h3>
+              <p class="cert-desc" data-i18n="certs.cert10.desc">NASSCOM & Govt of India Digital Skill Initiative</p>
+            </div>
+          </div>
+
+          <!-- Cert 11: IIT Allahabad - Android App Development Internship -->
+          <div class="glass-card cert-card" data-category="internship" data-index="10" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert12 (1).png" alt="IIT Allahabad - Android App Development" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert11.org">IIT Allahabad</span>
+              <h3 class="cert-title" data-i18n="certs.cert11.title">Android App Development</h3>
+              <p class="cert-desc" data-i18n="certs.cert11.desc">Summer Internship - Effervescence IIT Allahabad</p>
+            </div>
+          </div>
+
+          <!-- Cert 12: Aqmenz Automation - Python Internship -->
+          <div class="glass-card cert-card" data-category="internship" data-index="11" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert12 (3).png" alt="Aqmenz Automation - Python & Application Projects" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert12.org">Aqmenz Automation</span>
+              <h3 class="cert-title" data-i18n="certs.cert12.title">Python & Application Projects</h3>
+              <p class="cert-desc" data-i18n="certs.cert12.desc">Python Libraries, Automation & Projects</p>
+            </div>
+          </div>
+
+          <!-- Cert 13: DSCI Govt of India - Cyber Security -->
+          <div class="glass-card cert-card" data-category="security" data-index="12" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert12 (2).png" alt="DSCI Govt of India - Cyber Security Awareness" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert13.org">DSCI Govt of India</span>
+              <h3 class="cert-title" data-i18n="certs.cert13.title">Cyber Security Awareness</h3>
+              <p class="cert-desc" data-i18n="certs.cert13.desc">Information Security & Threat Prevention</p>
+            </div>
+          </div>
+
+          <!-- Cert 14: IIT Allahabad - Blockchain for Beginners -->
+          <div class="glass-card cert-card" data-category="internship" data-index="13" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert12 (4).png" alt="IIT Allahabad - Blockchain for Beginners" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert14.org">IIT Allahabad</span>
+              <h3 class="cert-title" data-i18n="certs.cert14.title">Blockchain for Beginners</h3>
+              <p class="cert-desc" data-i18n="certs.cert14.desc">Summer Internship - Distributed Ledgers & Web3</p>
+            </div>
+          </div>
+
+          <!-- Cert 15: Blockchain for Beginners Foundation -->
+          <div class="glass-card cert-card" data-category="security" data-index="14" data-tilt>
+            <div class="cert-img-wrap">
+              <img src="certi/cert3.png" alt="Foundations of Blockchain" loading="lazy" />
+              <div class="cert-overlay">
+                <i class="bx bx-zoom-in"></i>
+                <span data-i18n="cert.view">View Certificate</span>
+              </div>
+              <span class="verified-badge"><i class="bx bx-check-shield"></i> Verified</span>
+            </div>
+            <div class="cert-info">
+              <span class="cert-org" data-i18n="certs.cert15.org">Blockchain Council</span>
+              <h3 class="cert-title" data-i18n="certs.cert15.title">Foundations of Blockchain</h3>
+              <p class="cert-desc" data-i18n="certs.cert15.desc">Cryptographic Hash Functions & Smart Contracts</p>
+            </div>
+          </div>
         </div>
 
-        <div class="certificate">
-          <img
-            src="certi/cert15.png"
-            alt="Rooman Technologies"
-            onclick="openModal(this)"
-          />
-          <p>Rooman Technologies</p>
-          <p>Internship Rooman Technologies Private Limited</p>
-        </div>
-
-        <div class="certificate">
-          <img
-            src="certi/cert14.png"
-            alt="WadhWani"
-            onclick="openModal(this)"
-          />
-          <p>Wadhwani</p>
-          <p>93 Hours Course</p>
-        </div>
-        <div class="certificate">
-          <img
-            src="certi/cert2.png"
-            alt="INFOSIS SPRINGBOARD - Responsive web Development with HTML5, CSS3, JAVA SCRIPT"
-            onclick="openModal(this)"
-          />
-          <p>INFOSIS SPRINGBOARD</p>
-          <p>Responsive web Development with HTML5, CSS3, JAVA SCRIPT</p>
-        </div>
-        <div class="certificate">
-          <img
-            src="certi/cert3.png"
-            alt="BLOCKCHAIN FOR BEGINNERS"
-            onclick="openModal(this)"
-          />
-          <p>BLOCKCHAIN FOR BEGINNERS</p>
-        </div>
-        <div class="certificate">
-          <img
-            src="certi/cert4.png"
-            alt="FUTURE SKILL PRIME - DIGITAL 101 JOURNEY"
-            onclick="openModal(this)"
-          />
-          <p>FUTURE SKILL PRIME</p>
-          <p>DIGITAL 101 JOURNEY</p>
-        </div>
-        <div class="certificate">
-          <img
-            src="certi/cert5.png"
-            alt="GeeksforGeeks - Content Writing Internship"
-            onclick="openModal(this)"
-          />
-          <p>Internship GeeksforGeeks</p>
-          <p>Content Writing Internship</p>
-        </div>
-        <div class="certificate">
-          <img
-            src="certi/cert6.png"
-            alt="INFOSIS SPRINGBOARD - BROWSING THE WEB"
-            onclick="openModal(this)"
-          />
-          <p>INFOSIS SPRINGBOARD</p>
-          <p>BROWSING THE WEB</p>
-        </div>
-        <div class="certificate">
-          <img
-            src="certi/cert7.png"
-            alt="UDEMY - THE COMPLETE JAVASCRIPT COURSE"
-            onclick="openModal(this)"
-          />
-          <p>UDEMY</p>
-          <p>THE COMPLETE JAVASCRIPT COURSE</p>
-        </div>
-        <div class="certificate">
-          <img
-            src="certi/cert8.png"
-            alt="OpenWeaver - BASICS OF JAVASCRIPT PROGRAMMING"
-            onclick="openModal(this)"
-          />
-          <p>OpenWeaver</p>
-          <p>BASICS OF JAVASCRIPT PROGRAMMING</p>
-        </div>
-        <div class="certificate">
-          <img
-            src="certi/cert12 (1).png"
-            alt="Summer Internship with Effervescence of IIT ALLAHABAD - Android Application Development"
-            onclick="openModal(this)"
-          />
-          <p>Summer Internship with Effervescence of IIT ALLAHABAD</p>
-          <p>Android Application Development</p>
-        </div>
-        <div class="certificate">
-          <img
-            src="certi/cert12 (3).png"
-            alt="Internship at Aqmenz Automation Private Limited - Python Libraries with Application Projects"
-            onclick="openModal(this)"
-          />
-          <p>Internship at Aqmenz Automation Private Limited</p>
-          <p>Python Libraries with Application Projects</p>
-        </div>
-        <div class="certificate">
-          <img
-            src="certi/cert12 (2).png"
-            alt="DSCI Government of India Certificate - Cyber Security Awareness Quiz"
-            onclick="openModal(this)"
-          />
-          <p>DSCI Government of India Certificate</p>
-          <p>Cyber Security Awareness Quiz</p>
-        </div>
-        <div class="certificate">
-          <img
-            src="certi/cert12 (4).png"
-            alt="Summer Internship with Effervescence of IIT ALLAHABAD - Block Chain For Beginners"
-            onclick="openModal(this)"
-          />
-          <p>Summer Internship with Effervescence of IIT ALLAHABAD</p>
-          <p>Block Chain For Beginners</p>
-        </div>
+        <!-- CTA Section -->
+        <section class="cta-section">
+          <div class="glass-card cta-card">
+            <h2 class="cta-title">Looking for a verified, continuous learner for your team?</h2>
+            <p class="cta-desc">Let's connect and build innovative full-stack solutions together.</p>
+            <div class="cta-actions">
+              <a href="../contact/contact.html" class="btn btn-primary">
+                Get in Touch 🚀
+              </a>
+              <a href="../aboutme/index.html" class="btn btn-glass">
+                View About Me 📄
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
 
-    <footer>
-      <p>
-        Copyright &copy; 2023 | Designed and Maintenance by Mohd Kashif | All
-        Rights Reserved
-      </p>
-    </footer>
+    <!-- Fullscreen Lightbox Modal -->
+    <div class="modal-overlay" id="lightboxModal" aria-hidden="true" role="dialog">
+      <div class="lightbox-dialog">
+        <!-- Close Button -->
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close modal">
+          <i class="bx bx-x"></i>
+        </button>
 
-    <!-- Modal for larger image view -->
-    <div id="imageModal" class="modal" onclick="closeModal()">
-      <span class="close">&times;</span>
-      <img class="modal-content" id="modalImg" />
-      <div id="caption"></div>
+        <!-- Navigation Buttons -->
+        <button class="lightbox-nav prev-btn" id="lightboxPrev" aria-label="Previous certificate">
+          <i class="bx bx-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav next-btn" id="lightboxNext" aria-label="Next certificate">
+          <i class="bx bx-chevron-right"></i>
+        </button>
+
+        <!-- Content Container -->
+        <div class="lightbox-content">
+          <img id="lightboxImg" src="" alt="Certificate Full Preview" />
+          <div class="lightbox-caption">
+            <span class="lightbox-org" id="lightboxOrg">Organization</span>
+            <h3 class="lightbox-title" id="lightboxTitle">Certificate Title</h3>
+            <p class="lightbox-counter" id="lightboxCounter">1 / 15</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Navigation button -->
-    <a href="../index.html" class="nav-button">
-      <i class="fas fa-home"></i>
-    </a>
+    <!-- Footer -->
+    <footer class="cert-footer">
+      <p data-i18n="footer.copyright">
+        Copyright &copy; 2023 | Designed and Maintenance by Mohd Kashif | All Rights Reserved
+      </p>
+      <div class="footer-bottom-links">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <span>•</span>
+        <a href="../aboutme/index.html" data-i18n="nav.about">About</a>
+        <span>•</span>
+        <a href="../index.html#projects" data-i18n="nav.projects">Projects</a>
+        <span>•</span>
+        <a href="#" class="active" data-i18n="cert.title">Certificates</a>
+        <span>•</span>
+        <a href="../progress/index.html" data-i18n="nav.progress">Dev Log</a>
+        <span>•</span>
+        <a href="../contact/contact.html" data-i18n="nav.contact">Contact</a>
+      </div>
+    </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/i18next@21.6.16/dist/umd/i18next.min.js"></script>
+    <script src="../script.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

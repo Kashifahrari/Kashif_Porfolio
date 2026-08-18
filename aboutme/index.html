@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-theme");
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About - Mohd Kashif Ahrari</title>
+    <title>About Mohd Kashif Ahrari | Full-Stack Developer & Software Engineer</title>
+    <meta
+      name="description"
+      content="Learn more about Mohd Kashif Ahrari – Education, Internships, Technical Skills, Professional Experience, and Journey."
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -15,384 +31,671 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- 3D Background Elements -->
+    <!-- Background Particles & Ambient Glow Orbs -->
     <div id="particles-js"></div>
-    <div class="floating-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-      <div class="shape shape-4"></div>
-    </div>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
 
-    <!-- header design -->
+    <!-- Navigation Header -->
     <header class="header">
-      <a href="#" class="logo"
-        >About Me...<span class="animate" style="--i: 1"></span
-      ></a>
-
-      <div class="bx bx-menu" id="menu-icon">
-        <span class="animate" style="--i: 2"></span>
-      </div>
+      <a href="../index.html" class="logo">
+        Kashif<span>.dev</span>
+      </a>
 
       <nav class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="#about" class="active">About</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="../contact/contact.html">Contact</a>
-
-        <span class="active-nav"></span>
-        <span class="animate" style="--i: 2"></span>
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a href="#about" class="active" data-i18n="nav.about">About</a>
+        <a href="#education" data-i18n="nav.education">Education</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="../index.html#projects" data-i18n="nav.projects">Projects</a>
+        <a href="../certificate/index.html" data-i18n="cert.title">Certificates</a>
+        <a href="../progress/index.html" data-i18n="nav.progress">Dev Log</a>
+        <a href="../contact/contact.html" data-i18n="nav.contact">Contact</a>
       </nav>
+
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button id="lang-en" class="lang-btn" aria-label="Switch to English" aria-pressed="true">EN</button>
+          <button id="lang-hi" class="lang-btn" aria-label="Switch to Hindi" aria-pressed="false">HI</button>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <a
+          href="../roadmap-24lpa/index.html"
+          class="nav-roadmap-link"
+          title="Private Area (Password Protected)"
+        >
+          <i class="bx bxs-lock-alt"></i>
+          <span>(Not for you)</span>
+        </a>
+      </div>
+
+      <div class="bx bx-menu" id="menu-icon"></div>
     </header>
 
-    <!-- home section design -->
-    <section class="home show-animate" id="home">
-      <div class="home-content">
-        <h1>
-          Hi, I'm <span>Mohd Kashif</span
-          ><span class="animate" style="--i: 2"></span>
-        </h1>
-        <div class="text-animate">
-          <h3>A zealous Learner.....</h3>
-          <span class="animate" style="--i: 3"></span>
-        </div>
-        <p style="font-size: 20px">
-          Hello, I'm Mohd Kashif, a passionate learner with a strong foundation
-          in Python, Java, and web development (HTML, CSS, JavaScript). I've
-          completed coursework in Data Structures and Algorithms, published
-          articles on Geeks for Geeks, and won front-end competitions. Currently
-          advancing in React and committed to continuous growth in technology.
-          <span class="animate" style="--i: 4"></span>
-        </p>
-
-        <div class="btn-box">
-          <a href="#about" class="btn">Explore More</a>
-          <a href="../contact/contact.html" class="btn">Contact Me</a>
-          <span class="animate" style="--i: 5"></span>
-        </div>
-      </div>
-
-      <div class="home-sci">
-        <a href="https://www.linkedin.com/in/mohd-kashif-9096a4227"
-          ><i class="bx bxl-linkedin"></i
-        ></a>
-        <span class="animate" style="--i: 6"></span>
-      </div>
-
-      <div class="home-imgHover">
-        <div class="profile-3d-container">
-          <div class="profile-3d">
-            <div class="face front"></div>
-            <div class="face back"></div>
-            <div class="face right"></div>
-            <div class="face left"></div>
-            <div class="face top"></div>
-            <div class="face bottom"></div>
+    <!-- Main Content -->
+    <main class="about-main">
+      <div class="about-container">
+        <!-- Hero Summary Section -->
+        <section class="about-hero" id="about">
+          <div class="status-badge">
+            <span class="pulse-ring"></span>
+            <span class="pulse-dot"></span>
+            <span data-i18n="hero.badge">Available for freelance projects & full-time roles</span>
           </div>
-        </div>
-      </div>
-      <span class="animate home-img" style="--i: 7"></span>
-    </section>
 
-    <!-- about section design -->
-    <section class="about" id="about">
-      <h2 class="heading">
-        About <span>Me</span><span class="animate scroll" style="--i: 1"></span>
-      </h2>
+          <h1 class="hero-title">
+            <span data-i18n="about.heading">About <span>Me</span></span>
+          </h1>
 
-      <div class="about-img">
-        <img src="kashif2.jpg" alt="Mohd Kashif" />
-        <span class="circle-spin"></span>
-        <span class="animate scroll" style="--i: 2"></span>
-      </div>
+          <p class="hero-subtitle" data-i18n="about.subtitle">Developer & Designer</p>
 
-      <div class="about-content">
-        <h3>
-          Hi there! Glad to see you here.<span
-            class="animate scroll"
-            style="--i: 3"
-          ></span>
-        </h3>
-        <p>
-          Hello! I am <strong>Mohd Kashif</strong>,an aspiring full-stack
-          developer with a strong foundation in
-          <strong>Java, Python, JavaScript, HTML, CSS,</strong> and
-          <strong>SQL</strong>. I have completed coursework in
-          <em
-            >Data Structures, OOPs, Operating Systems, Database Management
-            Systems,</em
-          >
-          and <em>Computer Networks</em>. Through internships and projects such
-          as the <strong>Mega-Vlog Blogging Website</strong>,
-          <strong>ETL Data Pipeline</strong>, and
-          <strong>Student Attendance Management System</strong>, I’ve gained
-          practical experience in backend development, API integration, and
-          full-stack web development using
-          <strong>React, Node.js, MySQL,</strong> and <strong>MongoDB</strong>.
-        </p>
-
-        <div class="btn-box btns">
-          <a href="../contact/contact.html" class="btn">Contact Me</a>
-          <span class="animate scroll" style="--i: 5"></span>
-        </div>
-      </div>
-    </section>
-
-    <!-- education section design -->
-    <section class="education" id="education">
-      <h2 class="heading">
-        My <span>Journey</span
-        ><span class="animate scroll" style="--i: 1"></span>
-      </h2>
-
-      <div class="education-row">
-        <div class="education-column">
-          <h3 class="title">
-            Education<span class="animate scroll" style="--i: 2"></span>
-          </h3>
-
-          <div class="education-box">
-            <div class="education-content">
-              <div class="content">
-                <div class="year"><i class="bx bxs-calendar"></i> 2018</div>
-                <h3>Class X</h3>
-                <p>ST.JOSEPH'S SCHOOL GORAKHNATH GORAKHPUR UTTAR PRADESH</p>
-                <p>Passed with 85.25%</p>
-              </div>
-            </div>
-
-            <div class="education-content">
-              <div class="content">
-                <div class="year"><i class="bx bxs-calendar"></i> 2020</div>
-                <h3>Class XII</h3>
-                <p>ST.JOSEPH'S SCHOOL GORAKHNATH GORAKHPUR UTTAR PRADESH</p>
-                <p>Passed with 1st division</p>
-              </div>
-            </div>
-
-            <div class="education-content">
-              <div class="content">
-                <div class="year">
-                  <i class="bx bxs-calendar"></i> 2021 - 2025
+          <!-- About Bento Presentation -->
+          <div class="about-bento-grid">
+            <!-- Left: Profile Photo Card with 3D Tilt -->
+            <div class="glass-card profile-card" data-tilt>
+              <div class="profile-img-wrap">
+                <img
+                  src="kashif2.jpg"
+                  alt="Mohd Kashif"
+                  data-i18n-alt="home.imageAlt"
+                  loading="lazy"
+                />
+                <div class="experience-pill">
+                  <i class="bx bx-badge-check"></i>
+                  <span>Zealous Learner & Dev</span>
                 </div>
-                <h3>Bachelor's Degree - College</h3>
-                <p>Cambridge Institute Of Technology Bangalore</p>
-<<<<<<< HEAD
-                <p>B.E in Computer Science with 8.66 CGPA</p>
-=======
-                <p>B.E in Computer Science with 82.87%</p>
->>>>>>> 516b974c1aa7e3758496f94bd0bb9b470051fd17
               </div>
             </div>
 
-            <span class="animate scroll" style="--i: 3"></span>
-          </div>
-        </div>
+            <!-- Right: Bio & Quick Facts -->
+            <div class="glass-card about-info-card">
+              <h2 class="greeting-text" data-i18n="about.greeting">Hi there! Glad to see you here.</h2>
+              <p class="bio-text" data-i18n="about.bio">
+                Hello! I am <strong>Mohd Kashif</strong>, a Software Engineer at <strong>Dhira Software Labs</strong> (promoted from Full-Stack Intern) and Computer Science graduate from <strong>Cambridge Institute of Technology</strong> (8.66 CGPA / 86.6%). I specialize in <strong>React 19, TypeScript, React Flow, Node.js, Express, Java (DSA),</strong> and <strong>SQL / MongoDB</strong>. I have engineered platforms like <strong>CBSE Aakalan (CBA Platform)</strong>, <strong>Stay Ease Rental Platform</strong>, and <strong>Mega-Vlog</strong>. Additionally, I am a published author on <strong>GeeksforGeeks with 61,000+ readers</strong> and proficient in AI-assisted productivity tools like ChatGPT and GitHub Copilot.
+              </p>
 
-        <div class="education-column">
-          <h3 class="title">
-            Experience <span class="animate scroll" style="--i: 5"></span>
-          </h3>
-
-          <div class="education-box">
-            <!-- Backend & Data Intern -->
-            <div class="education-content">
-              <div class="content">
-                <div class="year">
-                  <i class="bx bxs-calendar"></i> Feb 2025 – Sep 2025
+              <!-- Quick Info Chips -->
+              <div class="info-chips-grid">
+                <div class="info-chip">
+                  <i class="bx bx-briefcase-alt-2"></i>
+                  <span>Software Engineer @ Dhira</span>
                 </div>
-                <h3>Backend & Data Intern – SM Web Solutions Pvt. Ltd</h3>
-                <p>
-                  Worked on backend development with <b>Node.js</b> and
-                  <b>Express.js</b>, building and integrating REST APIs. Gained
-                  exposure to <b>data handling, MongoDB, and MySQL</b> while
-                  contributing to live client projects.
-                </p>
-              </div>
-            </div>
-
-            <!-- Web Developer Intern -->
-            <div class="education-content">
-              <div class="content">
-                <div class="year">
-                  <i class="bx bxs-calendar"></i> sep 2024 – Feb 2025
+                <div class="info-chip">
+                  <i class="bx bx-book-reader"></i>
+                  <span>61,000+ Reads on GFG</span>
                 </div>
-                <h3>Web Developer Intern – Rooman Technologies Pvt. Ltd</h3>
-                <p>
-                  Developed multiple projects including a
-                  <b>Portfolio Website</b>, <b>Landing Page</b>, and
-                  <b>Calculator App</b>. Strengthened front-end development
-                  skills using <b>HTML, CSS, JavaScript, <b>React</b></b
-                  >, and basic React concepts.
-                </p>
-              </div>
-            </div>
-
-            <!-- Content Writer -->
-            <div class="education-content">
-              <div class="content">
-                <div class="year">
-                  <i class="bx bxs-calendar"></i> 2023 – 2024
+                <div class="info-chip">
+                  <i class="bx bx-award"></i>
+                  <span>8.66 CGPA (86.6% B.E CSE)</span>
                 </div>
-                <h3>Content Writer – GeeksforGeeks</h3>
-                <p>
-                  Published technical articles read by <b>19,000+ readers</b>,
-                  covering programming, statistics, and web technologies.
-                  Recognized with a certificate of internship for contribution.
-                </p>
-                <h4>One of the Article:</h4>
-                <p>
-                  <a
-                    style="color: #00abf0"
-                    href="https://www.geeksforgeeks.org/javascript-html-dom/"
-                    >JavaScript HTML DOM</a
-                  >
-                </p>
-                <p>And many more...</p>
+                <div class="info-chip">
+                  <i class="bx bx-code-alt"></i>
+                  <span>React 19, React Flow & Node.js</span>
+                </div>
+              </div>
+
+              <div class="about-actions">
+                <a href="../contact/contact.html" class="btn btn-primary" data-i18n="about.contact">
+                  Contact Me ✉️
+                </a>
+                <a href="../certificate/index.html" class="btn btn-glass" data-i18n="cert.title">
+                  View Certificates 📜
+                </a>
               </div>
             </div>
-
-            <!-- Content Creator -->
-            <div class="education-content">
-              <div class="content">
-                <div class="year"><i class="bx bxs-calendar"></i> Present</div>
-                <h3>Content Creator – YouTube</h3>
-                <p>
-                  Creating educational and tech-related content to share
-                  learning and development journey with peers and aspiring
-                  developers.
-                </p>
-                <p>
-                  <a
-                    style="color: #00abf0"
-                    href="https://www.youtube.com/watch?v=9jBPZFRxv-E"
-                    >Visit my video to know more</a
-                  >
-                </p>
-              </div>
-            </div>
-
-            <span class="animate scroll" style="--i: 6"></span>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- skills section design -->
-    <section class="skills" id="skills">
-      <h2 class="heading">
-        My <span>Skills</span>
-        <span class="animate scroll" style="--i: 1"></span>
-      </h2>
+        <!-- Journey Section (Education & Experience) -->
+        <section class="journey-section" id="education">
+          <div class="section-header">
+            <h2 class="section-title">
+              <span data-i18n="journey.heading">My <span>Journey</span></span>
+            </h2>
+            <p class="section-subtitle">Academic foundations, software engineering roles, and career milestones.</p>
+          </div>
 
-      <div class="skills-row">
-        <!-- Technical Skills -->
-        <div class="skills-column">
-          <h3 class="title">
-            Technical Skills
-            <span class="animate scroll" style="--i: 2"></span>
-          </h3>
-
-          <div class="skills-box">
-            <div class="skills-content">
-              <div class="progress">
-                <h3>Java(DSA) <span>85%</span></h3>
-                <div class="bar"><span></span></div>
+          <div class="journey-grid">
+            <!-- Left Column: Education -->
+            <div class="journey-column">
+              <div class="column-header">
+                <div class="column-icon-wrap edu">
+                  <i class="bx bx-graduation"></i>
+                </div>
+                <h3 class="column-title" data-i18n="education.title">Education</h3>
               </div>
 
-              <div class="progress">
-                <h3>Python <span>55%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
+              <div class="timeline">
+                <!-- Education Item 1: Bachelor's Degree -->
+                <div class="glass-card timeline-card" data-tilt>
+                  <div class="timeline-dot"></div>
+                  <span class="timeline-year"><i class="bx bxs-calendar"></i> 2021 - 2025</span>
+                  <h4 class="card-role" data-i18n="education.degree.title">Bachelor of Engineering - CSE</h4>
+                  <h5 class="card-org" data-i18n="education.degree.college">Cambridge Institute Of Technology Bangalore</h5>
+                  <p class="card-details" data-i18n="education.degree.score">B.E in Computer Science & Engineering with 8.66 CGPA (86.6%)</p>
+                </div>
 
-              <div class="progress">
-                <h3>JavaScript (ES6+) <span>85%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
+                <!-- Education Item 2: Class XII -->
+                <div class="glass-card timeline-card" data-tilt>
+                  <div class="timeline-dot"></div>
+                  <span class="timeline-year"><i class="bx bxs-calendar"></i> 2020</span>
+                  <h4 class="card-role" data-i18n="education.class12.title">Class XII</h4>
+                  <h5 class="card-org" data-i18n="education.class12.school">ST.JOSEPH'S SCHOOL GORAKHNATH GORAKHPUR</h5>
+                  <p class="card-details" data-i18n="education.class12.result">Passed with 1st division</p>
+                </div>
 
-              <div class="progress">
-                <h3>HTML & CSS <span>90%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-
-              <div class="progress">
-                <h3>SQL/NoSql (MongoDB) <span>90%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-
-              <div class="progress">
-                <h3>React & Node.js <span>80%</span></h3>
-                <div class="bar"><span></span></div>
+                <!-- Education Item 3: Class X -->
+                <div class="glass-card timeline-card" data-tilt>
+                  <div class="timeline-dot"></div>
+                  <span class="timeline-year"><i class="bx bxs-calendar"></i> 2018</span>
+                  <h4 class="card-role" data-i18n="education.class10.title">Class X</h4>
+                  <h5 class="card-org" data-i18n="education.class10.school">ST.JOSEPH'S SCHOOL GORAKHNATH GORAKHPUR</h5>
+                  <p class="card-details" data-i18n="education.class10.result">Passed with 85.25%</p>
+                </div>
               </div>
             </div>
-            <span class="animate scroll" style="--i: 3"></span>
-          </div>
-        </div>
 
-        <!-- Professional Skills -->
-        <div class="skills-column">
-          <h3 class="title">
-            Professional Skills
-            <span class="animate scroll" style="--i: 5"></span>
-          </h3>
-
-          <div class="skills-box">
-            <div class="skills-content">
-              <div class="progress">
-                <h3>Web Development <span>80%</span></h3>
-                <div class="bar"><span></span></div>
+            <!-- Right Column: Experience -->
+            <div class="journey-column" id="experience">
+              <div class="column-header">
+                <div class="column-icon-wrap exp">
+                  <i class="bx bx-briefcase-alt-2"></i>
+                </div>
+                <h3 class="column-title" data-i18n="experience.title">Experience</h3>
               </div>
 
-              <div class="progress">
-                <h3>Backend Development & API Integration <span>80%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
+              <div class="timeline">
+                <!-- Experience Item 0: Software Engineer @ Dhira -->
+                <div class="glass-card timeline-card" data-tilt>
+                  <div class="timeline-dot"></div>
+                  <span class="timeline-year"><i class="bx bxs-calendar"></i> <span data-i18n="experience.exp0.year">Sep 2025 – Present</span></span>
+                  <h4 class="card-role" data-i18n="experience.exp0.title">Software Engineer – Dhira Software Labs Pvt. Ltd</h4>
+                  <p class="card-details" data-i18n="experience.exp0.desc">
+                    Promoted from Full-Stack Intern after 3 months. Engineered full-stack web applications with <b>React 19</b> frontend and <b>Node.js</b> backend. Built interactive Canvas Frontend modules using <b>React Flow</b>. Built responsive UIs using <b>Tailwind CSS, SCSS, and Material-UI</b> in agile sprints.
+                  </p>
+                </div>
 
-              <div class="progress">
-                <h3>Problem Solving & DSA <span>75%-80%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
+                <!-- Experience Item 1: Backend Intern -->
+                <div class="glass-card timeline-card" data-tilt>
+                  <div class="timeline-dot"></div>
+                  <span class="timeline-year"><i class="bx bxs-calendar"></i> <span data-i18n="experience.exp1.year">Feb 2025 – Sep 2025</span></span>
+                  <h4 class="card-role" data-i18n="experience.exp1.title">Backend Intern – SM Web Solutions Pvt. Ltd</h4>
+                  <p class="card-details" data-i18n="experience.exp1.desc">
+                    Built and integrated RESTful APIs using <b>Node.js</b> and <b>Express.js</b>. Designed and optimized SQL queries to improve database performance across <b>MySQL and MongoDB</b>.
+                  </p>
+                </div>
 
-              <div class="progress">
-                <h3>Content Writing (GeeksforGeeks Author) <span>90%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-
-              <div class="progress">
-                <h3>Teamwork & Communication <span>100%</span></h3>
-                <div class="bar"><span></span></div>
-              </div>
-
-              <div class="progress">
-                <h3>Leadership & Event Performance <span>92%</span></h3>
-                <div class="bar"><span></span></div>
+                <!-- Experience Item 2: Content Writer Intern -->
+                <div class="glass-card timeline-card" data-tilt>
+                  <div class="timeline-dot"></div>
+                  <span class="timeline-year"><i class="bx bxs-calendar"></i> <span data-i18n="experience.exp3.year">2024 (3 Months)</span></span>
+                  <h4 class="card-role" data-i18n="experience.exp3.title">Content Writer Intern – GeeksforGeeks</h4>
+                  <p class="card-details" data-i18n="experience.exp3.desc">
+                    Published technical articles read by <b>61,000+ readers</b>, covering programming and DOM architecture. Recognized with a certificate of internship for exceptional contribution.
+                  </p>
+                  <div class="article-link-wrap">
+                    <span data-i18n="experience.exp3.articleHead">Top Featured Article:</span>
+                    <a
+                      href="https://www.geeksforgeeks.org/javascript-html-dom/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-link"
+                      data-i18n="experience.exp3.link"
+                    >
+                      JavaScript HTML DOM (61,000+ Reads) <i class="bx bx-link-external"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-            <span class="animate scroll" style="--i: 6"></span>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- footer design -->
-    <footer class="footer">
-      <div class="footer-text">
-        <p>
-          Copyright &copy; 2023 | Designed and Maintenance by Mohd Kashif | All
-          Rights Reserved
-        </p>
-        <span class="animate scroll" style="--i: 1"></span>
-      </div>
+        <!-- Skills Section -->
+        <section class="skills-section" id="skills">
+          <div class="section-header">
+            <h2 class="section-title">
+              <span data-i18n="skills.heading">My <span>Skills</span></span>
+            </h2>
+            <p class="section-subtitle">Proficiency across programming languages, full-stack technologies, and professional competencies.</p>
+          </div>
 
-      <div class="footer-iconTop">
-        <a href="#"><i class="bx bx-up-arrow-alt"></i></a>
-        <span class="animate scroll" style="--i: 3"></span>
+          <div class="skills-grid">
+            <!-- Column 1: Technical Skills -->
+            <div class="glass-card skills-card" data-tilt>
+              <div class="skills-card-header">
+                <div class="skills-icon-wrap tech">
+                  <i class="bx bx-code-block"></i>
+                </div>
+                <h3 class="skills-card-title" data-i18n="skills.technical">Technical Skills</h3>
+              </div>
+
+              <div class="skills-list">
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span class="skill-name" data-i18n="skills.items.react_reactflow">React 19 & React Flow</span>
+                    <span class="skill-percent">90%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="--val: 90%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span class="skill-name" data-i18n="skills.items.nodejs_express">Node.js & Express.js</span>
+                    <span class="skill-percent">88%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="--val: 88%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span class="skill-name" data-i18n="skills.items.typescript_js">TypeScript & ES6+</span>
+                    <span class="skill-percent">85%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="--val: 85%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span class="skill-name" data-i18n="skills.items.java_dsa">Java & DSA</span>
+                    <span class="skill-percent">85%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="--val: 85%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span class="skill-name" data-i18n="skills.items.sql_mongodb">SQL (MySQL) & MongoDB</span>
+                    <span class="skill-percent">90%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="--val: 90%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span class="skill-name" data-i18n="skills.items.tailwind_css">Tailwind CSS & SCSS</span>
+                    <span class="skill-percent">92%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="--val: 92%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 2: Professional Skills -->
+            <div class="glass-card skills-card" data-tilt>
+              <div class="skills-card-header">
+                <div class="skills-icon-wrap prof">
+                  <i class="bx bx-cog"></i>
+                </div>
+                <h3 class="skills-card-title" data-i18n="skills.professional">Professional Skills</h3>
+              </div>
+
+              <div class="skills-list">
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span class="skill-name" data-i18n="skills.items.web_dev">Full-Stack Architecture</span>
+                    <span class="skill-percent">90%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="--val: 90%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span class="skill-name" data-i18n="skills.items.backend_api">RESTful APIs & State Mgmt</span>
+                    <span class="skill-percent">88%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="--val: 88%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span class="skill-name" data-i18n="skills.items.ai_productivity">AI-Assisted Productivity (Copilot)</span>
+                    <span class="skill-percent">95%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="--val: 95%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span class="skill-name" data-i18n="skills.items.content_writing">Technical Authoring (61K+ GFG)</span>
+                    <span class="skill-percent">92%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="--val: 92%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span class="skill-name" data-i18n="skills.items.teamwork">Agile Sprints & Leadership</span>
+                    <span class="skill-percent">100%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="--val: 100%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span class="skill-name" data-i18n="skills.items.leadership">Contest Organization (Decode to Code)</span>
+                    <span class="skill-percent">95%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" style="--val: 95%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Key Achievements & AI Productivity Bento Grid -->
+        <section class="achievements-section" style="margin-bottom: 6rem;">
+          <div class="section-header">
+            <h2 class="section-title">
+              <span>Key <span>Achievements</span> & Competencies</span>
+            </h2>
+            <p class="section-subtitle">Hackathons, technical publications, competition leadership, and AI acceleration.</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem;">
+            <!-- Achievement 1: Front-end Competitions -->
+            <div class="glass-card stat-card" data-tilt style="padding: 2.5rem;">
+              <div class="stat-icon-wrap" style="color: var(--accent-gold); font-size: 3rem; margin-bottom: 1.2rem;">
+                <i class="bx bxs-trophy"></i>
+              </div>
+              <h4 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 700; color: var(--text-color); margin-bottom: 0.6rem;">
+                Inter-College Winner 🏆
+              </h4>
+              <p style="font-size: 1.35rem; color: var(--text-muted); line-height: 1.5;">
+                Winner of front-end engineering competitions hosted across inter-college tech fests.
+              </p>
+            </div>
+
+            <!-- Achievement 2: Decode to Code -->
+            <div class="glass-card stat-card" data-tilt style="padding: 2.5rem;">
+              <div class="stat-icon-wrap" style="color: var(--main-color); font-size: 3rem; margin-bottom: 1.2rem;">
+                <i class="bx bx-code-curly"></i>
+              </div>
+              <h4 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 700; color: var(--text-color); margin-bottom: 0.6rem;">
+                "DECODE TO CODE" Lead 🎯
+              </h4>
+              <p style="font-size: 1.35rem; color: var(--text-muted); line-height: 1.5;">
+                Organized and spearheaded the flagship college coding competition "DECODE TO CODE" for 100+ students.
+              </p>
+            </div>
+
+            <!-- Achievement 3: GeeksforGeeks Author -->
+            <div class="glass-card stat-card" data-tilt style="padding: 2.5rem;">
+              <div class="stat-icon-wrap" style="color: var(--accent-green); font-size: 3rem; margin-bottom: 1.2rem;">
+                <i class="bx bx-book-reader"></i>
+              </div>
+              <h4 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 700; color: var(--text-color); margin-bottom: 0.6rem;">
+                61,000+ Reads on GFG ✍️
+              </h4>
+              <p style="font-size: 1.35rem; color: var(--text-muted); line-height: 1.5;">
+                Published technical author on GeeksforGeeks covering DOM API architecture with 61k+ global readers.
+              </p>
+            </div>
+
+            <!-- Achievement 4: AI-Assisted Productivity -->
+            <div class="glass-card stat-card" data-tilt style="padding: 2.5rem;">
+              <div class="stat-icon-wrap" style="color: var(--accent-teal); font-size: 3rem; margin-bottom: 1.2rem;">
+                <i class="bx bx-bot"></i>
+              </div>
+              <h4 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 700; color: var(--text-color); margin-bottom: 0.6rem;">
+                AI Velocity & LLMs 🤖
+              </h4>
+              <p style="font-size: 1.35rem; color: var(--text-muted); line-height: 1.5;">
+                Comfortable using GitHub Copilot and ChatGPT to accelerate development, troubleshoot issues, and elevate shipping speed.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- GeeksforGeeks Technical Publications Showcase -->
+        <section class="publications-section" id="publications" style="margin-bottom: 7rem;">
+          <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+            <div class="status-badge" style="margin-bottom: 1.2rem;">
+              <span class="pulse-ring"></span>
+              <span class="pulse-dot"></span>
+              <span data-i18n="publications.badge">GeeksforGeeks Author • 61,000+ Readers</span>
+            </div>
+            <h2 class="section-title">
+              <span data-i18n="publications.heading">Technical <span>Publications</span></span>
+            </h2>
+            <p class="section-subtitle" data-i18n="publications.subtitle">
+              Authored in-depth technical guides, web architecture, and mathematical computing articles on GeeksforGeeks.
+            </p>
+          </div>
+
+          <div class="publications-grid">
+            <!-- Article 1: Chi-Square Test -->
+            <div class="glass-card pub-card" data-tilt>
+              <div class="pub-card-top">
+                <span class="pub-category-tag" data-i18n="publications.article_1.category">Statistics & Mathematics</span>
+                <span class="pub-stat-pill"><i class="bx bx-show"></i> Published</span>
+              </div>
+              <h3 class="pub-title" data-i18n="publications.article_1.title">Chi-Square (χ²) Test in Statistics</h3>
+              <p class="pub-desc" data-i18n="publications.article_1.desc">
+                Goodness-of-fit, test of independence in contingency tables, degrees of freedom, and statistical hypothesis testing.
+              </p>
+              <div class="pub-tags-row">
+                <span>Hypothesis Testing</span>
+                <span>Chi-Square</span>
+                <span>Statistics</span>
+              </div>
+              <a
+                href="https://www.geeksforgeeks.org/maths/chi-square-test/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="pub-read-link"
+              >
+                <span data-i18n="publications.read_article">Read on GeeksforGeeks ↗</span>
+                <i class="bx bx-arrow-back" style="transform: rotate(135deg);"></i>
+              </a>
+            </div>
+
+            <!-- Article 2: JavaScript HTML DOM -->
+            <div class="glass-card pub-card featured-pub" data-tilt>
+              <div class="pub-card-top">
+                <span class="pub-category-tag" data-i18n="publications.article_2.category">Frontend & Web APIs</span>
+                <span class="pub-stat-pill highlight"><i class="bx bxs-hot"></i> 61K+ Reads 🔥</span>
+              </div>
+              <h3 class="pub-title" data-i18n="publications.article_2.title">JavaScript HTML DOM Architecture</h3>
+              <p class="pub-desc" data-i18n="publications.article_2.desc">
+                DOM tree traversals, node manipulation, dynamic rendering, and modern event delegation mechanisms (61,000+ reads).
+              </p>
+              <div class="pub-tags-row">
+                <span>JavaScript</span>
+                <span>DOM API</span>
+                <span>Event Flow</span>
+              </div>
+              <a
+                href="https://www.geeksforgeeks.org/html/javascript-html-dom/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="pub-read-link"
+              >
+                <span data-i18n="publications.read_article">Read on GeeksforGeeks ↗</span>
+                <i class="bx bx-arrow-back" style="transform: rotate(135deg);"></i>
+              </a>
+            </div>
+
+            <!-- Article 3: Common Debugging Techniques -->
+            <div class="glass-card pub-card" data-tilt>
+              <div class="pub-card-top">
+                <span class="pub-category-tag" data-i18n="publications.article_3.category">JavaScript Engineering</span>
+                <span class="pub-stat-pill"><i class="bx bx-code-alt"></i> Debugging</span>
+              </div>
+              <h3 class="pub-title" data-i18n="publications.article_3.title">Common Debugging Techniques for JavaScript</h3>
+              <p class="pub-desc" data-i18n="publications.article_3.desc">
+                Chrome DevTools breakpoints, call stack analysis, asynchronous error debugging, and performance profiling.
+              </p>
+              <div class="pub-tags-row">
+                <span>DevTools</span>
+                <span>Async Stack</span>
+                <span>Debugging</span>
+              </div>
+              <a
+                href="https://www.geeksforgeeks.org/javascript/what-are-some-common-debugging-techniques-for-javascript/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="pub-read-link"
+              >
+                <span data-i18n="publications.read_article">Read on GeeksforGeeks ↗</span>
+                <i class="bx bx-arrow-back" style="transform: rotate(135deg);"></i>
+              </a>
+            </div>
+
+            <!-- Article 4: Fundamentals of Graph Theory -->
+            <div class="glass-card pub-card" data-tilt>
+              <div class="pub-card-top">
+                <span class="pub-category-tag" data-i18n="publications.article_4.category">DSA & Discrete Mathematics</span>
+                <span class="pub-stat-pill"><i class="bx bx-network-chart"></i> Graph Theory</span>
+              </div>
+              <h3 class="pub-title" data-i18n="publications.article_4.title">Fundamentals of Graph Theory</h3>
+              <p class="pub-desc" data-i18n="publications.article_4.desc">
+                Vertices, edges, planar graphs, Eulerian/Hamiltonian cycles, isomorphism, and computational graph algorithms.
+              </p>
+              <div class="pub-tags-row">
+                <span>Graph Theory</span>
+                <span>Discrete Math</span>
+                <span>DSA</span>
+              </div>
+              <a
+                href="https://www.geeksforgeeks.org/maths/fundamentals-of-graph-theory/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="pub-read-link"
+              >
+                <span data-i18n="publications.read_article">Read on GeeksforGeeks ↗</span>
+                <i class="bx bx-arrow-back" style="transform: rotate(135deg);"></i>
+              </a>
+            </div>
+
+            <!-- Article 5: Estimation in Statistics -->
+            <div class="glass-card pub-card" data-tilt>
+              <div class="pub-card-top">
+                <span class="pub-category-tag" data-i18n="publications.article_5.category">Mathematical Statistics</span>
+                <span class="pub-stat-pill"><i class="bx bx-calculator"></i> Inference</span>
+              </div>
+              <h3 class="pub-title" data-i18n="publications.article_5.title">Estimation in Statistical Inference</h3>
+              <p class="pub-desc" data-i18n="publications.article_5.desc">
+                Point estimation vs confidence intervals, Maximum Likelihood Estimation (MLE), and minimum variance unbiased estimators.
+              </p>
+              <div class="pub-tags-row">
+                <span>Estimation</span>
+                <span>MLE</span>
+                <span>Confidence Interval</span>
+              </div>
+              <a
+                href="https://www.geeksforgeeks.org/maths/estimation-in-statistics/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="pub-read-link"
+              >
+                <span data-i18n="publications.read_article">Read on GeeksforGeeks ↗</span>
+                <i class="bx bx-arrow-back" style="transform: rotate(135deg);"></i>
+              </a>
+            </div>
+
+            <!-- Card 6: Author Profile Hub -->
+            <div class="glass-card pub-card author-hub-card" data-tilt>
+              <div class="pub-card-top">
+                <span class="pub-category-tag author-tag">Official Author Profile</span>
+                <span class="pub-stat-pill highlight">Verified Author ✍️</span>
+              </div>
+              <h3 class="pub-title">Explore Full GeeksforGeeks Author Portfolio</h3>
+              <p class="pub-desc">
+                Access all published technical research, mathematical computing guides, and web development documentation by Mohd Kashif.
+              </p>
+              <div class="pub-tags-row">
+                <span>61,000+ Reads</span>
+                <span>Technical Writing</span>
+                <span>GFG Author</span>
+              </div>
+              <a
+                href="https://www.geeksforgeeks.org/profile/mohd_kashif_ahrari?tab=articles&page=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+                style="margin-top: 1.5rem; width: 100%;"
+              >
+                <span data-i18n="publications.view_all">View All on GFG (61K+ Reads) 🚀</span>
+                <i class="bx bx-right-arrow-alt"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+          <div class="glass-card cta-card">
+            <h2 class="cta-title">Interested in building something together?</h2>
+            <p class="cta-desc">Let's discuss full-stack projects, internships, or engineering opportunities.</p>
+            <div class="cta-actions">
+              <a href="../contact/contact.html" class="btn btn-primary">
+                Get in Touch 🚀
+              </a>
+              <a
+                href="https://wa.me/917905291957?text=Hi%20Kashif,%20I%20saw%20your%20About%20page%20and%20would%20like%20to%20connect!"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-whatsapp"
+              >
+                <i class="bx bxl-whatsapp"></i>
+                <span>Chat on WhatsApp 💬</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="about-footer">
+      <p data-i18n="footer.copyright">
+        Copyright &copy; 2023 | Designed and Maintenance by Mohd Kashif | All Rights Reserved
+      </p>
+      <div class="footer-bottom-links">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <span>•</span>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <span>•</span>
+        <a href="../index.html#projects" data-i18n="nav.projects">Projects</a>
+        <span>•</span>
+        <a href="../certificate/index.html" data-i18n="cert.title">Certificates</a>
+        <span>•</span>
+        <a href="../progress/index.html" data-i18n="nav.progress">Dev Log</a>
+        <span>•</span>
+        <a href="../contact/contact.html" data-i18n="nav.contact">Contact</a>
       </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/i18next@21.6.16/dist/umd/i18next.min.js"></script>
+    <script src="../script.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

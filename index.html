@@ -1,157 +1,776 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-theme");
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mohd Kashif Ahrari - 3D Portfolio</title>
+    <title>Mohd Kashif Ahrari | Full-Stack Developer & Software Engineer</title>
+    <meta
+      name="description"
+      content="Mohd Kashif Ahrari – Computer Science Engineer & Full-Stack Developer specializing in Java, React, Node.js, SQL, MongoDB, and modern web architectures."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Background Particles & Ambient Glow Orbs -->
     <div id="particles-js"></div>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
 
-    <nav>
-      <h2>
-        <b>..</b>POR<span class="bre">TFO</span><span>LIO <b>..</b></span>
-      </h2>
-      <ul>
-        <li><a class="btn" href="aboutme/index.html">ABOUT ME</a></li>
-        <li><a class="btn" href="contact/contact.html">CONTACT ©️</a></li>
-      </ul>
-      <a href="https://www.linkedin.com/in/mohd-kashif-9096a4227" class="btn"
-        >Follow Me</a
-      >
-    </nav>
+    <!-- Navigation Header -->
+    <header class="header">
+      <a href="index.html" class="logo">
+        Kashif<span>.dev</span>
+      </a>
 
-    <div class="hero">
-      <div class="cube-container">
-        <div class="cube">
-          <div class="cube-face front">K</div>
-          <div class="cube-face back">A</div>
-          <div class="cube-face right">S</div>
-          <div class="cube-face left">H</div>
-          <div class="cube-face top">I</div>
-          <div class="cube-face bottom">F</div>
+      <nav class="navbar">
+        <a href="#hero" class="active" data-i18n="nav.home">Home</a>
+        <a href="aboutme/index.html" data-i18n="nav.about">About</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="certificate/index.html" data-i18n="nav.certificates">Certificates</a>
+        <a href="progress/index.html" data-i18n="nav.progress">Dev Log</a>
+        <a href="contact/contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button id="lang-en" class="lang-btn" aria-label="Switch to English" aria-pressed="true">EN</button>
+          <button id="lang-hi" class="lang-btn" aria-label="Switch to Hindi" aria-pressed="false">HI</button>
         </div>
-      </div>
-
-      <div class="hero-content">
-        <h4>Hi ,<span>I'm </span></h4>
-        <h1><span>M</span>ohd Ka<span>sh</span>if Ahrar<span>i</span></h1>
-        <h4>I'm a <span class="multiText"></span></h4>
-        <br />
-        <div class="newslatter">
-          <form action="">
-            <input type="email" id="mail" placeholder="Enter your E-mail" />
-            <input type="submit" name="submit" value="let's start" />
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <section class="about">
-      <img src="kashif.jpg" alt="Mohd Kashif Ahrari" />
-      <div class="about-text">
-        <h2>About Me</h2>
-        <h5>Developer <span>& Designer</span></h5>
-        <p>
-          I am a front-end web developer. I can provide clean code and pixel
-          perfect design. I also make the website more & more interactive with
-          web animations. I can provide clean code and pixel perfect design. I
-          also make the website more & more interactive with web animations. A
-          responsive design makes your website accessible to all users,
-          regardless of their device.
-        </p>
-        <button type="button">Let's Talk</button>
-      </div>
-    </section>
-
-    <div class="service">
-      <div class="title">
-        <h2>My Projects</h2>
-      </div>
-
-      <div class="box">
-        <div class="card">
-          <i class="fa-solid fa-bars"></i>
-          <a style="text-decoration: none" href="project/index.html"
-            ><h5>Web Development</h5></a
-          >
-          <div class="pra">
-            <p>
-              Every website should be built with two primary goals: Firstly, it
-              needs to work across all devices. Secondly, it needs to be fast as
-              possible.
-            </p>
-            <p style="text-align: center">
-              <a class="button" href="#">Read More</a>
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <i class="fa-regular fa-user"></i>
-          <a style="text-decoration: none" href="certificate/index.html"
-            ><h5>Certifications</h5></a
-          >
-          <div class="pra">
-            <p>
-              I have completed several certifications in web development, UI/UX
-              design, and programming languages that validate my skills.
-            </p>
-            <p style="text-align: center">
-              <a class="button" href="certificate/index.html">Read More</a>
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <i class="fa-solid fa-bell"></i>
-          <h5>Other Domain</h5>
-          <div class="pra">
-            <p>
-              Besides web development, I have experience in graphic design,
-              digital marketing, and content creation for diverse projects.
-            </p>
-            <p style="text-align: center">
-              <a class="button" href="#">Read More</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="contact-me">
-      <p>Let's build something more creative & unique!!</p>
-      <a class="button-two" href="contact/contact.html">lets do it</a>
-    </div>
-
-    <footer>
-      <p>Mohd Kashif</p>
-      <p>
-        For more HTML, CSS, and coding tutorial - please click on the link below
-        to subscribe to my channel:
-      </p>
-      <div class="socil">
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/kashif_ahrari?igsh=bHp3eDh3ajRwNHli "
-          ><i class="fa-brands fa-instagram"></i
-        ></a>
-        <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
         <a
-          href="https://www.linkedin.com/in/mohd-kashif-9096a4227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
-          ><i class="fa-brands fa-linkedin-in"></i
-        ></a>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          href="https://www.linkedin.com/in/mohd-kashif-9096a4227"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="nav-follow-btn"
+          data-i18n="nav.follow"
+        >
+          <i class="bx bxl-linkedin"></i>
+          <span>Follow Me</span>
+        </a>
+        <a
+          href="roadmap-24lpa/index.html"
+          class="nav-roadmap-link"
+          title="Private Area (Password Protected)"
+        >
+          <i class="bx bxs-lock-alt"></i>
+          <span>(Not for you)</span>
+        </a>
+      </div>
+
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    <main id="main">
+      <!-- Hero Section -->
+      <section class="hero" id="hero">
+        <div class="hero-wrapper">
+          <!-- Hero Text Column -->
+          <div class="hero-content">
+            <div class="status-badge">
+              <span class="pulse-ring"></span>
+              <span class="pulse-dot"></span>
+              <span data-i18n="hero.badge">Available for freelance projects & full-time roles</span>
+            </div>
+
+            <h4 class="hero-greeting" data-i18n="hero.greeting">Hi, I'm</h4>
+            <h1 class="hero-title" data-i18n="hero.name">Mohd Kashif Ahrari</h1>
+
+            <h3 class="hero-typing">
+              <span data-i18n="hero.im_a">I build</span>
+              <span class="multiText" aria-live="polite"></span>
+            </h3>
+
+            <p class="hero-desc" data-i18n="hero.description">
+              Passionate Computer Science Engineer & Full-Stack Developer with 8.66 CGPA. Experienced in Java, React, Node.js, SQL, and building scalable cloud-ready web applications.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary" data-i18n="hero.explore">
+                <span>Explore My Work 🚀</span>
+              </a>
+              <a href="contact/contact.html" class="btn btn-secondary" data-i18n="hero.contact">
+                <span>Get in Touch ✉️</span>
+              </a>
+              <a href="aboutme/index.html" class="btn btn-glass" data-i18n="hero.resume">
+                <span>About Me 📄</span>
+              </a>
+            </div>
+
+            <!-- Social Links Quick Bar -->
+            <div class="hero-socials">
+              <a
+                href="https://www.linkedin.com/in/mohd-kashif-9096a4227"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-btn linkedin"
+                aria-label="LinkedIn"
+              >
+                <i class="bx bxl-linkedin"></i>
+              </a>
+              <a
+                href="https://github.com/Kashifahrari"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-btn github"
+                aria-label="GitHub"
+              >
+                <i class="bx bxl-github"></i>
+              </a>
+              <a
+                href="https://www.geeksforgeeks.org/profile/mohd_kashif_ahrari?tab=articles&page=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-btn gfg"
+                aria-label="GeeksforGeeks"
+              >
+                <i class="bx bx-code-alt"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/@kashifahrari"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-btn youtube"
+                aria-label="YouTube"
+              >
+                <i class="bx bxl-youtube"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/kashif_ahrari"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-btn instagram"
+                aria-label="Instagram"
+              >
+                <i class="bx bxl-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero 3D Interactive Cyber Cube Column -->
+          <div class="hero-visual">
+            <div class="cube-scene" id="cubeScene">
+              <div class="cube-glow"></div>
+              <div class="cube" id="heroCube">
+                <div class="cube-face front">
+                  <i class="bx bxl-react"></i>
+                  <span>REACT</span>
+                </div>
+                <div class="cube-face back">
+                  <i class="bx bxl-nodejs"></i>
+                  <span>NODE.JS</span>
+                </div>
+                <div class="cube-face right">
+                  <i class="bx bxl-java"></i>
+                  <span>JAVA DSA</span>
+                </div>
+                <div class="cube-face left">
+                  <i class="bx bxl-python"></i>
+                  <span>PYTHON</span>
+                </div>
+                <div class="cube-face top">
+                  <i class="bx bxl-mongodb"></i>
+                  <span>MONGODB</span>
+                </div>
+                <div class="cube-face bottom">
+                  <i class="bx bxs-data"></i>
+                  <span>SQL DB</span>
+                </div>
+              </div>
+
+              <!-- Floating Tech Badges around Cube -->
+              <div class="floating-badge badge-1">
+                <i class="bx bxl-react"></i>
+                <span>React & Node</span>
+              </div>
+              <div class="floating-badge badge-2">
+                <i class="bx bxl-java"></i>
+                <span>Java & DSA</span>
+              </div>
+              <div class="floating-badge badge-3">
+                <i class="bx bxs-data"></i>
+                <span>SQL & MongoDB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bento Metrics & Stats Bar -->
+      <section class="stats-section">
+        <div class="stats-grid">
+          <div class="glass-card stat-card" data-tilt>
+            <div class="stat-icon-wrap gold">
+              <i class="bx bx-award"></i>
+            </div>
+            <div class="stat-info">
+              <h3 class="stat-number" data-i18n="stats.cgpa">8.66 CGPA (86.6%)</h3>
+              <p class="stat-label" data-i18n="stats.cgpa_desc">Cambridge Institute of Tech</p>
+            </div>
+          </div>
+
+          <div class="glass-card stat-card" data-tilt>
+            <div class="stat-icon-wrap teal">
+              <i class="bx bx-briefcase-alt-2"></i>
+            </div>
+            <div class="stat-info">
+              <h3 class="stat-number" data-i18n="stats.internships">Software Engineer</h3>
+              <p class="stat-label" data-i18n="stats.internships_desc">Dhira Software Labs & SM Web Solutions</p>
+            </div>
+          </div>
+
+          <div class="glass-card stat-card" data-tilt>
+            <div class="stat-icon-wrap green">
+              <i class="bx bx-book-reader"></i>
+            </div>
+            <div class="stat-info">
+              <h3 class="stat-number" data-i18n="stats.readers">61,000+ Reads</h3>
+              <p class="stat-label" data-i18n="stats.readers_desc">GeeksforGeeks Top Tech Author</p>
+            </div>
+          </div>
+
+          <div class="glass-card stat-card" data-tilt>
+            <div class="stat-icon-wrap cyan">
+              <i class="bx bx-code-block"></i>
+            </div>
+            <div class="stat-info">
+              <h3 class="stat-number" data-i18n="stats.projects">10+ Projects</h3>
+              <p class="stat-label" data-i18n="stats.projects_desc">Full-Stack, React Flow & APIs</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Me Bento Highlight Section -->
+      <section class="about-section" id="about">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span data-i18n="about.heading">About <span>Me</span></span>
+          </h2>
+          <p class="section-subtitle" data-i18n="about.subtitle">Software Engineer & Full-Stack Developer</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left: 3D Profile Card -->
+          <div class="glass-card profile-card" data-tilt>
+            <div class="profile-img-wrap">
+              <img
+                src="kashif.jpg"
+                alt="Mohd Kashif Ahrari"
+                data-i18n-alt="home.imageAlt"
+                loading="lazy"
+              />
+              <div class="experience-pill">
+                <i class="bx bx-badge-check"></i>
+                <span>Software Engineer @ Dhira</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Bio & Key Specializations -->
+          <div class="glass-card about-info-card">
+            <h3 class="about-greeting" data-i18n="about.greeting">Hi there! Glad to see you here.</h3>
+            <p class="about-bio" data-i18n="about.bio">
+              Hello! I am <strong>Mohd Kashif</strong>, a Software Engineer at <strong>Dhira Software Labs</strong> (promoted from Full-Stack Intern) and Computer Science graduate from <strong>Cambridge Institute of Technology</strong> (8.66 CGPA / 86.6%). I specialize in <strong>React 19, TypeScript, React Flow, Node.js, Express, Java (DSA),</strong> and <strong>SQL / MongoDB</strong>. I have engineered platforms like <strong>CBSE Aakalan (CBA Platform)</strong>, <strong>Stay Ease Rental Platform</strong>, and <strong>Mega-Vlog</strong>. Additionally, I am a published author on <strong>GeeksforGeeks with 61,000+ readers</strong>.
+            </p>
+
+            <div class="skills-chips-wrapper">
+              <span class="skill-chip">⚛️ React 19 & React Flow</span>
+              <span class="skill-chip">🔷 TypeScript & ES6+</span>
+              <span class="skill-chip">🟢 Node.js & Express</span>
+              <span class="skill-chip">⚡ TanStack Query</span>
+              <span class="skill-chip">☕ Java & DSA</span>
+              <span class="skill-chip">🎨 Tailwind CSS & SCSS</span>
+              <span class="skill-chip">🐬 MySQL & MongoDB</span>
+              <span class="skill-chip">🤖 AI-Assisted Productivity</span>
+            </div>
+
+            <div class="about-card-action">
+              <a href="aboutme/index.html" class="btn btn-primary" data-i18n="about.learn_more">
+                Learn More About Me →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects Showcase Section -->
+      <section class="projects-section" id="projects">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span data-i18n="projects.title">Featured <span>Projects</span></span>
+          </h2>
+          <p class="section-subtitle" data-i18n="projects.subtitle">
+            A showcase of enterprise platforms, full-stack systems, and production engineering solutions I've engineered.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: CBSE Aakalan (CBA Platform) -->
+          <div class="glass-card project-card" data-tilt>
+            <div class="project-header">
+              <div class="project-icon-wrap web">
+                <i class="bx bx-layer"></i>
+              </div>
+              <span class="project-category">Enterprise Platform</span>
+            </div>
+            <h3 class="project-title" data-i18n="projects.project1.title">CBSE Aakalan (CBA Platform)</h3>
+            <p class="project-desc" data-i18n="projects.project1.desc">
+              Enterprise assessment management platform for CBSE developed at Dhira Software Labs, featuring automated question banking, rich formula authoring, TanStack Query state management, and print-ready PDF export via jsPDF.
+            </p>
+            <div class="project-tags">
+              <span class="tag">React 19</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">TanStack Query</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">jsPDF</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Kashifahrari" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="projects.project1.link">
+                <span>Explore Project 🚀</span>
+                <i class="bx bx-right-arrow-alt"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2: Stay Ease Rental Platform -->
+          <div class="glass-card project-card" data-tilt>
+            <div class="project-header">
+              <div class="project-icon-wrap backend">
+                <i class="bx bx-home-heart"></i>
+              </div>
+              <span class="project-category">Rental Platform</span>
+            </div>
+            <h3 class="project-title" data-i18n="projects.project2.title">Stay Ease - Rental Platform</h3>
+            <p class="project-desc" data-i18n="projects.project2.desc">
+              A full-stack property rental application featuring secure Passport.js session auth, CRUD listings, user reviews, responsive Bootstrap 5 UI, and RESTful APIs.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag">Passport.js</span>
+              <span class="tag">Bootstrap 5</span>
+              <span class="tag">MongoDB</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Kashifahrari" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="projects.project2.link">
+                <span>View Architecture ⚡</span>
+                <i class="bx bx-right-arrow-alt"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3: Mega-Vlog Platform -->
+          <div class="glass-card project-card" data-tilt>
+            <div class="project-header">
+              <div class="project-icon-wrap data">
+                <i class="bx bx-news"></i>
+              </div>
+              <span class="project-category">Full-Stack Web</span>
+            </div>
+            <h3 class="project-title" data-i18n="projects.project3.title">Mega-Vlog : Blogging Website</h3>
+            <p class="project-desc" data-i18n="projects.project3.desc">
+              A modern responsive blogging platform built with React, Tailwind CSS, and Appwrite backend for authentication, database content storage, and media uploads.
+            </p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Appwrite</span>
+              <span class="tag">CRUD</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Kashifahrari" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="projects.project3.link">
+                <span>View Details 📊</span>
+                <i class="bx bx-right-arrow-alt"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 4: Student Attendance System -->
+          <div class="glass-card project-card" data-tilt>
+            <div class="project-header">
+              <div class="project-icon-wrap cert">
+                <i class="bx bx-calendar-check"></i>
+              </div>
+              <span class="project-category">Management System</span>
+            </div>
+            <h3 class="project-title" data-i18n="projects.project4.title">Student Attendance Management System</h3>
+            <p class="project-desc" data-i18n="projects.project4.desc">
+              A real-time attendance management system built with HTML, CSS, JS, PHP, and MySQL for tracking attendance by subject, exam eligibility calculation, and report generation.
+            </p>
+            <div class="project-tags">
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML5/CSS3</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Kashifahrari" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="projects.project4.link">
+                <span>View Management System 📋</span>
+                <i class="bx bx-right-arrow-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Tech Stack Marquee -->
+      <section class="tech-marquee-section">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span data-i18n="tech_stack.title">Core <span>Tech Stack</span></span>
+          </h2>
+        </div>
+        <div class="marquee-wrapper">
+          <div class="marquee-track">
+            <div class="tech-item"><i class="bx bxl-java"></i> Java</div>
+            <div class="tech-item"><i class="bx bxl-python"></i> Python</div>
+            <div class="tech-item"><i class="bx bxl-javascript"></i> JavaScript</div>
+            <div class="tech-item"><i class="bx bxl-react"></i> React.js</div>
+            <div class="tech-item"><i class="bx bxl-nodejs"></i> Node.js</div>
+            <div class="tech-item"><i class="bx bxl-mongodb"></i> MongoDB</div>
+            <div class="tech-item"><i class="bx bxs-data"></i> MySQL</div>
+            <div class="tech-item"><i class="bx bxl-html5"></i> HTML5 & CSS3</div>
+            <div class="tech-item"><i class="bx bxl-git"></i> Git & GitHub</div>
+            <div class="tech-item"><i class="bx bx-code-curly"></i> Data Structures</div>
+            <!-- Duplicate for infinite seamless scroll -->
+            <div class="tech-item"><i class="bx bxl-java"></i> Java</div>
+            <div class="tech-item"><i class="bx bxl-python"></i> Python</div>
+            <div class="tech-item"><i class="bx bxl-javascript"></i> JavaScript</div>
+            <div class="tech-item"><i class="bx bxl-react"></i> React.js</div>
+            <div class="tech-item"><i class="bx bxl-nodejs"></i> Node.js</div>
+            <div class="tech-item"><i class="bx bxl-mongodb"></i> MongoDB</div>
+            <div class="tech-item"><i class="bx bxs-data"></i> MySQL</div>
+            <div class="tech-item"><i class="bx bxl-html5"></i> HTML5 & CSS3</div>
+            <div class="tech-item"><i class="bx bxl-git"></i> Git & GitHub</div>
+            <div class="tech-item"><i class="bx bx-code-curly"></i> Data Structures</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GeeksforGeeks Technical Publications Showcase -->
+      <section class="publications-section" id="publications" style="margin-bottom: 7rem;">
+        <div class="section-header">
+          <div class="status-badge" style="margin-bottom: 1.2rem;">
+            <span class="pulse-ring"></span>
+            <span class="pulse-dot"></span>
+            <span data-i18n="publications.badge">GeeksforGeeks Author • 61,000+ Readers</span>
+          </div>
+          <h2 class="section-title">
+            <span data-i18n="publications.heading">Technical <span>Publications</span></span>
+          </h2>
+          <p class="section-subtitle" data-i18n="publications.subtitle">
+            Authored in-depth technical guides, web architecture, and mathematical computing articles on GeeksforGeeks.
+          </p>
+        </div>
+
+        <div class="publications-grid">
+          <!-- Article 1: Chi-Square Test -->
+          <div class="glass-card pub-card" data-tilt>
+            <div class="pub-card-top">
+              <span class="pub-category-tag" data-i18n="publications.article_1.category">Statistics & Mathematics</span>
+              <span class="pub-stat-pill"><i class="bx bx-show"></i> Published</span>
+            </div>
+            <h3 class="pub-title" data-i18n="publications.article_1.title">Chi-Square (χ²) Test in Statistics</h3>
+            <p class="pub-desc" data-i18n="publications.article_1.desc">
+              Goodness-of-fit, test of independence in contingency tables, degrees of freedom, and statistical hypothesis testing.
+            </p>
+            <div class="pub-tags-row">
+              <span>Hypothesis Testing</span>
+              <span>Chi-Square</span>
+              <span>Statistics</span>
+            </div>
+            <a
+              href="https://www.geeksforgeeks.org/maths/chi-square-test/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="pub-read-link"
+            >
+              <span data-i18n="publications.read_article">Read on GeeksforGeeks ↗</span>
+              <i class="bx bx-arrow-back" style="transform: rotate(135deg);"></i>
+            </a>
+          </div>
+
+          <!-- Article 2: JavaScript HTML DOM -->
+          <div class="glass-card pub-card featured-pub" data-tilt>
+            <div class="pub-card-top">
+              <span class="pub-category-tag" data-i18n="publications.article_2.category">Frontend & Web APIs</span>
+              <span class="pub-stat-pill highlight"><i class="bx bxs-hot"></i> 61K+ Reads 🔥</span>
+            </div>
+            <h3 class="pub-title" data-i18n="publications.article_2.title">JavaScript HTML DOM Architecture</h3>
+            <p class="pub-desc" data-i18n="publications.article_2.desc">
+              DOM tree traversals, node manipulation, dynamic rendering, and modern event delegation mechanisms (61,000+ reads).
+            </p>
+            <div class="pub-tags-row">
+              <span>JavaScript</span>
+              <span>DOM API</span>
+              <span>Event Flow</span>
+            </div>
+            <a
+              href="https://www.geeksforgeeks.org/html/javascript-html-dom/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="pub-read-link"
+            >
+              <span data-i18n="publications.read_article">Read on GeeksforGeeks ↗</span>
+              <i class="bx bx-arrow-back" style="transform: rotate(135deg);"></i>
+            </a>
+          </div>
+
+          <!-- Article 3: Common Debugging Techniques -->
+          <div class="glass-card pub-card" data-tilt>
+            <div class="pub-card-top">
+              <span class="pub-category-tag" data-i18n="publications.article_3.category">JavaScript Engineering</span>
+              <span class="pub-stat-pill"><i class="bx bx-code-alt"></i> Debugging</span>
+            </div>
+            <h3 class="pub-title" data-i18n="publications.article_3.title">Common Debugging Techniques for JavaScript</h3>
+            <p class="pub-desc" data-i18n="publications.article_3.desc">
+              Chrome DevTools breakpoints, call stack analysis, asynchronous error debugging, and performance profiling.
+            </p>
+            <div class="pub-tags-row">
+              <span>DevTools</span>
+              <span>Async Stack</span>
+              <span>Debugging</span>
+            </div>
+            <a
+              href="https://www.geeksforgeeks.org/javascript/what-are-some-common-debugging-techniques-for-javascript/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="pub-read-link"
+            >
+              <span data-i18n="publications.read_article">Read on GeeksforGeeks ↗</span>
+              <i class="bx bx-arrow-back" style="transform: rotate(135deg);"></i>
+            </a>
+          </div>
+
+          <!-- Article 4: Fundamentals of Graph Theory -->
+          <div class="glass-card pub-card" data-tilt>
+            <div class="pub-card-top">
+              <span class="pub-category-tag" data-i18n="publications.article_4.category">DSA & Discrete Mathematics</span>
+              <span class="pub-stat-pill"><i class="bx bx-network-chart"></i> Graph Theory</span>
+            </div>
+            <h3 class="pub-title" data-i18n="publications.article_4.title">Fundamentals of Graph Theory</h3>
+            <p class="pub-desc" data-i18n="publications.article_4.desc">
+              Vertices, edges, planar graphs, Eulerian/Hamiltonian cycles, isomorphism, and computational graph algorithms.
+            </p>
+            <div class="pub-tags-row">
+              <span>Graph Theory</span>
+              <span>Discrete Math</span>
+              <span>DSA</span>
+            </div>
+            <a
+              href="https://www.geeksforgeeks.org/maths/fundamentals-of-graph-theory/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="pub-read-link"
+            >
+              <span data-i18n="publications.read_article">Read on GeeksforGeeks ↗</span>
+              <i class="bx bx-arrow-back" style="transform: rotate(135deg);"></i>
+            </a>
+          </div>
+
+          <!-- Article 5: Estimation in Statistics -->
+          <div class="glass-card pub-card" data-tilt>
+            <div class="pub-card-top">
+              <span class="pub-category-tag" data-i18n="publications.article_5.category">Mathematical Statistics</span>
+              <span class="pub-stat-pill"><i class="bx bx-calculator"></i> Inference</span>
+            </div>
+            <h3 class="pub-title" data-i18n="publications.article_5.title">Estimation in Statistical Inference</h3>
+            <p class="pub-desc" data-i18n="publications.article_5.desc">
+              Point estimation vs confidence intervals, Maximum Likelihood Estimation (MLE), and minimum variance unbiased estimators.
+            </p>
+            <div class="pub-tags-row">
+              <span>Estimation</span>
+              <span>MLE</span>
+              <span>Confidence Interval</span>
+            </div>
+            <a
+              href="https://www.geeksforgeeks.org/maths/estimation-in-statistics/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="pub-read-link"
+            >
+              <span data-i18n="publications.read_article">Read on GeeksforGeeks ↗</span>
+              <i class="bx bx-arrow-back" style="transform: rotate(135deg);"></i>
+            </a>
+          </div>
+
+          <!-- Card 6: Author Profile Hub -->
+          <div class="glass-card pub-card author-hub-card" data-tilt>
+            <div class="pub-card-top">
+              <span class="pub-category-tag author-tag">Official Author Profile</span>
+              <span class="pub-stat-pill highlight">Verified Author ✍️</span>
+            </div>
+            <h3 class="pub-title">Explore Full GeeksforGeeks Author Portfolio</h3>
+            <p class="pub-desc">
+              Access all published technical research, mathematical computing guides, and web development documentation by Mohd Kashif.
+            </p>
+            <div class="pub-tags-row">
+              <span>61,000+ Reads</span>
+              <span>Technical Writing</span>
+              <span>GFG Author</span>
+            </div>
+            <a
+              href="https://www.geeksforgeeks.org/profile/mohd_kashif_ahrari?tab=articles&page=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+              style="margin-top: 1.5rem; width: 100%;"
+            >
+              <span data-i18n="publications.view_all">View All on GFG (61K+ Reads) 🚀</span>
+              <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Live Dev Log Teaser Banner -->
+      <section class="devlog-teaser-section" style="margin-bottom: 6rem;">
+        <div class="glass-card" style="padding: 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2.5rem;">
+          <div>
+            <div class="status-badge" style="margin-bottom: 1.2rem;">
+              <span class="pulse-ring"></span>
+              <span class="pulse-dot"></span>
+              <span data-i18n="progress.badge">Live Build-in-Public Engineering Log</span>
+            </div>
+            <h2 style="font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--text-color); margin-bottom: 0.8rem;">
+              See What I'm Building <span>Today</span> 🔥
+            </h2>
+            <p style="font-size: 1.55rem; color: var(--text-muted); max-width: 620px;">
+              Explore daily engineering logs, problem-solving breakthroughs, and my interactive milestone flow roadmap.
+            </p>
+          </div>
+          <a href="progress/index.html" class="btn btn-primary">
+            <span>Explore Dev Log & Roadmap 🚀</span>
+            <i class="bx bx-right-arrow-alt"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- Call To Action Section -->
+      <section class="cta-section">
+        <div class="glass-card cta-card">
+          <h2 class="cta-title" data-i18n="contact_me.title">Have an exciting project or opportunity in mind?</h2>
+          <p class="cta-desc" data-i18n="contact_me.p">Let's build something exceptional and unique together!</p>
+          <div class="cta-actions">
+            <a href="contact/contact.html" class="btn btn-primary" data-i18n="contact_me.cta">
+              Start a Conversation 🚀
+            </a>
+            <a
+              href="https://wa.me/917905291957?text=Hi%20Kashif,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-whatsapp"
+              data-i18n="contact_me.whatsapp"
+            >
+              <i class="bx bxl-whatsapp"></i>
+              <span>Chat on WhatsApp 💬</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <a href="index.html" class="footer-logo">Kashif<span>.dev</span></a>
+        <p class="footer-bio">
+          Full-Stack Web Developer & Software Engineer passionate about creating fast, scalable, and delightful digital experiences.
+        </p>
+        <div class="footer-socials">
+          <a
+            href="https://www.linkedin.com/in/mohd-kashif-9096a4227"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <i class="bx bxl-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/Kashifahrari"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <i class="bx bxl-github"></i>
+          </a>
+          <a
+            href="https://www.geeksforgeeks.org/profile/mohd_kashif_ahrari?tab=articles&page=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GeeksforGeeks"
+          >
+            <i class="bx bx-code-alt"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/@kashifahrari"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+          >
+            <i class="bx bxl-youtube"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/kashif_ahrari"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <i class="bx bxl-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer.copyright">
+          Copyright &copy; 2023 | Designed and Maintenance by Mohd Kashif | All Rights Reserved
+        </p>
+        <div class="footer-links">
+          <a href="#hero" data-i18n="nav.home">Home</a>
+          <span>•</span>
+          <a href="aboutme/index.html" data-i18n="nav.about">About</a>
+          <span>•</span>
+          <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <span>•</span>
+          <a href="certificate/index.html" data-i18n="nav.certificates">Certificates</a>
+          <span>•</span>
+          <a href="progress/index.html" data-i18n="nav.progress">Dev Log</a>
+          <span>•</span>
+          <a href="contact/contact.html" data-i18n="nav.contact">Contact</a>
+          <span>•</span>
+          <a href="roadmap-24lpa/index.html" title="Private Area" style="color: var(--accent-gold); font-weight: 600;">(Not for you) 🔒</a>
+        </div>
       </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script defer src="https://unpkg.com/i18next@21.6.16/dist/umd/i18next.min.js"></script>
+    <script defer src="script.js"></script>
   </body>
 </html>

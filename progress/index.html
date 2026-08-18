@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-theme");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Dev Log & Interactive Milestone Roadmap | Mohd Kashif Ahrari</title>
+    <meta
+      name="description"
+      content="Live build-in-public engineering logs, daily progress updates, and interactive milestone roadmap of Mohd Kashif Ahrari."
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@xyflow/react@12.4.4/dist/style.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Background Particles & Ambient Glow Orbs -->
+    <div id="particles-js"></div>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Navigation Header -->
+    <header class="header">
+      <a href="../index.html" class="logo">
+        Kashif<span>.dev</span>
+      </a>
+
+      <nav class="navbar">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <a href="../aboutme/index.html" data-i18n="nav.about">About</a>
+        <a href="../index.html#projects" data-i18n="nav.projects">Projects</a>
+        <a href="../certificate/index.html" data-i18n="cert.title">Certificates</a>
+        <a href="#" class="active" data-i18n="nav.progress">Dev Log</a>
+        <a href="../contact/contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button id="lang-en" class="lang-btn" aria-label="Switch to English" aria-pressed="true">EN</button>
+          <button id="lang-hi" class="lang-btn" aria-label="Switch to Hindi" aria-pressed="false">HI</button>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <a
+          href="../roadmap-24lpa/index.html"
+          class="nav-roadmap-link"
+          title="Private Area (Password Protected)"
+        >
+          <i class="bx bxs-lock-alt"></i>
+          <span>(Not for you)</span>
+        </a>
+      </div>
+
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="progress-main">
+      <div class="progress-container">
+        <!-- Hero Section -->
+        <section class="progress-hero">
+          <div class="status-badge">
+            <span class="pulse-ring"></span>
+            <span class="pulse-dot"></span>
+            <span data-i18n="progress.badge">Live Build-in-Public Engineering Log</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span data-i18n="progress.heading">Daily <span>Dev Log</span> & Roadmap</span>
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="progress.subtitle">
+            Tracking my day-to-day engineering progress, solved challenges, and interactive milestone roadmap.
+          </p>
+
+          <!-- Top Action Bar -->
+          <div class="top-action-bar">
+            <button class="btn btn-primary" id="openLogModalBtn">
+              <i class="bx bx-plus-circle"></i>
+              <span data-i18n="progress.postBtn">Post Today's Update ✍️</span>
+            </button>
+            <button class="btn btn-glass" id="exportLogsBtn">
+              <i class="bx bx-download"></i>
+              <span data-i18n="progress.modal.export">Export JSON 💾</span>
+            </button>
+          </div>
+
+          <!-- Activity Stats Bento Grid -->
+          <div class="stats-grid">
+            <div class="glass-card stat-card" data-tilt>
+              <div class="stat-icon-wrap streak">
+                <i class="bx bxs-flame"></i>
+              </div>
+              <div class="stat-content">
+                <h3 class="stat-val" data-i18n="progress.stats.streak">14-Day Streak</h3>
+                <p class="stat-label" data-i18n="progress.stats.streak_desc">Continuous Daily Shipping</p>
+              </div>
+            </div>
+
+            <div class="glass-card stat-card" data-tilt>
+              <div class="stat-icon-wrap tasks">
+                <i class="bx bx-check-double"></i>
+              </div>
+              <div class="stat-content">
+                <h3 class="stat-val" data-i18n="progress.stats.tasks">42+ Shipped</h3>
+                <p class="stat-label" data-i18n="progress.stats.tasks_desc">Completed Tasks & Features</p>
+              </div>
+            </div>
+
+            <div class="glass-card stat-card" data-tilt>
+              <div class="stat-icon-wrap hours">
+                <i class="bx bx-time-five"></i>
+              </div>
+              <div class="stat-content">
+                <h3 class="stat-val" data-i18n="progress.stats.hours">180+ Hours</h3>
+                <p class="stat-label" data-i18n="progress.stats.hours_desc">Hands-on Coding & Problem Solving</p>
+              </div>
+            </div>
+
+            <div class="glass-card stat-card" data-tilt>
+              <div class="stat-icon-wrap focus">
+                <i class="bx bx-target-lock"></i>
+              </div>
+              <div class="stat-content">
+                <h3 class="stat-val" data-i18n="progress.stats.active">Active Focus</h3>
+                <p class="stat-label" data-i18n="progress.stats.active_desc">Full-Stack Web & Scalable APIs</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Interactive Milestone Flow Roadmap (Powered by React Flow) -->
+        <section class="roadmap-section">
+          <div class="section-header">
+            <h2 class="section-title">
+              <span data-i18n="progress.roadmap.title">Interactive Milestone Roadmap</span>
+            </h2>
+            <p class="section-subtitle" data-i18n="progress.roadmap.subtitle">
+              Explore my learning trajectory and production engineering milestones powered by <strong>React Flow</strong>. Drag, pan, zoom, or click any node to filter related logs!
+            </p>
+          </div>
+
+          <div class="glass-card flow-canvas-container">
+            <div class="flow-canvas-header">
+              <div class="flow-legend">
+                <span class="legend-item completed"><span class="legend-dot"></span> Completed</span>
+                <span class="legend-item in-progress"><span class="legend-dot"></span> In Progress</span>
+                <span class="legend-item upcoming"><span class="legend-dot"></span> Next Milestone</span>
+              </div>
+              <span class="flow-hint"><i class="bx bx-move"></i> Interactive React Flow Canvas: Drag nodes • Scroll to Zoom</span>
+            </div>
+
+            <!-- React Flow Canvas Mount Root -->
+            <div id="react-flow-root" class="react-flow-mount-point"></div>
+          </div>
+        </section>
+
+        <!-- Daily Dev Logs Section -->
+        <section class="logs-section">
+          <div class="section-header">
+            <h2 class="section-title">
+              <span>Engineering <span>Activity Feed</span></span>
+            </h2>
+            <p class="section-subtitle">Real-time daily progress, completed tasks, and architectural insights.</p>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="filter-wrapper">
+            <button class="filter-btn active" data-filter="all" data-i18n="progress.filters.all">
+              All Logs
+            </button>
+            <button class="filter-btn" data-filter="fullstack" data-i18n="progress.filters.fullstack">
+              Full-Stack Web 💻
+            </button>
+            <button class="filter-btn" data-filter="backend" data-i18n="progress.filters.backend">
+              Backend & APIs ⚡
+            </button>
+            <button class="filter-btn" data-filter="dsa" data-i18n="progress.filters.dsa">
+              DSA & Logic 🧠
+            </button>
+            <button class="filter-btn" data-filter="learning" data-i18n="progress.filters.learning">
+              Research & Notes 📚
+            </button>
+          </div>
+
+          <!-- Daily Logs Feed Container -->
+          <div class="logs-feed" id="logsFeed">
+            <!-- Logs dynamically populated by JavaScript -->
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+          <div class="glass-card cta-card">
+            <h2 class="cta-title">Like what you see in the daily build log?</h2>
+            <p class="cta-desc">Let's connect and discuss how I can bring this continuous shipping velocity to your team!</p>
+            <div class="cta-actions">
+              <a href="../contact/contact.html" class="btn btn-primary">
+                Get in Touch 🚀
+              </a>
+              <a
+                href="https://wa.me/917905291957?text=Hi%20Kashif,%20I%20checked%20your%20Dev%20Log%20and%20would%20love%20to%20collaborate!"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-whatsapp"
+              >
+                <i class="bx bxl-whatsapp"></i>
+                <span>Chat on WhatsApp 💬</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Post Daily Update Glass Modal -->
+    <div class="modal-overlay" id="postModalOverlay" aria-hidden="true" role="dialog">
+      <div class="glass-card modal-dialog">
+        <div class="modal-header">
+          <h2 class="modal-title">
+            <i class="bx bx-edit-alt"></i>
+            <span data-i18n="progress.modal.title">Log Daily Progress</span>
+          </h2>
+          <button class="modal-close" id="closeModalBtn" aria-label="Close modal">
+            <i class="bx bx-x"></i>
+          </button>
+        </div>
+
+        <form id="progressForm" class="progress-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="logDate" data-i18n="progress.modal.date">Date</label>
+              <input type="date" id="logDate" required />
+            </div>
+            <div class="form-group">
+              <label for="logCategory" data-i18n="progress.modal.category">Category</label>
+              <select id="logCategory" required>
+                <option value="fullstack">Full-Stack Web 💻</option>
+                <option value="backend">Backend & APIs ⚡</option>
+                <option value="dsa">DSA & Problem Solving 🧠</option>
+                <option value="learning">Research & Notes 📚</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="logTitle" data-i18n="progress.modal.taskTitle">Task / Milestone Title</label>
+            <input type="text" id="logTitle" placeholder="e.g., Built JWT Auth Middleware & User Roles" required />
+          </div>
+
+          <div class="form-group">
+            <label for="logHighlights" data-i18n="progress.modal.highlights">Accomplishments (one per line)</label>
+            <textarea id="logHighlights" rows="4" placeholder="• Implemented token refresh rotation&#10;• Created protected API routes in Express&#10;• Tested edge case handling with Postman" required></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="logTech" data-i18n="progress.modal.tech">Tech Stack Tags (comma-separated)</label>
+              <input type="text" id="logTech" placeholder="e.g. Node.js, Express, JWT, MongoDB" required />
+            </div>
+            <div class="form-group">
+              <label for="logLink" data-i18n="progress.modal.link">Project / Commit URL (optional)</label>
+              <input type="url" id="logLink" placeholder="https://github.com/Kashifahrari/..." />
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn btn-glass" id="cancelModalBtn" data-i18n="progress.modal.close">Cancel</button>
+            <button type="submit" class="btn btn-primary" data-i18n="progress.modal.submit">Publish Update 🚀</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Footer -->
+    <footer class="progress-footer">
+      <p data-i18n="footer.copyright">
+        Copyright &copy; 2023 | Designed and Maintenance by Mohd Kashif | All Rights Reserved
+      </p>
+      <div class="footer-bottom-links">
+        <a href="../index.html" data-i18n="nav.home">Home</a>
+        <span>•</span>
+        <a href="../aboutme/index.html" data-i18n="nav.about">About</a>
+        <span>•</span>
+        <a href="../index.html#projects" data-i18n="nav.projects">Projects</a>
+        <span>•</span>
+        <a href="../certificate/index.html" data-i18n="cert.title">Certificates</a>
+        <span>•</span>
+        <a href="#" class="active" data-i18n="nav.progress">Dev Log</a>
+        <span>•</span>
+        <a href="../contact/contact.html" data-i18n="nav.contact">Contact</a>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/i18next@21.6.16/dist/umd/i18next.min.js"></script>
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="react-flow-app.js"></script>
+  </body>
+</html>
