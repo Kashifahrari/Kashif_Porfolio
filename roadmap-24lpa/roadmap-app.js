@@ -642,8 +642,8 @@ const RoadTo24LPAApp = () => {
         'div',
         { className: 'glass-card auth-card' },
         React.createElement('div', { className: 'auth-icon-wrap' }, React.createElement('i', { className: 'bx bxs-lock-alt' })),
-        React.createElement('h2', { className: 'auth-title' }, 'Road to 24 LPA 🎯'),
-        React.createElement('p', { className: 'auth-subtitle' }, 'Confidential 12-Month Operating System & Execution Tracker. Access restricted to Mohd Kashif.'),
+        React.createElement('h2', { className: 'auth-title' }, 'PROJECT TITAN // CLASSIFIED ⚡'),
+        React.createElement('p', { className: 'auth-subtitle' }, 'Next-Generation Autonomous Architecture & Quantum Execution Engine. Stealth deployment in progress. Access restricted to Founder & Core Engineering.'),
         React.createElement(
           'form',
           { onSubmit: handlePinSubmit, className: 'auth-form' },
@@ -652,7 +652,7 @@ const RoadTo24LPAApp = () => {
             { className: 'password-input-group' },
             React.createElement('input', {
               type: showPassword ? 'text' : 'password',
-              placeholder: 'Enter Secret Password...',
+              placeholder: 'Enter Secret Passcode...',
               value: enteredPin,
               onChange: (e) => setEnteredPin(e.target.value),
               className: 'auth-input',
@@ -670,12 +670,12 @@ const RoadTo24LPAApp = () => {
             )
           ),
           pinError && React.createElement('p', { className: 'auth-error' }, pinError),
-          React.createElement('button', { type: 'submit', className: 'btn btn-primary auth-submit-btn' }, 'Unlock Operating System 🚀')
+          React.createElement('button', { type: 'submit', className: 'btn btn-primary auth-submit-btn' }, 'Decrypt Classified Terminal 🚀')
         ),
         React.createElement(
           'div',
           { className: 'auth-hint' },
-          React.createElement('span', null, '🔒 Private engineering portal • Password Protected')
+          React.createElement('span', null, '🔒 Level-5 Cryptographic Enclave • Stealth R&D Vault')
         )
       )
     );
@@ -692,9 +692,9 @@ const RoadTo24LPAApp = () => {
       React.createElement(
         'div',
         { className: 'os-logo-group' },
-        React.createElement('span', { className: 'os-badge-pulse' }, 'PRIVATE'),
-        React.createElement('h1', { className: 'os-main-title' }, 'Road to ₹24 LPA 🎯'),
-        React.createElement('span', { className: 'os-user-tag' }, 'Mohd Kashif\'s 12-Month OS')
+        React.createElement('span', { className: 'os-badge-pulse' }, 'STEALTH'),
+        React.createElement('h1', { className: 'os-main-title' }, 'PROJECT TITAN // STEALTH OS ⚡'),
+        React.createElement('span', { className: 'os-user-tag' }, 'Mohd Kashif\'s Autonomous Engine')
       ),
       React.createElement(
         'div',
