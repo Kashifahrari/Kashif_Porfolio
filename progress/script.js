@@ -196,19 +196,38 @@ function initDevLogSystem() {
     dateInput.value = new Date().toISOString().split("T")[0];
   }
 
-  // Load custom logs from localStorage or fallback
+  // Load custom logs from localStorage, filter out junk/test entries
   let customLogs = [];
   try {
     const saved = localStorage.getItem("kashif_dev_logs");
-    if (saved) customLogs = JSON.parse(saved);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed)) {
+        // Automatically purge any junk/test entries like "checkinh"
+        customLogs = parsed.filter((log) => {
+          const t = (log.title || "").toLowerCase().trim();
+          const h = Array.isArray(log.highlights) ? log.highlights.join(" ").toLowerCase() : "";
+          return (
+            t !== "checkinh" &&
+            t !== "test" &&
+            t !== "testing" &&
+            !h.includes("kadfjkladj") &&
+            t.length > 0
+          );
+        });
+        localStorage.setItem("kashif_dev_logs", JSON.stringify(customLogs));
+      }
+    }
   } catch (e) {
     customLogs = [];
   }
 
   let allLogs = [...customLogs, ...DEFAULT_LOGS];
+  let currentFilter = "all";
 
   // Render logs
   function renderLogs(filter = "all") {
+    currentFilter = filter;
     if (!logsFeed) return;
     logsFeed.innerHTML = "";
 
@@ -239,16 +258,23 @@ function initDevLogSystem() {
         year: "numeric"
       });
 
-      const highlightsHtml = log.highlights
+      const highlightsHtml = (log.highlights || [])
         .map((h) => `<li><i class="bx bx-check-circle"></i> <span>${h}</span></li>`)
         .join("");
 
-      const tagsHtml = log.tech
+      const tagsHtml = (log.tech || [])
         .map((t) => `<span class="log-tag">${t.trim()}</span>`)
         .join("");
 
       const linkHtml = log.link
         ? `<a href="${log.link}" target="_blank" rel="noopener noreferrer" class="log-link"><span>View Demo / Repo</span> <i class="bx bx-link-external"></i></a>`
+        : ``;
+
+      const isCustom = String(log.id).startsWith("custom-");
+      const deleteBtnHtml = isCustom
+        ? `<button class="log-delete-btn" data-log-id="${log.id}" title="Delete this log entry">
+             <i class="bx bx-trash"></i>
+           </button>`
         : ``;
 
       card.innerHTML = `
@@ -257,6 +283,7 @@ function initDevLogSystem() {
             <span class="log-category-pill ${log.category}">${log.categoryLabel || log.category}</span>
             <span class="log-date"><i class="bx bx-calendar"></i> ${formattedDate}</span>
           </div>
+          ${deleteBtnHtml}
         </div>
         <h3 class="log-title">${log.title}</h3>
         <ul class="log-highlights">
@@ -267,6 +294,23 @@ function initDevLogSystem() {
           ${linkHtml}
         </div>
       `;
+
+      // Attach delete event
+      if (isCustom) {
+        const delBtn = card.querySelector(".log-delete-btn");
+        if (delBtn) {
+          delBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (window.confirm("Are you sure you want to remove this log entry?")) {
+              customLogs = customLogs.filter((l) => l.id !== log.id);
+              localStorage.setItem("kashif_dev_logs", JSON.stringify(customLogs));
+              allLogs = [...customLogs, ...DEFAULT_LOGS];
+              renderLogs(currentFilter);
+              showToast("🗑️ Log entry removed!");
+            }
+          });
+        }
+      }
 
       logsFeed.appendChild(card);
     });

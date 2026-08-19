@@ -206,3 +206,100 @@
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+/* ===================================================
+   LIGHT THEME MODAL STYLING
+   =================================================== */
+.light-theme .resume-modal-overlay {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.light-theme .resume-modal-dialog {
+  background: #ffffff;
+  border-color: rgba(2, 132, 199, 0.25);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15), 0 0 35px rgba(2, 132, 199, 0.1);
+  color: #0f172a;
+}
+
+.light-theme .resume-modal-header {
+  background: #f8fafc;
+  border-bottom-color: rgba(2, 132, 199, 0.15);
+}
+
+.light-theme .resume-modal-title {
+  color: #0f172a;
+}
+
+.light-theme .resume-modal-close {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.light-theme .resume-modal-close:hover {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.light-theme .resume-summary-card {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.light-theme .resume-summary-title {
+  color: #0f172a;
+}
+
+.light-theme .resume-summary-text {
+  color: #475569;
+}
+
+.light-theme .resume-stat-pill {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.light-theme .resume-section-title {
+  color: #0f172a;
+  border-bottom-color: rgba(2, 132, 199, 0.15);
+}
+
+.light-theme .resume-exp-card {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.light-theme .resume-role-title {
+  color: #0f172a;
+}
+
+.light-theme .resume-bullets {
+  color: #334155;
+}
+
+.light-theme .resume-skill-pill {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.light-theme .resume-modal-footer {
+  background: #f8fafc;
+  border-top-color: rgba(2, 132, 199, 0.15);
+}
+
+.light-theme .resume-action-btn.btn-outline {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.light-theme .resume-action-btn.btn-outline:hover {
+  background: #e2e8f0;
+  border-color: #0284c7;
+  color: #0284c7;
+}

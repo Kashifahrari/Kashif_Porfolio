@@ -56,6 +56,27 @@
   color: var(--main-color);
 }
 
+.light-theme .btn-primary {
+  background: linear-gradient(135deg, var(--main-color), var(--accent-teal));
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
+}
+
+.light-theme .btn-primary:hover {
+  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.5);
+}
+
+.light-theme .btn-secondary {
+  background: rgba(2, 132, 199, 0.08);
+  border: 1.5px solid var(--main-color);
+  color: #0f172a;
+}
+
+.light-theme .btn-secondary:hover {
+  background: var(--main-color);
+  color: #ffffff;
+}
+
 .light-theme .social-icon-btn {
   background: rgba(0, 0, 0, 0.04);
   border-color: rgba(2, 132, 199, 0.25);

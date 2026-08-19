@@ -50,6 +50,22 @@
   color: #0f172a;
 }
 
+.light-theme .btn-glass:hover {
+  background: rgba(2, 132, 199, 0.12);
+  border-color: var(--main-color);
+  color: var(--main-color);
+}
+
+.light-theme .btn-primary {
+  background: linear-gradient(135deg, var(--main-color), var(--accent-teal));
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
+}
+
+.light-theme .btn-primary:hover {
+  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.5);
+}
+
 * {
   margin: 0;
   padding: 0;
