@@ -2,81 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PROJECT TITAN | Classified Next-Gen Architecture & Stealth Engine</title>
-    <meta name="robots" content="noindex, nofollow" />
-    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../assets/terminal.css" />
-    <link rel="stylesheet" href="../assets/cursor.css" />
-    <link rel="stylesheet" href="../assets/scroll-tools.css" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Background Particles & Ambient Orbs -->
-    <div id="particles-js"></div>
-    <div class="ambient-glow glow-1"></div>
-    <div class="ambient-glow glow-2"></div>
-    <div class="ambient-glow glow-3"></div>
-
-    <!-- Main Mounting Point for Private React OS Tracker -->
-    <div id="road-to-24lpa-root"></div>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <meta http-equiv="refresh" content="0;url=../portal/index.html" />
+    <title>Redirecting to Secure Portal...</title>
     <script>
-      // Background particles
-      document.addEventListener("DOMContentLoaded", () => {
-        if (typeof particlesJS === "function" && document.getElementById("particles-js")) {
-          particlesJS("particles-js", {
-            particles: {
-              number: { value: 50, density: { enable: true, value_area: 800 } },
-              color: { value: "#00abf0" },
-              shape: { type: "circle" },
-              opacity: { value: 0.35, random: true },
-              size: { value: 3, random: true },
-              line_linked: {
-                enable: true,
-                distance: 140,
-                color: "#00abf0",
-                opacity: 0.25,
-                width: 1,
-              },
-              move: {
-                enable: true,
-                speed: 1.5,
-                direction: "none",
-                random: true,
-                straight: false,
-                out_mode: "out",
-                bounce: false,
-              },
-            },
-            interactivity: {
-              detect_on: "canvas",
-              events: {
-                onhover: { enable: true, mode: "grab" },
-                resize: true,
-              },
-            },
-            retina_detect: true,
-          });
-        }
-      });
+      const target = '../portal/index.html' + window.location.search + window.location.hash;
+      window.location.replace(target);
     </script>
-    <script type="module" src="roadmap-app.js"></script>
-    <script defer src="../assets/security.js"></script>
-    <script defer src="../assets/terminal.js"></script>
-    <script defer src="../assets/scroll-tools.js"></script>
-    <script defer src="../assets/cursor.js"></script>
+  </head>
+  <body style="background: #080d1a; color: #64748b; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+    <p>Redirecting to <a href="../portal/index.html" style="color: #00abf0;">Secure Portal</a>...</p>
   </body>
 </html>

@@ -84,11 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
   init3DTilt();
   initDevLogSystem();
 
-  // Stealth Access: Press Ctrl + Shift + K to open private 24 LPA portal
+  // Stealth Access: Press Ctrl + Shift + K to open private portal
   document.addEventListener("keydown", (e) => {
     if (e.ctrlKey && e.shiftKey && (e.key === "K" || e.key === "k")) {
       e.preventDefault();
-      window.location.href = "../roadmap-24lpa/index.html";
+      window.location.href = "../portal/index.html";
     }
   });
 
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const statusBadge = document.querySelector(".status-badge");
   if (statusBadge) {
     statusBadge.addEventListener("dblclick", () => {
-      window.location.href = "../roadmap-24lpa/index.html";
+      window.location.href = "../portal/index.html";
     });
   }
 });
