@@ -50,8 +50,10 @@
   ██║ ╚═╝ ██║██║  ██╗       ██║   ███████╗██║  ██║██║ ╚═╝ ██║
   ╚═╝     ╚═╝╚═╝  ╚═╝       ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝
           </div>
-          <p style="color: #94a3b8;">Welcome to <strong>Mohd Kashif Ahrari's Interactive CLI</strong> [Version 2.0.26].</p>
-          <p class="t-hint">Type <strong style="color: #00abf0;">'help'</strong> to see available commands or <strong style="color: #10b981;">'sudo hire'</strong> to collaborate.</p>
+          <p style="color: #94a3b8;">Welcome to <strong>Mohd Kashif Ahrari's AI Terminal & Portfolio CLI</strong> [v2.0.26].</p>
+          <p class="t-hint">
+            🤖 <strong>AI Assistant Active:</strong> Ask any query about Kashif's experience, paste a <strong>Job Description</strong> for candidate fit analysis, or type <strong style="color: #00abf0;">'help'</strong> for built-in commands (<strong style="color: #10b981;">'sudo hire'</strong> to collaborate).
+          </p>
           <hr style="border: 0; border-top: 1px solid rgba(0, 171, 240, 0.2); margin: 0.5rem 0;" />
           
           <div id="terminalLogContainer"></div>
@@ -61,7 +63,7 @@
             <div class="t-prompt-row">
               <span class="t-prompt-user">visitor</span><span class="t-prompt-at">@</span><span class="t-prompt-host">kashif.dev</span>:<span class="t-prompt-path">~</span>$
             </div>
-            <input type="text" class="t-input-field" id="terminalInput" autocomplete="off" spellcheck="false" placeholder="Type a command..." />
+            <input type="text" class="t-input-field" id="terminalInput" autocomplete="off" spellcheck="false" placeholder="Ask a question, paste a JD, or type a command..." />
           </div>
         </div>
       </div>
