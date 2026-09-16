@@ -102,7 +102,8 @@ Available commands:
     `,
     about: `
 <strong>Mohd Kashif Ahrari</strong> — Software Engineer & Full-Stack Developer
-• <strong>Current Role:</strong> Software Engineer at Dhira Software Labs (promoted from Full-Stack Intern)
+• <strong>Current Role:</strong> Software Engineer at Dhira Software Labs (Remote)
+• <strong>Location:</strong> Gorakhpur, Uttar Pradesh, India (Open to Relocation)
 • <strong>Education:</strong> B.E in Computer Science & Engineering from Cambridge Institute of Technology (8.66 CGPA / 86.6%)
 • <strong>Author:</strong> Published Technical Author on GeeksforGeeks with <strong>61,000+ readers</strong>
 • <strong>Specialization:</strong> React 19, TypeScript, React Flow, Node.js, Express, Java (DSA), SQL & MongoDB
@@ -124,7 +125,7 @@ Available commands:
     `,
     experience: `
 <strong>Professional Experience:</strong>
-  • <strong>Software Engineer</strong> @ Dhira Software Labs (Feb 2026 – Present)
+  • <strong>Software Engineer (Remote)</strong> @ Dhira Software Labs (Feb 2026 – Present)
     - Promoted from Full-Stack Intern to full-time Software Engineer.
     - Engineered CBSE Aakalan platform with TanStack Query and client-side PDF generation.
   • <strong>Web Developer Intern</strong> @ Rooman Technologies (Aug 2023 – Sep 2023)
@@ -141,7 +142,8 @@ Available commands:
     `,
     contact: `
 <strong>Get in Touch:</strong>
-  • 📧 Email: <a href="mailto:kashifahrari12345@gmail.com" class="t-link">kashifahrari12345@gmail.com</a>
+  • 📍 Location: Gorakhpur, Uttar Pradesh, India (Working Remotely / Relocation Ready)
+  • 📧 Email: <a href="mailto:ahrarikashif@gmail.com" class="t-link">ahrarikashif@gmail.com</a>
   • 📱 Phone: <a href="tel:+917905291957" class="t-link">+91 7905291957</a>
   • 💬 WhatsApp: <a href="https://wa.me/917905291957" target="_blank" class="t-link">+91 7905291957</a>
   • 🔗 LinkedIn: <a href="https://www.linkedin.com/in/mohd-kashif-9096a4227" target="_blank" class="t-link">linkedin.com/in/mohd-kashif-9096a4227</a>
@@ -221,7 +223,7 @@ Session: Active (Guest Access Granted)
 
     // Bold **text**
     formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong style="color: #00abf0;">$1</strong>');
-    
+
     // Inline code `code`
     formatted = formatted.replace(/`([^`]+)`/g, '<code style="background: rgba(0,171,240,0.15); padding: 2px 6px; border-radius: 4px; color: #38bdf8;">$1</code>');
 

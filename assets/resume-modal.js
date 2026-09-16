@@ -43,7 +43,7 @@
                   <span class="resume-role-title">Software Engineer (Promoted from Full-Stack Intern)</span>
                   <span class="resume-date-tag">Feb 2026 – Present</span>
                 </div>
-                <div class="resume-org">Dhira Software Labs • Bengaluru, India</div>
+                <div class="resume-org">Dhira Software Labs • Remote (Gorakhpur, UP, India)</div>
                 <ul class="resume-bullets">
                   <li>Architected CBSE Aakalan (CBA Platform) assessment management module with TanStack Query and automated formula parsing.</li>
                   <li>Engineered client-side high-fidelity PDF report generation with jsPDF for official question papers and blueprints.</li>
@@ -101,7 +101,7 @@
         <!-- Footer Actions -->
         <div class="resume-modal-footer">
           <div style="font-size: 1.3rem; color: #94a3b8;">
-            <span>📍 Bengaluru, India • Available for Full-Time & High-Impact Roles</span>
+            <span>📍 Gorakhpur, UP, India • Remote / Relocation Ready • Available for Full-Time Roles</span>
           </div>
           <div class="resume-footer-actions">
             <button class="btn btn-glass" id="resumePrintBtn">
