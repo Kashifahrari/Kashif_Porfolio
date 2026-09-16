@@ -1,11 +1,17 @@
 /**
  * ===================================================
  * KASHIF CLI v2.0 - DEVELOPER INTERACTIVE TERMINAL
+ * Powered by Groq AI Agent & Real-Time Token Streaming
  * ===================================================
  */
 
 (function () {
   if (document.getElementById("kashif-terminal-root")) return;
+
+  // Backend API URL: automatically switches between localhost and production cloud backend
+  const PROD_BACKEND_URL = "https://kashif-portfolio-backend.onrender.com"; // Replace with your Render URL after deploying
+  const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.protocol === "file:";
+  const API_ENDPOINT = isLocal ? "http://localhost:5000/api/chat" : `${PROD_BACKEND_URL}/api/chat`;
 
   // Container root
   const root = document.createElement("div");
@@ -75,6 +81,7 @@
 
   let commandHistory = [];
   let historyIndex = -1;
+  let isGenerating = false;
 
   const COMMANDS = {
     help: `
@@ -189,7 +196,6 @@ Session: Active (Guest Access Granted)
   // Global Shortcut: Backtick (~) or Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "`" || e.key === "~") {
-      // Ignore if user is currently typing in an input/textarea outside terminal
       if (document.activeElement && (document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "TEXTAREA") && document.activeElement !== input) {
         return;
       }
@@ -204,9 +210,107 @@ Session: Active (Guest Access Granted)
     }
   });
 
+  // Simple Markdown to HTML formatter for terminal output
+  function formatTerminalText(rawText) {
+    let formatted = rawText
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+
+    // Bold **text**
+    formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong style="color: #00abf0;">$1</strong>');
+    
+    // Inline code `code`
+    formatted = formatted.replace(/`([^`]+)`/g, '<code style="background: rgba(0,171,240,0.15); padding: 2px 6px; border-radius: 4px; color: #38bdf8;">$1</code>');
+
+    // Bullet points
+    formatted = formatted.replace(/^[•\-\*]\s+(.*)$/gm, '<div style="margin-left: 1rem; margin-bottom: 0.25rem;">• $1</div>');
+
+    // URLs to clickable links
+    formatted = formatted.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" class="t-link">$1</a>');
+
+    // Guardrail alerts highlighting
+    formatted = formatted.replace(/\[GUARDRAIL\]/g, '<span style="background: rgba(239,68,68,0.2); color: #f87171; padding: 2px 6px; border-radius: 4px; font-weight: 700;">[GUARDRAIL]</span>');
+
+    // Convert newlines to breaks
+    formatted = formatted.replace(/\n/g, "<br />");
+
+    return formatted;
+  }
+
+  // Handle LLM Streaming from Flask Backend
+  async function streamAIResponse(promptText, responseContainer) {
+    isGenerating = true;
+    input.disabled = true;
+    responseContainer.innerHTML = `<span style="color: #ffd166;">⚡ ahrari-ai thinking<span class="t-cursor">...</span></span>`;
+
+    let accumulatedText = "";
+
+    try {
+      const response = await fetch(API_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message: promptText })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || `Server responded with status ${response.status}`);
+      }
+
+      // Clear the "thinking..." indicator
+      responseContainer.innerHTML = "";
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder("utf-8");
+
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value, { stream: true });
+        accumulatedText += chunk;
+
+        // Render formatted text with streaming cursor
+        responseContainer.innerHTML = formatTerminalText(accumulatedText) + ` <span class="t-cursor" style="color: #00abf0; font-weight: 700;">▌</span>`;
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+      }
+
+      // Final render without cursor
+      responseContainer.innerHTML = formatTerminalText(accumulatedText);
+
+    } catch (err) {
+      console.warn("AI Backend unreachable or returned error:", err);
+      responseContainer.innerHTML = `
+        <div style="color: #f87171; margin-bottom: 0.5rem;">
+          ⚠️ <strong>AI Agent Backend Offline:</strong> Unable to connect to <code>${API_ENDPOINT}</code>
+        </div>
+        <div style="color: #94a3b8; font-size: 0.9em; margin-bottom: 0.5rem;">
+          To activate the live Groq AI Agent & JD Matcher locally:
+          <ol style="margin: 0.5rem 0 0.5rem 1.5rem; color: #cbd5e1;">
+            <li>Ensure dependencies are installed: <code style="color: #38bdf8;">pip install -r requirements.txt</code></li>
+            <li>Add your free Groq key in <code style="color: #38bdf8;">.env</code></li>
+            <li>Start backend: <code style="color: #38bdf8;">python server.py</code></li>
+          </ol>
+          You can still use static commands like <strong style="color: #00abf0;">'about'</strong>, <strong style="color: #00abf0;">'skills'</strong>, <strong style="color: #00abf0;">'projects'</strong>, or <strong style="color: #10b981;">'sudo hire'</strong>.
+        </div>
+      `;
+    } finally {
+      isGenerating = false;
+      input.disabled = false;
+      input.focus();
+      terminalBody.scrollTop = terminalBody.scrollHeight;
+    }
+  }
+
   function handleCommand(cmdRaw) {
-    const cmd = cmdRaw.trim().toLowerCase();
-    if (!cmd) return;
+    if (isGenerating) return;
+
+    const trimmed = cmdRaw.trim();
+    const cmdKey = trimmed.toLowerCase();
+    if (!trimmed) return;
 
     commandHistory.push(cmdRaw);
     historyIndex = commandHistory.length;
@@ -222,25 +326,28 @@ Session: Active (Guest Access Granted)
       </div>
     `;
 
-    if (COMMANDS[cmd]) {
-      let result = typeof COMMANDS[cmd] === "function" ? COMMANDS[cmd]() : COMMANDS[cmd];
-      if (result !== null) {
-        const respDiv = document.createElement("div");
-        respDiv.className = "t-response";
-        respDiv.innerHTML = result;
-        outputBlock.appendChild(respDiv);
-        logContainer.appendChild(outputBlock);
-      }
-    } else {
-      const respDiv = document.createElement("div");
-      respDiv.className = "t-response";
-      respDiv.innerHTML = `<span style="color: #ff6b6b;">Command not found: '${cmdRaw}'. Type <strong style="color: #00abf0;">'help'</strong> for a list of commands.</span>`;
-      outputBlock.appendChild(respDiv);
-      logContainer.appendChild(outputBlock);
-    }
+    const respDiv = document.createElement("div");
+    respDiv.className = "t-response";
+    outputBlock.appendChild(respDiv);
+    logContainer.appendChild(outputBlock);
 
     input.value = "";
     terminalBody.scrollTop = terminalBody.scrollHeight;
+
+    // 1. Check if it's a static built-in command
+    if (COMMANDS[cmdKey]) {
+      let result = typeof COMMANDS[cmdKey] === "function" ? COMMANDS[cmdKey]() : COMMANDS[cmdKey];
+      if (result !== null) {
+        respDiv.innerHTML = result;
+      } else {
+        // null result means command handled its own DOM (like clear or exit)
+        outputBlock.remove();
+      }
+      terminalBody.scrollTop = terminalBody.scrollHeight;
+    } else {
+      // 2. Otherwise, treat as natural language question / JD and stream from AI Agent!
+      streamAIResponse(trimmed, respDiv);
+    }
   }
 
   // Input events
