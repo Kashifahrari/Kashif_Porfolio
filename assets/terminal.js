@@ -141,7 +141,7 @@ Available commands:
     `,
     contact: `
 <strong>Get in Touch:</strong>
-  • 📧 Email: <a href="mailto:kashifahrari12345@gmail.com" class="t-link">kashifahrari12345@gmail.com</a>
+  • 📧 Email: <a href="mailto:ahrarikashif@gmail.com" class="t-link">ahrarikashif@gmail.com</a>
   • 📱 Phone: <a href="tel:+917905291957" class="t-link">+91 7905291957</a>
   • 💬 WhatsApp: <a href="https://wa.me/917905291957" target="_blank" class="t-link">+91 7905291957</a>
   • 🔗 LinkedIn: <a href="https://www.linkedin.com/in/mohd-kashif-9096a4227" target="_blank" class="t-link">linkedin.com/in/mohd-kashif-9096a4227</a>

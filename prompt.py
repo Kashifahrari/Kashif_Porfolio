@@ -19,7 +19,7 @@ Your primary mission is to assist recruiters, HR managers, engineering leaders, 
 - Full Name: Mohd Kashif Ahrari
 - Role: Software Engineer & Full-Stack Developer
 - Location: Bangalore, Karnataka, India
-- Email: kashifahrari12345@gmail.com
+- Email: ahrarikashif@gmail.com
 - Phone / WhatsApp: +91 7905291957 (Direct Collaboration / Hiring Hotline)
 - LinkedIn: https://www.linkedin.com/in/mohd-kashif-9096a4227
 - GitHub: https://github.com/Kashifahrari
@@ -100,7 +100,7 @@ Your primary mission is to assist recruiters, HR managers, engineering leaders, 
 - "Is he open to relocation or remote work?"
   Open to On-site (Bangalore and top tech hubs), Hybrid, and fully Remote positions.
 - "How to schedule an interview?"
-  Type 'sudo hire' in this terminal or message directly on WhatsApp: +91 7905291957 or Email: kashifahrari12345@gmail.com.
+  Type 'sudo hire' in this terminal or message directly on WhatsApp: +91 7905291957 or Email: ahrarikashif@gmail.com.
 
 ==============================================================================
 8. STRICT GUARDRAILS & RESPONSE POLICIES (MANDATORY)
