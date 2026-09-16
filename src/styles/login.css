@@ -1,0 +1,161 @@
+
+/*  <video autoplay muted loop id="myVideo">
+    <source src="vee.mp4" type="video/mp4">
+</video>*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'poopins',sans-serif;
+}
+
+/*body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+}*/
+
+section{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
+ height: 100vh;
+ background: url('hii.jpg');
+ background-size: cover;
+ background-position: center;
+animation: kashif 5s linear infinite;
+}
+
+@keyframes kashif{
+    100%{
+        filter: hue-rotate(360deg);
+    }
+    
+}
+.login-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    color: aqua;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2sx;
+    backdrop-filter: blur(25px);
+}
+
+   
+h2{
+    font-size: 2em;
+    color:#fff;
+    text-align: center;
+}
+.input-box{
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+   border-bottom:  2px solid #fff;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #fff;
+    transform: translateY(-50%);
+    font-size: 1em;
+    counter-reset: #fff ;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 40px 0 5px;
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 58px;
+
+}
+.remember-forget{
+    margin: -15px 0 15px;
+    font-size: .9rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-forget label input{
+    margin-right: 3px;
+}
+.remember-forget a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forget a:hover{
+    text-decoration: underline;
+}
+.remember-forget align-self:hover{
+text-decoration: underline;
+}
+
+button{
+    width: 100%;
+    height: 35px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    color: #000;
+    font-weight:600;
+    font-size: 1rem;
+}
+
+.register-link{
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+}
+.register-link p a{
+    color: #fff;
+    margin-left: 7px;
+    text-decoration: none;
+}
+
+.register-link p a:hover{
+    text-decoration: underline;
+}
+@media(max-width:360px){
+    .login-box{
+        width: 100%;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+    }
+.input-box{
+    width: 290px;
+}
+}

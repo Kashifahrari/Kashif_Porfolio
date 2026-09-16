@@ -1,0 +1,1 @@
+﻿import React from 'react'; const UnderDevelopmentPage = () => <div style={{minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center',background:'var(--bg-color)',color:'var(--text-color)',fontSize:'2rem'}}>🚧 Under Development</div>; export default UnderDevelopmentPage;

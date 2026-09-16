@@ -1,0 +1,1 @@
+﻿import React from 'react'; import '../../styles/login.css'; const LoginPage = () => <div style={{minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center',background:'var(--bg-color)',color:'var(--text-color)'}}>Login Page</div>; export default LoginPage;

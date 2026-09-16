@@ -1,0 +1,1 @@
+﻿import React from 'react'; const NotFoundPage = () => <div style={{minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center',background:'var(--bg-color)',color:'var(--text-color)',fontSize:'2rem'}}>404 — Page Not Found</div>; export default NotFoundPage;
