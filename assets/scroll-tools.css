@@ -1,0 +1,131 @@
+/* ===================================================
+   SCROLL TOOLS & TOAST NOTIFICATION STYLES
+   =================================================== */
+
+.scroll-top-wrap {
+  position: fixed !important;
+  bottom: 2.5rem !important;
+  right: 2.5rem !important;
+  z-index: 99990 !important;
+  width: 48px !important;
+  height: 48px !important;
+  cursor: pointer !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(20px) scale(0.9) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 171, 240, 0.2) !important;
+  background: transparent !important;
+  user-select: none !important;
+}
+
+.scroll-top-wrap.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.scroll-top-wrap:hover {
+  transform: translateY(-4px) scale(1.08) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 171, 240, 0.4) !important;
+}
+
+.scroll-progress-svg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 48px !important;
+  height: 48px !important;
+  transform: rotate(-90deg) !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+
+.scroll-progress-bg {
+  fill: #081b29 !important;
+  stroke: rgba(0, 171, 240, 0.25) !important;
+  stroke-width: 3.5 !important;
+}
+
+.light-theme .scroll-progress-bg {
+  fill: #ffffff !important;
+  stroke: rgba(2, 132, 199, 0.25) !important;
+}
+
+.scroll-progress-bar {
+  fill: none !important;
+  stroke: #00abf0 !important;
+  stroke-width: 3.5 !important;
+  stroke-linecap: round !important;
+  transition: stroke-dashoffset 0.1s ease-out !important;
+}
+
+.light-theme .scroll-progress-bar {
+  stroke: #0284c7 !important;
+}
+
+.scroll-top-icon {
+  position: relative !important;
+  z-index: 2 !important;
+  font-size: 24px !important;
+  color: #00abf0 !important;
+  transition: transform 0.25s ease !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+}
+
+.light-theme .scroll-top-icon {
+  color: #0284c7 !important;
+}
+
+.scroll-top-wrap:hover .scroll-top-icon {
+  transform: translateY(-2px) !important;
+}
+
+/* Copy Toast */
+.cyber-toast-container {
+  position: fixed !important;
+  top: 2.5rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(-30px) !important;
+  z-index: 1000000 !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.cyber-toast-container.active {
+  opacity: 1 !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+.cyber-toast {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 1.2rem !important;
+  padding: 1.2rem 2.2rem !important;
+  background: rgba(8, 27, 41, 0.95) !important;
+  border: 1.5px solid #10b981 !important;
+  border-radius: 3rem !important;
+  color: #ffffff !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(16, 185, 129, 0.35) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+}
+
+.cyber-toast i {
+  font-size: 2rem !important;
+  color: #10b981 !important;
+}
+
+.cyber-toast-highlight {
+  color: #ffd166 !important;
+  font-family: monospace !important;
+  font-size: 1.3rem !important;
+}

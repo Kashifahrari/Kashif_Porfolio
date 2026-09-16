@@ -1,0 +1,289 @@
+/* ===================================================
+   INTERACTIVE DEVELOPER TERMINAL (KASHIF CLI v2.0)
+   =================================================== */
+
+/* Floating CLI Trigger Button */
+.terminal-launcher-btn {
+  position: fixed;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  z-index: 99990;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.8rem;
+  background: rgba(8, 27, 41, 0.85);
+  border: 1.5px solid var(--card-border, rgba(0, 171, 240, 0.4));
+  border-radius: 3rem;
+  color: var(--main-color, #00abf0);
+  font-family: "Fira Code", monospace, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  cursor: pointer;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 171, 240, 0.25);
+  transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+  user-select: none;
+}
+
+.terminal-launcher-btn:hover {
+  background: rgba(0, 171, 240, 0.2);
+  border-color: var(--main-color, #00abf0);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 171, 240, 0.45);
+}
+
+.terminal-launcher-btn .cli-dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: cliPulse 2s infinite ease-in-out;
+}
+
+@keyframes cliPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* Terminal Modal Backdrop */
+.terminal-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 13, 20, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.terminal-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Terminal Window */
+.terminal-window {
+  width: 100%;
+  max-width: 780px;
+  height: 520px;
+  background: rgba(6, 18, 28, 0.95);
+  border: 1.5px solid rgba(0, 171, 240, 0.4);
+  border-radius: 1.8rem;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 171, 240, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.92) translateY(20px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.terminal-modal-overlay.active .terminal-window {
+  transform: scale(1) translateY(0);
+}
+
+/* Terminal Header */
+.terminal-header {
+  height: 4.2rem;
+  padding: 0 1.6rem;
+  background: rgba(13, 37, 56, 0.9);
+  border-bottom: 1px solid rgba(0, 171, 240, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.terminal-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.t-btn {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.t-btn:hover {
+  transform: scale(1.15);
+}
+
+.t-close { background: #ff5f56; }
+.t-min { background: #ffbd2e; }
+.t-max { background: #27c93f; }
+
+.terminal-title {
+  font-family: "Fira Code", monospace, sans-serif;
+  font-size: 1.25rem;
+  color: #94a3b8;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.terminal-title span {
+  color: #00abf0;
+  font-weight: 700;
+}
+
+.terminal-shortcut-hint {
+  font-family: "Fira Code", monospace, sans-serif;
+  font-size: 1.15rem;
+  color: #64748b;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Terminal Body & Log Screen */
+.terminal-body {
+  flex: 1;
+  padding: 2rem 2.2rem;
+  overflow-y: auto;
+  font-family: "Fira Code", monospace, sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar for Terminal */
+.terminal-body::-webkit-scrollbar {
+  width: 6px;
+}
+.terminal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.terminal-body::-webkit-scrollbar-thumb {
+  background: rgba(0, 171, 240, 0.3);
+  border-radius: 3px;
+}
+
+.t-welcome-banner {
+  color: #00abf0;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  white-space: pre-wrap;
+  filter: drop-shadow(0 0 8px rgba(0, 171, 240, 0.4));
+}
+
+.t-hint {
+  color: #ffd166;
+  font-size: 1.25rem;
+}
+
+.t-output-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.t-prompt-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #4ecdc4;
+  font-weight: 600;
+}
+
+.t-prompt-user {
+  color: #10b981;
+}
+
+.t-prompt-at {
+  color: #64748b;
+}
+
+.t-prompt-host {
+  color: #00abf0;
+}
+
+.t-prompt-path {
+  color: #ffd166;
+}
+
+.t-command-text {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.t-response {
+  color: #cbd5e1;
+  padding-left: 1.6rem;
+  border-left: 2px solid rgba(0, 171, 240, 0.3);
+  margin-top: 0.4rem;
+}
+
+.t-badge {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.6rem;
+  background: rgba(0, 171, 240, 0.15);
+  border: 1px solid rgba(0, 171, 240, 0.3);
+  color: #00abf0;
+  margin: 0.2rem 0.4rem 0.2rem 0;
+  font-size: 1.2rem;
+}
+
+.t-link {
+  color: #00abf0;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.t-link:hover {
+  color: #4ecdc4;
+}
+
+/* Active Input Row */
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.t-input-field {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: "Fira Code", monospace, sans-serif;
+  font-size: 1.35rem;
+  color: #ffffff;
+  caret-color: #00abf0;
+}
+
+@media (max-width: 768px) {
+  .terminal-launcher-btn {
+    bottom: 2rem;
+    left: 2rem;
+    padding: 0.8rem 1.4rem;
+    font-size: 1.2rem;
+  }
+  .terminal-window {
+    height: 80vh;
+  }
+}
