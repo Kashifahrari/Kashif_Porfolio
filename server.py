@@ -1,20 +1,20 @@
 """
 ==============================================================================
-KASHIF AI TERMINAL - FLASK BACKEND SERVER
+KASHIF AI TERMINAL - FLASK BACKEND SERVER (SECURE PRODUCTION READY)
 ==============================================================================
-A lightweight, beginner-friendly Flask backend that connects the portfolio's
-interactive CLI terminal to Groq's ultra-fast LLM (llama-3.3-70b-versatile).
-
 Features:
-- Real-time token streaming (Server-Sent Events)
-- Secure API key handling via .env
+- Real-time token streaming with Groq LLM
+- Rate limiting per IP to protect against API key abuse & spam
+- Max payload length validation (prevents token exhaustion)
+- Secure environment configuration via .env
 - Exhaustive resume grounding & guardrails from prompt.py
-- Built-in Job Description (JD) match analyzer
 ==============================================================================
 """
 
 import os
 import sys
+import time
+from collections import defaultdict
 from flask import Flask, request, Response, jsonify
 from flask_cors import CORS
 from dotenv import load_dotenv
@@ -35,10 +35,10 @@ load_dotenv()
 # 2. Initialize Flask application
 app = Flask(__name__)
 
-# 3. Enable CORS so your portfolio frontend (e.g. Live Server or localhost) can call this API
+# 3. Enable CORS for secure communication
 CORS(app)
 
-# 4. Initialize the Groq client with the API key from .env
+# 4. Initialize the Groq client with the API key from environment
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 client = None
 
@@ -47,6 +47,25 @@ if GROQ_API_KEY and GROQ_API_KEY != "your_groq_api_key_here":
 else:
     print("\n[WARNING] GROQ_API_KEY is not set or using default placeholder in .env!")
     print("Get a free API key at https://console.groq.com/keys and paste it in .env\n")
+
+# 5. Security: Simple In-Memory Rate Limiter (Max 25 requests per minute per IP)
+RATE_LIMIT_WINDOW_SECONDS = 60
+MAX_REQUESTS_PER_WINDOW = 25
+request_history = defaultdict(list)
+
+
+def is_rate_limited(client_ip: str) -> bool:
+    """Check if the requesting IP has exceeded the allowed rate limit."""
+    now = time.time()
+    history = request_history[client_ip]
+    # Remove timestamps older than the rate limit window
+    request_history[client_ip] = [ts for ts in history if now - ts < RATE_LIMIT_WINDOW_SECONDS]
+    
+    if len(request_history[client_ip]) >= MAX_REQUESTS_PER_WINDOW:
+        return True
+    
+    request_history[client_ip].append(now)
+    return False
 
 
 @app.route('/api/health', methods=['GET'])
@@ -64,12 +83,19 @@ def health_check():
 @app.route('/api/chat', methods=['POST'])
 def chat():
     """
-    Main chat endpoint with real-time streaming.
+    Main chat endpoint with real-time streaming and security guards.
     Receives user query / JD from terminal and streams back LLM response tokens.
     """
     global client
 
-    # Re-check key in case user updated .env without full restart
+    # Security: Rate Limiting Check
+    client_ip = request.headers.get("X-Forwarded-For", request.remote_addr or "unknown").split(",")[0].strip()
+    if is_rate_limited(client_ip):
+        return jsonify({
+            "error": "Rate limit exceeded. Please wait a moment before sending more queries."
+        }), 429
+
+    # Re-check key in case user updated environment without full restart
     if not client:
         key = os.environ.get("GROQ_API_KEY")
         if key and key != "your_groq_api_key_here":
@@ -77,7 +103,7 @@ def chat():
 
     if not client:
         return jsonify({
-            "error": "Groq API key not configured. Please add your GROQ_API_KEY in the .env file."
+            "error": "Groq API key not configured on server."
         }), 500
 
     # Parse request JSON from frontend terminal
@@ -86,6 +112,12 @@ def chat():
 
     if not user_message:
         return jsonify({"error": "Message cannot be empty."}), 400
+
+    # Security: Maximum payload length protection (max 4000 characters)
+    if len(user_message) > 4000:
+        return jsonify({
+            "error": "Message too long. Please keep questions or Job Descriptions under 4000 characters."
+        }), 400
 
     # Generator function for streaming response tokens chunk-by-chunk
     def generate_stream():
@@ -110,11 +142,11 @@ def chat():
                     if delta:
                         yield delta
                 
-                # If streaming completed successfully, exit function
+                # If streaming completed successfully, exit generator
                 return
                 
-            except Exception as err:
-                # If this model failed on stream consumption, try next candidate
+            except Exception:
+                # If this model fails, try next candidate
                 continue
         
         yield "\n[AI Error]: Unable to complete request with available Groq models."

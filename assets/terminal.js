@@ -9,7 +9,7 @@
   if (document.getElementById("kashif-terminal-root")) return;
 
   // Backend API URL: automatically switches between localhost and production cloud backend
-  const PROD_BACKEND_URL = "https://kashif-portfolio-backend.onrender.com"; // Replace with your Render URL after deploying
+  const PROD_BACKEND_URL = "https://kashif-porfolio.onrender.com";
   const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.protocol === "file:";
   const API_ENDPOINT = isLocal ? "http://localhost:5000/api/chat" : `${PROD_BACKEND_URL}/api/chat`;
 
