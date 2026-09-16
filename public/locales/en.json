@@ -1,0 +1,310 @@
+{
+  "translation": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "about_me": "About Me",
+      "contact": "Contact",
+      "education": "Education",
+      "skills": "Skills",
+      "projects": "Projects",
+      "certificates": "Certificates",
+      "progress": "Dev Log",
+      "follow": "Follow Me"
+    },
+    "hero": {
+      "badge": "Software Engineer @ Dhira Software Labs | Available for Projects",
+      "greeting": "Hi, I'm",
+      "name": "Mohd Kashif Ahrari",
+      "im_a": "I engineer",
+      "description": "Software Engineer at Dhira Software Labs & Full-Stack Developer with 8.66 CGPA (86.6%). Experienced in React 19, React Flow, TypeScript, Node.js, Express, Java DSA, SQL, and enterprise-grade platforms.",
+      "explore": "Explore My Work 🚀",
+      "contact": "Get in Touch ✉️",
+      "resume": "Learn More About Me 📄"
+    },
+    "typed": [
+      "Enterprise Full-Stack Applications",
+      "Interactive React Flow Canvases",
+      "Robust Backend REST APIs",
+      "Modern React 19 & TypeScript UIs"
+    ],
+    "stats": {
+      "cgpa": "8.66 CGPA (86.6%)",
+      "cgpa_desc": "Cambridge Institute of Tech",
+      "internships": "Software Engineer",
+      "internships_desc": "Dhira Software Labs & SM Web Solutions",
+      "readers": "61,000+ Reads",
+      "readers_desc": "GeeksforGeeks Top Tech Author",
+      "projects": "10+ Projects",
+      "projects_desc": "Full-Stack, React Flow & APIs"
+    },
+    "home": {
+      "title": "Hi, I'm <span>Mohd Kashif</span>",
+      "subtitle": "Software Engineer & Full-Stack Developer",
+      "paragraph": "Hello, I'm Mohd Kashif, a Software Engineer at Dhira Software Labs with a strong foundation in React 19, TypeScript, React Flow, Java, Python, and Node.js. Completed coursework in Data Structures and Algorithms, published author on GeeksforGeeks with 61,000+ readers, and winner of inter-college front-end competitions.",
+      "explore": "Explore More",
+      "contact": "Contact Me",
+      "imageAlt": "Portrait of Mohd Kashif Ahrari"
+    },
+    "about": {
+      "title": "About Me",
+      "heading": "About <span>Me</span>",
+      "subtitle": "Software Engineer & Full-Stack Developer",
+      "greeting": "Hi there! Glad to see you here.",
+      "bio": "Hello! I am <strong>Mohd Kashif</strong>, a Software Engineer at <strong>Dhira Software Labs</strong> (promoted from Full-Stack Intern) and Computer Science graduate from <strong>Cambridge Institute of Technology</strong> (8.66 CGPA / 86.6%). I specialize in <strong>React 19, TypeScript, React Flow, Node.js, Express, Java (DSA),</strong> and <strong>SQL / MongoDB</strong>. I have engineered platforms like <strong>CBSE Aakalan (CBA Platform)</strong>, <strong>Stay Ease Rental Platform</strong>, and <strong>Mega-Vlog</strong>. Additionally, I am a published author on <strong>GeeksforGeeks with 61,000+ readers</strong> and proficient in AI-assisted productivity tools like ChatGPT and GitHub Copilot.",
+      "paragraph": "I create high-performance, accessible, and responsive enterprise web architectures with modern design systems and intuitive user experiences.",
+      "cta": "Let's Talk",
+      "contact": "Contact Me",
+      "learn_more": "Learn More About Me →"
+    },
+    "projects": {
+      "title": "Featured <span>Projects</span>",
+      "subtitle": "A showcase of enterprise platforms, full-stack systems, and production engineering solutions I've engineered.",
+      "project1": {
+        "title": "CBSE Aakalan (CBA Platform)",
+        "desc": "Enterprise assessment management platform for CBSE developed at Dhira Software Labs, featuring automated question banking, rich formula authoring, TanStack Query state management, and print-ready PDF export via jsPDF.",
+        "link": "Explore Project 🚀"
+      },
+      "project2": {
+        "title": "Stay Ease - Rental Platform",
+        "desc": "A full-stack property rental application featuring secure Passport.js session auth, CRUD listings, user reviews, responsive Bootstrap 5 UI, and RESTful APIs.",
+        "link": "View Architecture ⚡"
+      },
+      "project3": {
+        "title": "Mega-Vlog : Blogging Website",
+        "desc": "A modern responsive blogging platform built with React, Tailwind CSS, and Appwrite backend for authentication, database content storage, and media uploads.",
+        "link": "View Details 📊"
+      },
+      "project4": {
+        "title": "Student Attendance Management System",
+        "desc": "A real-time attendance management system built with HTML, CSS, JS, PHP, and MySQL for tracking attendance by subject, exam eligibility calculation, and report generation.",
+        "link": "View Management System 📋"
+      }
+    },
+    "tech_stack": {
+      "title": "Core <span>Tech Stack</span>"
+    },
+    "contact_me": {
+      "title": "Have an exciting project or opportunity in mind?",
+      "p": "Let's build something exceptional and unique together!",
+      "cta": "Start a Conversation 🚀",
+      "whatsapp": "Chat on WhatsApp 💬"
+    },
+    "journey": {
+      "heading": "My <span>Journey</span>"
+    },
+    "education": {
+      "title": "Education",
+      "class10": {
+        "title": "Class X",
+        "school": "ST.JOSEPH'S SCHOOL GORAKHNATH GORAKHPUR UTTAR PRADESH",
+        "result": "Passed with 85.25%"
+      },
+      "class12": {
+        "title": "Class XII",
+        "school": "ST.JOSEPH'S SCHOOL GORAKHNATH GORAKHPUR UTTAR PRADESH",
+        "result": "Passed with 1st division"
+      },
+      "degree": {
+        "title": "Bachelor of Engineering - CSE",
+        "college": "Cambridge Institute Of Technology Bangalore (2021 – 2025)",
+        "score": "B.E in Computer Science & Engineering with 8.66 CGPA (86.6%)"
+      }
+    },
+    "experience": {
+      "title": "Experience",
+      "exp0": {
+        "year": "Sep 2025 – Present",
+        "title": "Software Engineer – Dhira Software Labs Pvt. Ltd",
+        "desc": "Promoted from Full-Stack Intern after 3 months. Engineered full-stack web applications with <b>React 19</b> frontend and <b>Node.js</b> backend. Built interactive Canvas Frontend modules using <b>React Flow</b>. Built responsive UIs using <b>Tailwind CSS, SCSS, and Material-UI</b> in agile sprints."
+      },
+      "exp1": {
+        "year": "Feb 2025 – Sep 2025",
+        "title": "Backend Intern – SM Web Solutions Pvt. Ltd",
+        "desc": "Built and integrated RESTful APIs using <b>Node.js</b> and <b>Express.js</b>. Designed and optimized SQL queries to improve database performance across <b>MySQL and MongoDB</b>."
+      },
+      "exp2": {
+        "year": "Sep 2024 – Feb 2025",
+        "title": "Web Developer Intern – Rooman Technologies Pvt. Ltd",
+        "desc": "Developed multiple projects including a <b>Portfolio Website</b>, <b>Landing Page</b>, and <b>Calculator App</b> using <b>HTML, CSS, JavaScript</b>, and <b>React</b>."
+      },
+      "exp3": {
+        "year": "2024 (3 Months)",
+        "title": "Content Writer Intern – GeeksforGeeks",
+        "desc": "Published technical articles read by <b>61,000+ readers</b>, covering programming and DOM architecture. Recognized with a certificate of internship for exceptional contribution.",
+        "articleHead": "Top Featured Article:",
+        "link": "JavaScript HTML DOM (61,000+ Reads)",
+        "more": "And many more..."
+      }
+    },
+    "skills": {
+      "heading": "My <span>Skills</span>",
+      "technical": "Technical Skills",
+      "professional": "Professional Skills",
+      "items": {
+        "react_reactflow": "React 19 & React Flow",
+        "nodejs_express": "Node.js & Express.js",
+        "typescript_js": "TypeScript & JavaScript (ES6+)",
+        "java_dsa": "Java & DSA",
+        "sql_mongodb": "SQL (MySQL) & MongoDB",
+        "tailwind_css": "Tailwind CSS, SCSS & HTML5",
+        "web_dev": "Full-Stack Web Architecture",
+        "backend_api": "RESTful APIs & State Management",
+        "ai_productivity": "AI-Assisted Productivity (Copilot / LLMs)",
+        "content_writing": "Technical Authoring (61K+ GFG Reads)",
+        "teamwork": "Agile Sprints & Team Leadership",
+        "leadership": "Competition Organization (Decode to Code)"
+      }
+    },
+    "footer": {
+      "copyright": "Copyright © 2023 | Designed and Maintenance by Mohd Kashif | All Rights Reserved"
+    },
+    "contact": {
+      "badge": "Available for freelance projects & full-time roles",
+      "heading": "Get In <span>Touch</span>",
+      "subtitle": "Have a project in mind, an internship or full-time opportunity, or just want to say hi? I'd love to connect!",
+      "cards": {
+        "email_title": "Email Address",
+        "email_desc": "Direct inbox — quick response",
+        "phone_title": "Phone & WhatsApp",
+        "phone_desc": "Available Mon - Sat (9 AM - 8 PM IST)",
+        "location_title": "Location",
+        "location_desc": "BTM Layout, Bengaluru, Karnataka, India",
+        "social_title": "Social Profiles",
+        "social_desc": "Let's connect on professional networks",
+        "copy_btn": "Copy",
+        "copied_btn": "Copied! ✨",
+        "whatsapp_btn": "Chat on WhatsApp"
+      },
+      "form": {
+        "title": "Send Me a <span>Message</span>",
+        "subtitle": "Fill out the form below and I'll get back to you within 24 hours.",
+        "nameLabel": "Full Name",
+        "namePlaceholder": "Mohd Kashif",
+        "emailLabel": "Email Address",
+        "emailPlaceholder": "you@example.com",
+        "subjectLabel": "Subject / Project Type",
+        "subjectPlaceholder": "Web Development / Full-Stack Project / Hiring",
+        "messageLabel": "Your Message",
+        "messagePlaceholder": "Tell me about your project, timeline, or just say hello...",
+        "charCount": "characters",
+        "send": "Send Message 🚀",
+        "sending": "Sending Message...",
+        "sent": "Message Sent! 🎉",
+        "successTitle": "Thank You!",
+        "successMsg": "Your message has been sent successfully. I will get back to you as soon as possible!",
+        "closeModal": "Close"
+      },
+      "quickConnect": {
+        "title": "Prefer Direct Communication?",
+        "desc": "Skip the form and reach out directly through WhatsApp, Email, or LinkedIn."
+      }
+    },
+    "cert": {
+      "badge": "15+ Verified Professional Credentials & Internships",
+      "heading": "My <span>Certificates</span>",
+      "title": "Certificates",
+      "subtitle": "Industry-recognized credentials in Full-Stack Web Development, Backend APIs, Python, Cybersecurity, and Blockchain.",
+      "filters": {
+        "all": "All Credentials (15)",
+        "internships": "Internships (5)",
+        "web": "Web & APIs (4)",
+        "security": "Cyber & IP (3)",
+        "courses": "Foundations (3)"
+      },
+      "verified": "Verified Credential",
+      "view": "View Certificate",
+      "modal_close": "Close",
+      "modal_prev": "Previous",
+      "modal_next": "Next"
+    },
+    "certs": {
+      "cert1": { "org": "Govt of India", "title": "NIPAM - IP Rights", "desc": "National Intellectual Property Awareness Mission" },
+      "cert2": { "org": "IBM", "title": "IBM - API Development", "desc": "API Design, Architecture & Backend Integration" },
+      "cert3": { "org": "Rooman Tech", "title": "Web Developer Internship", "desc": "Front-End & Responsive Web Engineering" },
+      "cert4": { "org": "Wadhwani Foundation", "title": "Employability Foundations", "desc": "93-Hour Professional Core Competencies" },
+      "cert5": { "org": "Infosys Springboard", "title": "Responsive Web Development", "desc": "Modern HTML5, CSS3 & JavaScript Web Apps" },
+      "cert6": { "org": "Infosys Springboard", "title": "Browsing the Web & Networking", "desc": "Web Architecture, HTTP Protocols & Networking" },
+      "cert7": { "org": "Udemy", "title": "The Complete JavaScript Course", "desc": "ES6+, Asynchronous JS, DOM & OOP Patterns" },
+      "cert8": { "org": "OpenWeaver", "title": "JavaScript Programming", "desc": "Core JavaScript Logic & Algorithms" },
+      "cert9": { "org": "GeeksforGeeks", "title": "Content Writing Internship", "desc": "Technical Article Writing on DSA & Programming" },
+      "cert10": { "org": "FutureSkills Prime", "title": "Digital 101 Journey", "desc": "NASSCOM & Govt of India Digital Skill Initiative" },
+      "cert11": { "org": "IIT Allahabad", "title": "Android App Development", "desc": "Summer Internship - Effervescence IIT Allahabad" },
+      "cert12": { "org": "Aqmenz Automation", "title": "Python & Application Projects", "desc": "Python Libraries, Automation & Projects" },
+      "cert13": { "org": "DSCI Govt of India", "title": "Cyber Security Awareness", "desc": "Information Security & Threat Prevention" },
+      "cert14": { "org": "IIT Allahabad", "title": "Blockchain for Beginners", "desc": "Summer Internship - Distributed Ledgers & Web3" },
+      "cert15": { "org": "Blockchain Council", "title": "Foundations of Blockchain", "desc": "Cryptographic Hash Functions & Smart Contracts" }
+    },
+    "progress": {
+      "badge": "Live Build-in-Public Engineering Log",
+      "heading": "Daily <span>Dev Log</span> & Roadmap",
+      "subtitle": "Tracking my day-to-day engineering progress, solved challenges, and interactive milestone roadmap.",
+      "stats": {
+        "streak": "14-Day Streak",
+        "streak_desc": "Continuous Daily Shipping",
+        "tasks": "42+ Shipped",
+        "tasks_desc": "Completed Tasks & Features",
+        "hours": "180+ Hours",
+        "hours_desc": "Hands-on Coding & Problem Solving",
+        "active": "Active Focus",
+        "active_desc": "Full-Stack Web & Scalable APIs"
+      },
+      "roadmap": {
+        "title": "Interactive Milestone Roadmap",
+        "subtitle": "Explore my learning trajectory and production engineering milestones."
+      },
+      "filters": {
+        "all": "All Logs",
+        "fullstack": "Full-Stack Web 💻",
+        "backend": "Backend & APIs ⚡",
+        "dsa": "DSA & Logic 🧠",
+        "learning": "Research & Notes 📚"
+      },
+      "postBtn": "Post Today's Update ✍️",
+      "modal": {
+        "title": "Log Daily Progress",
+        "date": "Date",
+        "category": "Category",
+        "taskTitle": "Task / Milestone Title",
+        "highlights": "Accomplishments (one per line)",
+        "tech": "Tech Stack Tags (comma-separated)",
+        "link": "Project / Commit URL (optional)",
+        "submit": "Publish Update 🚀",
+        "export": "Export JSON 💾",
+        "close": "Cancel"
+      }
+    },
+    "publications": {
+      "badge": "GeeksforGeeks Author • 61,000+ Readers",
+      "heading": "Technical <span>Publications</span>",
+      "subtitle": "Authored in-depth technical guides, web architecture, and mathematical computing articles on GeeksforGeeks.",
+      "read_article": "Read on GeeksforGeeks ↗",
+      "view_all": "View All Publications on GeeksforGeeks (61K+ Reads) 🚀",
+      "article_1": {
+        "title": "Chi-Square (χ²) Test in Statistics",
+        "category": "Statistics & Mathematics",
+        "desc": "Goodness-of-fit, test of independence in contingency tables, degrees of freedom, and statistical hypothesis testing."
+      },
+      "article_2": {
+        "title": "JavaScript HTML DOM Architecture",
+        "category": "Frontend & Web APIs",
+        "desc": "DOM tree traversals, node manipulation, dynamic rendering, and modern event delegation mechanisms (61,000+ reads)."
+      },
+      "article_3": {
+        "title": "Common Debugging Techniques for JavaScript",
+        "category": "JavaScript Engineering",
+        "desc": "Chrome DevTools breakpoints, call stack analysis, asynchronous error debugging, and performance profiling."
+      },
+      "article_4": {
+        "title": "Fundamentals of Graph Theory",
+        "category": "DSA & Discrete Mathematics",
+        "desc": "Vertices, edges, planar graphs, Eulerian/Hamiltonian cycles, isomorphism, and computational graph algorithms."
+      },
+      "article_5": {
+        "title": "Estimation in Statistical Inference",
+        "category": "Mathematical Statistics",
+        "desc": "Point estimation vs confidence intervals, Maximum Likelihood Estimation (MLE), and minimum variance unbiased estimators."
+      }
+    }
+  }
+}

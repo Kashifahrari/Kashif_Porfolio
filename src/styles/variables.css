@@ -1,0 +1,54 @@
+﻿/* ===================================================
+   PORTFOLIO - DESIGN SYSTEM CSS VARIABLES
+   Extracted from home styles for global use
+   =================================================== */
+
+/* Fonts loaded via index.html CDN link */
+
+:root {
+  --bg-color: #081b29;
+  --second-bg-color: #0d2538;
+  --card-bg: rgba(13, 37, 56, 0.65);
+  --card-border: rgba(0, 171, 240, 0.25);
+  --card-hover-border: rgba(0, 171, 240, 0.6);
+  --text-color: #f1f5f9;
+  --text-muted: #94a3b8;
+  --main-color: #00abf0;
+  --accent-teal: #4ecdc4;
+  --accent-coral: #ff6b6b;
+  --accent-gold: #ffd166;
+  --accent-green: #10b981;
+  --glass-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  --glass-glow: 0 0 30px rgba(0, 171, 240, 0.25);
+  --font-main: "Poppins", sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "Fira Code", monospace;
+}
+
+.light-theme {
+  --bg-color: #f4f8fb;
+  --second-bg-color: #e2e8f0;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(2, 132, 199, 0.2);
+  --card-hover-border: rgba(2, 132, 199, 0.5);
+  --text-color: #0f172a;
+  --text-muted: #475569;
+  --main-color: #0284c7;
+  --accent-teal: #06b6d4;
+  --accent-coral: #ef4444;
+  --accent-gold: #d97706;
+  --accent-green: #059669;
+  --glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --glass-glow: 0 0 25px rgba(2, 132, 199, 0.15);
+}
+
+.light-theme .ambient-glow { opacity: 0.08; }
+.light-theme .btn-glass { background: rgba(0,0,0,0.05); border-color: rgba(2,132,199,0.3); color: #0f172a; }
+.light-theme .btn-glass:hover { background: rgba(2,132,199,0.12); border-color: var(--main-color); color: var(--main-color); }
+.light-theme .btn-primary { background: linear-gradient(135deg, var(--main-color), var(--accent-teal)); color: #ffffff; box-shadow: 0 6px 20px rgba(2,132,199,0.35); }
+.light-theme .btn-primary:hover { box-shadow: 0 10px 25px rgba(2,132,199,0.5); }
+.light-theme .btn-secondary { background: rgba(2,132,199,0.08); border: 1.5px solid var(--main-color); color: #0f172a; }
+.light-theme .btn-secondary:hover { background: var(--main-color); color: #ffffff; }
+.light-theme .social-icon-btn { background: rgba(0,0,0,0.04); border-color: rgba(2,132,199,0.25); color: #0f172a; }
+.light-theme .header { background: rgba(244,248,251,0.88); border-bottom-color: rgba(2,132,199,0.15); }
+

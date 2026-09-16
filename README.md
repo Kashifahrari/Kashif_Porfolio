@@ -1,149 +1,32 @@
-Portfolio Project - Mohd Kashif
-A modern, responsive portfolio website with 3D effects and interactive elements showcasing my skills, projects, and certifications.
+# React + TypeScript + Vite
 
- Live Demo  : https://github.com/kashifahrari/Portfolio.git
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-✨ Features
-🎨 Design
-Modern 3D Effects: Interactive 3D transformations and animations
+Currently, two official plugins are available:
 
-Particle.js Background: Dynamic particle animation background
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-Glassmorphism UI: Frosted glass effect design elements
+## React Compiler
 
-Responsive Design: Fully responsive across all device sizes
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-Smooth Animations: CSS animations and transitions throughout
+## Expanding the Oxlint configuration
 
-📄 Pages
-Home Page
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
 
-Hero section with animated text
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
+```
 
-About me section
-
-Projects showcase with 3D card effects
-
-Contact information
-
-About Me Page
-
-Detailed personal information
-
-Education timeline
-
-Skills progress bars
-
-Experience details
-
-Certificates Page
-
-Interactive certificate gallery
-
-Modal view for certificate details
-
-3D hover effects
-
-Contact Page
-
-Contact form with validation
-
-Social media links
-
-Rotating 3D name elements at corners
-
-Interactive form elements
-
-⚡ Technologies Used
-HTML5: Semantic markup
-
-CSS3: Advanced styling with 3D transforms, animations, and gradients
-
-JavaScript: Interactive functionality and animations
-
-Particles.js: Dynamic background particles
-
-Font Awesome: Icons
-
-Google Fonts: Typography
-
-🛠️ Installation
-Clone the repository:
-
-bash
-git clone https://github.com/kashifahrari/Portfolio.git
-Navigate to the project directory:
-
-bash
-cd Portfolio
-Open index.html in your browser or use a local server.
-
-📱 Responsive Design
-The portfolio is fully responsive and optimized for:
-
-Mobile devices (320px and up)
-
-Tablets (768px and up)
-
-Desktops (1024px and up)
-
-Large screens (1200px and up)
-
-🎯 Key JavaScript Features
-Interactive 3D Effects: Hover transformations and animations
-
-Form Validation: Client-side form validation
-
-Modal Systems: For certificate viewing
-
-Particle Animations: Dynamic background effects
-
-Smooth Scrolling: Enhanced navigation experience
-
-🌟 Special Features
-3D Elements
-3D card hover effects throughout the site
-
-Rotating name elements on contact page
-
-Particle.js animated background
-
-Interactive 3D transformations
-
-Animations
-Typed.js text animation for profession titles
-
-Fade-in animations for content sections
-
-Smooth transitions between states
-
-Hover effects on interactive elements
-
-Performance Optimizations
-Optimized images for web
-
-CSS and JavaScript minification
-
-Efficient animation rendering
-
-Lazy loading where appropriate
-
-LinkedIn: Mohd Kashif
-
-
-🤝 Contributing
-Contributions, issues, and feature requests are welcome! Feel free to check issues page.
-
-🙏 Acknowledgments
-Particles.js for background effects
-
-Font Awesome for icons
-
-Google Fonts for typography
-
-Inspiration from various modern portfolio designs
-
-
-
-
-
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.

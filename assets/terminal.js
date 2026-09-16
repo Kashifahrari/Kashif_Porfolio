@@ -142,7 +142,7 @@ Available commands:
     `,
     contact: `
 <strong>Get in Touch:</strong>
-  • 📍 Location: Gorakhpur, Uttar Pradesh, India (Working Remotely / Relocation Ready)
+  • 📍 Location: Gorakhpur, Uttar Pradesh, India (Working Remotely for Dhira Software Labs / Relocation Ready)
   • 📧 Email: <a href="mailto:ahrarikashif@gmail.com" class="t-link">ahrarikashif@gmail.com</a>
   • 📱 Phone: <a href="tel:+917905291957" class="t-link">+91 7905291957</a>
   • 💬 WhatsApp: <a href="https://wa.me/917905291957" target="_blank" class="t-link">+91 7905291957</a>
